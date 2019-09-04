@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets (Joey)/Scenes/MainTest1.unity
     guid: 5d566b61d03cf429d9f648f8459b3920
+  - enabled: 0
+    path: Assets/Donald/Scenes/TapJumpScene.unity
+    guid: 588f4503409920348a3f1c8168888c27
   m_configObjects: {}
