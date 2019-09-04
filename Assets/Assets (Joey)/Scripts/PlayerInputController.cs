@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Crescendo.InitialCrescendo
 {
+    [RequireComponent(typeof(PlayerGestureController))]
     public class PlayerInputController : MonoBehaviour
     {
 
@@ -14,11 +15,11 @@ namespace Crescendo.InitialCrescendo
         public bool BeganTouchThisRound { get; private set; }
         public bool IsDown { get; private set; }
 
-        //private void playerge
+        private PlayerGestureController gestureController;
 
         private void Awake()
         {
-
+            gestureController = GetComponent<PlayerGestureController>();
         }
 
         private void Update()
@@ -99,6 +100,8 @@ namespace Crescendo.InitialCrescendo
         private void HandleInputUp()
         {
             //Debug.Log("Up", this);
+
+            gestureController.Reset();
 
             IsDown = false;
         }
