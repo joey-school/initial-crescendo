@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Crescendo.InitialCrescendo
 {
@@ -44,12 +45,14 @@ namespace Crescendo.InitialCrescendo
 
         private void JumpOnStaff()
         {
-            transform.position += Vector3.up * lineSpacing;
+            //transform.position += Vector3.up * lineSpacing;
+            transform.DOMoveY(transform.position.y + lineSpacing, 0.2f).SetEase(Ease.OutSine);
         }
 
         private void DropOnStaff()
         {
-            transform.position += Vector3.down * lineSpacing;
+            //transform.position += Vector3.down * lineSpacing;
+            transform.DOMoveY(transform.position.y - lineSpacing, 0.2f).SetEase(Ease.InSine);
         }
 
         public void StartGame()
