@@ -16,10 +16,14 @@ namespace Crescendo.InitialCrescendo
         public bool IsDown { get; private set; }
 
         private PlayerGestureController gestureController;
+        private PlayerMovementController movementController;
+
+        private bool hasTouchedOnce = false;
 
         private void Awake()
         {
             gestureController = GetComponent<PlayerGestureController>();
+            movementController = GetComponent<PlayerMovementController>();
         }
 
         private void Update()
@@ -36,9 +40,6 @@ namespace Crescendo.InitialCrescendo
             if (IsDown && BeganTouchThisRound)
             {
                 Vector3 distance = TouchPosition - PreviousTouchPosition;
-
-                //playerMovementController.Move(new Vector2(distance.x, distance.y));
-                //playerTouchRing.Move(new Vector3(touchPosition.x, touchPosition.y, 0f));
 
                 PreviousTouchPosition = TouchPosition;
             }
@@ -95,6 +96,19 @@ namespace Crescendo.InitialCrescendo
             PreviousTouchPosition = TouchPosition;
 
             BeganTouchThisRound = true;
+
+            if (hasTouchedOnce)
+            {
+                if (TouchPosition.y > 0f)
+                {
+                    movementController.JumpOnStaff();
+                } else if (TouchPosition.y < 0f)
+                {
+                    movementController.DropOnStaff();
+                }
+            }
+
+            hasTouchedOnce = true;
         }
 
         private void HandleInputUp()

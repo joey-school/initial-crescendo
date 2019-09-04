@@ -43,15 +43,17 @@ namespace Crescendo.InitialCrescendo
             transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
         }
 
-        private void JumpOnStaff()
+        public void JumpOnStaff()
         {
             //transform.position += Vector3.up * lineSpacing;
+            transform.DOKill();
             transform.DOMoveY(transform.position.y + lineSpacing, 0.2f).SetEase(Ease.OutSine);
         }
 
-        private void DropOnStaff()
+        public void DropOnStaff()
         {
             //transform.position += Vector3.down * lineSpacing;
+            transform.DOKill();
             transform.DOMoveY(transform.position.y - lineSpacing, 0.2f).SetEase(Ease.InSine);
         }
 
