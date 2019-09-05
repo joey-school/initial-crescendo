@@ -715,8 +715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RunSpeed: 0.3
   JumpForce: 1200
-  JumpStickman: {fileID: 21300000, guid: 1d476da21aa0f2244a8a7a39cf38059e, type: 3}
-  RunStickman: {fileID: 21300000, guid: 3e0a8e6d3b594094cb7791cbc376578d, type: 3}
+  JumpStickman: {fileID: 21300000, guid: 207e45ee01db94ed390df552a50cfb42, type: 3}
+  RunStickman: {fileID: 21300000, guid: 207e45ee01db94ed390df552a50cfb42, type: 3}
 --- !u!114 &537562988
 MonoBehaviour:
   m_ObjectHideFlags: 0
