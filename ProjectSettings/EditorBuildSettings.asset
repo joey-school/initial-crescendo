@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets (Joey)/Scenes/MainTest1.unity
     guid: 5d566b61d03cf429d9f648f8459b3920
   - enabled: 0
     path: Assets/Donald/Scenes/TapJumpScene.unity
     guid: 588f4503409920348a3f1c8168888c27
+  - enabled: 1
+    path: Assets/Donald/NoteJumpTest/NoteJumpTest2.unity
+    guid: 1bc10dc6c53c7b048b2a523654caaa1a
+  - enabled: 1
+    path: Assets/Donald/Scenes/MainMenu.unity
+    guid: 1c3a31688978a584e933e98d2e9de76c
   m_configObjects: {}
