@@ -16,6 +16,9 @@ namespace Crescendo.InitialCrescendo
 
         private bool gameIsRunning = false;
 
+        //private int runframecount = 0;
+        //private float distanceran = 0;
+
         private void OnEnable()
         {
             PlayerGestureController.SwipedUp += PlayerGestureController_SwipedUp;
@@ -41,6 +44,13 @@ namespace Crescendo.InitialCrescendo
         private void Run()
         {
             transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
+
+            //runframecount += 1;
+            //distanceran += runSpeed * Time.deltaTime;
+            //if (runframecount % 100 == 0)
+            //{
+            //    Debug.Log(runframecount + " frames: " + distanceran / runframecount);
+            //}
         }
 
         public void JumpOnStaff()
