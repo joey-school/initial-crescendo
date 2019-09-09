@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 714943539313037789}
   - component: {fileID: 714943539313037790}
   - component: {fileID: 714943539313037791}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoteJumpDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
