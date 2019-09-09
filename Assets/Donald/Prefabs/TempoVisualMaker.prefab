@@ -12261,7 +12261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12407f3d106672428bd0cbc4a01a0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThickenEvery: 3
+  ThickenEvery: 10
   NewXScale: 6
 --- !u!1 &2185087878207341845
 GameObject:
