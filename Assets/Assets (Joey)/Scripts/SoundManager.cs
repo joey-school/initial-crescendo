@@ -18,5 +18,15 @@ namespace Crescendo.InitialCrescendo
         {
             audio.Play();
         }
+
+        public void PauseSong()
+        {
+            audio.Pause();
+        }
+
+        public void UnpauseSong()
+        {
+            audio.UnPause();
+        }
     }
 }

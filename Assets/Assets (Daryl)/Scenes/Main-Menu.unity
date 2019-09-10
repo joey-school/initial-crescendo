@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 1547601042}
   - component: {fileID: 1547601043}
   m_Layer: 0
-  m_Name: UI Manager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793891bd8e12f0143a2e9e36946ed499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: DarylScene
 --- !u!1 &1627805385
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +713,7 @@ PrefabInstance:
     - target: {fileID: 8681359322427906283, guid: 5503f16b93618864f89460578e367887,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8681359322427906283, guid: 5503f16b93618864f89460578e367887,
         type: 3}
