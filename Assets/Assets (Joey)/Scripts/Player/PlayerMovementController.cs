@@ -43,7 +43,7 @@ namespace Crescendo.InitialCrescendo
 
         private void Update()
         {
-            Debug.LogFormat("Velocity, $Y: {0}", rigidbody.velocity.y);
+            //Debug.LogFormat("Velocity, $Y: {0}", rigidbody.velocity.y);
 
             UpdateAnimator();
         }
