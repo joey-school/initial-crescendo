@@ -8,20 +8,35 @@ namespace Crescendo.InitialCrescendo
     {
 
         [SerializeField]
-        private Transform target;
+        private float smoothFactor = 0.5f;
 
-        private Vector3 defaultPosition;
-        private float xDistanceToTarget;
+        [SerializeField]
+        private Transform player;
+
+        [SerializeField]
+        private float yPositionOffset = 3.9f;
+
+        private Vector3 smoothTargetPositionVelocity = Vector3.zero;
 
         private void Awake()
         {
-            defaultPosition = transform.position;
-            xDistanceToTarget = target.position.x - transform.position.x; 
+
         }
 
-        private void LateUpdate()
+        private void Start()
         {
-            transform.position = new Vector3(target.position.x - xDistanceToTarget, transform.position.y, transform.position.z);
+
+        }
+
+        private void Update()
+        {
+            Vector3 targetPosition = Vector3.SmoothDamp(transform.position, player.position + (Vector3.up * yPositionOffset), ref smoothTargetPositionVelocity, smoothFactor);
+            UpdatePosition(new Vector3(targetPosition.x, targetPosition.y, transform.position.z));
+        }
+
+        private void UpdatePosition(Vector3 position)
+        {
+            transform.position = position;
         }
     }
 }
