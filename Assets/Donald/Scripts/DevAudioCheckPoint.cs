@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class DevAudioCheckPoint : MonoBehaviour
 {
-    public AudioSource AudioSource;
     [SerializeField] private float StartTimeSeconds;
+
+    [HideInInspector]
+    public bool Active;
+
+    private AudioSource AudioSource;
 
     private void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
         AudioSource.time = StartTimeSeconds;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AudioSource.Play();
+        if (Active)
+        {
+            AudioSource.Play();
+        }
     }
 }
