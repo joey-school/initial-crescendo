@@ -6,94 +6,80 @@ using DG.Tweening;
 
 namespace Crescendo.InitialCrescendo
 {
+    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Animator))]
     public class PlayerMovementController : MonoBehaviour
     {
 
         [SerializeField]
-        private float runSpeed = 5f;
+        private float runPower = 5f;
 
-        private float lineSpacing = 2f;
+        [SerializeField]
+        private float jumpPower = 2f;
 
-        private bool gameIsRunning = false;
+        [SerializeField]
+        private LayerMask groundLayers;
 
-        //private int runframecount = 0;
-        //private float distanceran = 0;
+        [SerializeField]
+        private Transform feet;
 
-        private void OnEnable()
+        private new Rigidbody2D rigidbody;
+        private Animator animator;
+
+        private bool isGrounded = true;
+
+        private void Awake()
         {
-            PlayerGestureController.SwipedUp += PlayerGestureController_SwipedUp;
-            PlayerGestureController.SwipedDown += PlayerGestureController_SwipedDown;
+            rigidbody = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
         }
 
-        private void OnDisable()
+        private void FixedUpdate()
         {
-            PlayerGestureController.SwipedUp -= PlayerGestureController_SwipedUp;
-            PlayerGestureController.SwipedDown -= PlayerGestureController_SwipedDown;
-        }
-
-        private void Update()
-        {
-            if (!gameIsRunning)
-            {
-                return;
-            }
+            CheckGrounded();
 
             Run();
         }
 
+        private void Update()
+        {
+            Debug.LogFormat("Velocity, $Y: {0}", rigidbody.velocity.y);
+
+            UpdateAnimator();
+        }
+
         private void Run()
         {
-            transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
-
-            //runframecount += 1;
-            //distanceran += runSpeed * Time.deltaTime;
-            //if (runframecount % 100 == 0)
-            //{
-            //    Debug.Log(runframecount + " frames: " + distanceran / runframecount);
-            //}
+            rigidbody.velocity = new Vector2(runPower, rigidbody.velocity.y);
         }
 
-        public void JumpOnStaff()
+        public void Jump()
         {
-            //transform.position += Vector3.up * lineSpacing;
-            transform.DOKill();
-            transform.DOMoveY(transform.position.y + lineSpacing, 0.2f).SetEase(Ease.OutSine);
+            rigidbody.AddForce(Vector2.up * jumpPower);
         }
 
-        public void DropOnStaff()
+        private void UpdateAnimator()
         {
-            //transform.position += Vector3.down * lineSpacing;
-            transform.DOKill();
-            transform.DOMoveY(transform.position.y - lineSpacing, 0.2f).SetEase(Ease.InSine);
+            animator.SetBool("IsGrounded", isGrounded);
+            animator.SetFloat("HorizontalVelocity", rigidbody.velocity.x);//, 0.1f, Time.deltaTime);
+            animator.SetFloat("VerticalVelocity", rigidbody.velocity.y);//, 0.1f, Time.deltaTime);
         }
 
-        public void StartGame()
+        private void CheckGrounded()
         {
-#if UNITY_EDITOR
-            gameIsRunning = true;
-#elif UNITY_ANDROID
-            StartCoroutine(Foo());
-#endif
+            isGrounded = false;
 
-        }
+            // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+            // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(feet.position, 0.2f, groundLayers);
 
-        private IEnumerator Foo()
-        {
-            float v = 0.3f;
-
-            yield return new WaitForSeconds(v);
-
-            gameIsRunning = true;
-        }
-
-        private void PlayerGestureController_SwipedUp()
-        {
-            JumpOnStaff();
-        }
-
-        private void PlayerGestureController_SwipedDown()
-        {
-            DropOnStaff();
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].gameObject != gameObject)
+                {
+                    isGrounded = true;
+                }
+            }
         }
     }
 }

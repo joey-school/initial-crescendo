@@ -4,25 +4,14 @@ using UnityEngine;
 
 namespace Crescendo.InitialCrescendo
 {
-    [RequireComponent(typeof(PlayerGestureController))]
+    [RequireComponent(typeof(PlayerMovementController))]
     public class PlayerInputController : MonoBehaviour
     {
-
-        public Vector3 TouchPosition { get; private set; }
-        public Vector3 StartTouchPosition { get; private set; }
-        public Vector3 PreviousTouchPosition { get; private set; }
-
-        public bool BeganTouchThisRound { get; private set; }
-        public bool IsDown { get; private set; }
-
-        private PlayerGestureController gestureController;
+    
         private PlayerMovementController movementController;
-
-        private bool hasTouchedOnce = false;
 
         private void Awake()
         {
-            gestureController = GetComponent<PlayerGestureController>();
             movementController = GetComponent<PlayerMovementController>();
         }
 
@@ -35,20 +24,8 @@ namespace Crescendo.InitialCrescendo
 #endif
         }
 
-        private void FixedUpdate()
-        {
-            if (IsDown && BeganTouchThisRound)
-            {
-                Vector3 distance = TouchPosition - PreviousTouchPosition;
-
-                PreviousTouchPosition = TouchPosition;
-            }
-        }
-
         private void HandleMouseInput()
         {
-            TouchPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
-
             if (Input.GetMouseButtonDown(0))
             {
                 HandleInputDown();
@@ -67,8 +44,6 @@ namespace Crescendo.InitialCrescendo
         {
             if (Input.touchCount > 0)
             {
-                TouchPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, Camera.main.transform.position.z));
-
                 switch (Input.GetTouch(0).phase)
                 {
                     case TouchPhase.Began:
@@ -90,44 +65,17 @@ namespace Crescendo.InitialCrescendo
 
         private void HandleInputDown()
         {
-            //Debug.Log("Down", this);
-
-            StartTouchPosition = TouchPosition;
-            PreviousTouchPosition = TouchPosition;
-
-            BeganTouchThisRound = true;
-
-            if (hasTouchedOnce)
-            {
-                if (TouchPosition.y > 0f)
-                {
-                    movementController.JumpOnStaff();
-                } else if (TouchPosition.y < 0f)
-                {
-                    movementController.DropOnStaff();
-                }
-            }
-
-            hasTouchedOnce = true;
+            movementController.Jump();
         }
 
         private void HandleInputUp()
         {
-            //Debug.Log("Up", this);
 
-            gestureController.Reset();
-
-            IsDown = false;
         }
 
         private void HandleInputHold()
         {
-            //Debug.Log("Hold", this);
 
-            if (BeganTouchThisRound)
-            {
-                IsDown = true;
-            }
         }
     }
 }
