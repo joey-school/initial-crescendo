@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu_Buttons : MonoBehaviour
+namespace Crescendo.InitialCrescendo
 {
-    [SerializeField] private string SceneName;
-    
-    public void StartGame()
+    public class Menu_Buttons : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneName);
-    }
+        [SerializeField] private string SceneName;
+        
+        public void StartGame()
+        {
+            SceneManager.LoadScene(SceneName);
+        }
 
-    public void QuitGame()
-    {
-        Application.Quit();
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
