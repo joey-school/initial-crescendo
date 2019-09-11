@@ -6,12 +6,12 @@ namespace Crescendo.InitialCrescendo
 {
     public class SoundManager : MonoBehaviour
     {
-
+				[SerializeField]
         private new AudioSource audio;
 
         private void Awake()
         {
-            audio = GetComponent<AudioSource>();
+            //audio = GetComponent<AudioSource>();
         }
 
         public void StartSong()
