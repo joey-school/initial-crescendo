@@ -14,6 +14,9 @@ namespace Crescendo.InitialCrescendo
         private Transform player;
 
         [SerializeField]
+        private float xPositionOffset = 2f;
+
+        [SerializeField]
         private float yPositionOffset = 3.9f;
 
         private Vector3 smoothTargetPositionVelocity = Vector3.zero;
@@ -30,7 +33,7 @@ namespace Crescendo.InitialCrescendo
 
         private void Update()
         {
-            Vector3 targetPosition = Vector3.SmoothDamp(transform.position, player.position + (Vector3.up * yPositionOffset), ref smoothTargetPositionVelocity, smoothFactor);
+            Vector3 targetPosition = Vector3.SmoothDamp(transform.position, player.position + (Vector3.right * xPositionOffset) + (Vector3.up * yPositionOffset), ref smoothTargetPositionVelocity, smoothFactor);
             UpdatePosition(new Vector3(targetPosition.x, targetPosition.y, transform.position.z));
         }
 
