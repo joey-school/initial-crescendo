@@ -65,7 +65,10 @@ namespace Crescendo.InitialCrescendo
 
         private void HandleInputDown()
         {
-            movementController.Jump();
+            if (movementController.IsGrounded)
+            {
+                movementController.Jump();
+            }
         }
 
         private void HandleInputUp()

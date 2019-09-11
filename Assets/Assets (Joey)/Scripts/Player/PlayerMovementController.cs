@@ -26,7 +26,7 @@ namespace Crescendo.InitialCrescendo
         private new Rigidbody2D rigidbody;
         private Animator animator;
 
-        private bool isGrounded = true;
+        public bool IsGrounded { get; private set; } = true;
 
         private void Awake()
         {
@@ -60,14 +60,14 @@ namespace Crescendo.InitialCrescendo
 
         private void UpdateAnimator()
         {
-            animator.SetBool("IsGrounded", isGrounded);
+            animator.SetBool("IsGrounded", IsGrounded);
             animator.SetFloat("HorizontalVelocity", rigidbody.velocity.x);//, 0.1f, Time.deltaTime);
             animator.SetFloat("VerticalVelocity", rigidbody.velocity.y);//, 0.1f, Time.deltaTime);
         }
 
         private void CheckGrounded()
         {
-            isGrounded = false;
+            IsGrounded = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -77,7 +77,7 @@ namespace Crescendo.InitialCrescendo
             {
                 if (colliders[i].gameObject != gameObject)
                 {
-                    isGrounded = true;
+                    IsGrounded = true;
                 }
             }
         }
