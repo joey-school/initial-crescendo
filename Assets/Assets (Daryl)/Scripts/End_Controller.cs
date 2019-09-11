@@ -23,7 +23,7 @@ namespace Crescendo.InitialCrescendo
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong();
                     break;
                 case "Finish":
-                    txt.text = "You escaped!";
+                    txt.text = "Complete!";
                     Time.timeScale = 0f;
                     EndPanel.SetActive(true);
                     PauseButton.SetActive(false);
