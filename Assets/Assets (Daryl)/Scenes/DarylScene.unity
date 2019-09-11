@@ -1860,7 +1860,7 @@ MonoBehaviour:
   EndPanel: {fileID: 1765337177}
   PauseButton: {fileID: 100127029}
   txt: {fileID: 829747372}
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 113129777}
 --- !u!1001 &1150469675
 PrefabInstance:
   m_ObjectHideFlags: 0
