@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public GameObject PlayerSpawnPoint;
     public GameObject GroundingObject;
     public LayerMask LayerMask;
     public bool Grounded = false;
@@ -20,7 +19,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = PlayerSpawnPoint.transform.position;
+
     }
 
     // Update is called once per frame
