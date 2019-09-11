@@ -10,6 +10,9 @@ namespace Crescendo.InitialCrescendo
         [SerializeField] private GameObject EndPanel;
         [SerializeField] private GameObject PauseButton;
         [SerializeField] private Text txt;
+        [SerializeField] private ScoreManager scoreManager;
+
+        private int currentHighscore = 0;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -21,6 +24,7 @@ namespace Crescendo.InitialCrescendo
                     EndPanel.SetActive(true);
                     PauseButton.SetActive(false);
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong();
+                    SaveScore();
                     break;
                 case "Finish":
                     txt.text = "You escaped!";
@@ -28,7 +32,20 @@ namespace Crescendo.InitialCrescendo
                     EndPanel.SetActive(true);
                     PauseButton.SetActive(false);
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong();
+                    SaveScore();
                     break;
+            }
+        }
+
+        private void SaveScore()
+        {
+            if(PlayerPrefs.HasKey("Score"))
+            {
+                currentHighscore = PlayerPrefs.GetInt("Score");
+            }
+            if(currentHighscore < scoreManager.Percentage)
+            {
+                PlayerPrefs.SetInt("Score", scoreManager.Percentage);
             }
         }
     }
