@@ -5,18 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Assets (Production)/Scenes/Main.unity
-    guid: 1350dd2414bab485782363728516094b
-  - enabled: 0
-    path: Assets/Donald/NoteJumpTest/NoteJumpTest2.unity
-    guid: 1bc10dc6c53c7b048b2a523654caaa1a
-  - enabled: 0
-    path: Assets/Donald/Scenes/MainMenu.unity
-    guid: 1c3a31688978a584e933e98d2e9de76c
-  - enabled: 0
-    path: Assets/Assets (Daryl)/Scenes/DarylScene.unity
-    guid: 4b4c716c1eee25643ae20ab6d7b07cd2
   - enabled: 1
     path: Assets/Donald/Scenes/Main-Menu.unity
     guid: a716cd5c747a78a498786269559a11c3
