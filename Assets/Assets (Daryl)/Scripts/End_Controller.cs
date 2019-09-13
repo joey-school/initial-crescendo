@@ -27,7 +27,7 @@ namespace Crescendo.InitialCrescendo
                     SaveScore();
                     break;
                 case "Finish":
-                    txt.text = "You escaped!";
+                    txt.text = "Complete!";
                     Time.timeScale = 0f;
                     EndPanel.SetActive(true);
                     PauseButton.SetActive(false);

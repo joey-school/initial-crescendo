@@ -4,54 +4,60 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameObject GroundingObject;
+    public LayerMask LayerMask;
+    public bool Grounded = false;
+
     public float RunSpeed;
     public float JumpForce;
-    public Sprite JumpStickman;
-    public Sprite RunStickman;
 
-    bool jumping;
+    public bool DrawLine = false;
+    public LineRenderer LineRenderer;
+
+    private bool running;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = RunStickman;
-        jumping = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float timeScale = GetComponent<PlayerTime>().TimeScale;
-        transform.position += new Vector3(RunSpeed * timeScale,0,0);
+        if (running)
+        {
+            float timeScale = GetComponent<PlayerTime>().TimeScale;
+            transform.position += new Vector3(RunSpeed * timeScale, 0, 0);
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (!jumping)
+            if (running)
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
-                GetComponent<SpriteRenderer>().sprite = JumpStickman;
-                jumping = true;
-            } else if (jumping)
+                if (Grounded)
+                {
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpForce));
+                }
+            }
+            else
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -JumpForce));
+                running = true;
             }
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name.ToLower().Contains("barline"))
+        if (DrawLine)
         {
-            jumping = false;
-            GetComponent<SpriteRenderer>().sprite = RunStickman;
+            Vector3[] positions = new Vector3[LineRenderer.positionCount + 1];
+            LineRenderer.GetPositions(positions);
+            positions[LineRenderer.positionCount] = transform.position;
+            LineRenderer.positionCount = positions.Length;
+            LineRenderer.SetPositions(positions);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void FixedUpdate()
     {
-        if (collision.name.Contains("GoodNote"))
-        {
-            Destroy(collision.gameObject);
-        }
+        Grounded = GroundingObject.GetComponent<BoxCollider2D>().IsTouchingLayers(LayerMask);
     }
 }
