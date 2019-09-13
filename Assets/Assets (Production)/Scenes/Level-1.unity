@@ -49965,6 +49965,7 @@ MonoBehaviour:
   EndPanel: {fileID: 90289910}
   PauseButton: {fileID: 1207188580}
   txt: {fileID: 1965662317}
+  scoreManager: {fileID: 0}
 --- !u!4 &1343477112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6321045917556499601, guid: 2ab2f7c33f8964bdda2011cd037df472,
@@ -58761,7 +58762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566595502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 783, y: -12, z: 6.051315}
+  m_LocalPosition: {x: 783, y: -8, z: 6.051315}
   m_LocalScale: {x: 1732.4, y: 7.367, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
