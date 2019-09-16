@@ -295,7 +295,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.44
+  orthographic size: 12.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2471,6 +2471,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1880076206564132496, guid: d9affb8d7d9ef4a759d84538ce3a25cc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2634828
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880076206564132496, guid: d9affb8d7d9ef4a759d84538ce3a25cc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2634828
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880076206564132496, guid: d9affb8d7d9ef4a759d84538ce3a25cc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2634828
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880076207065276578, guid: d9affb8d7d9ef4a759d84538ce3a25cc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7464525
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880076207065276578, guid: d9affb8d7d9ef4a759d84538ce3a25cc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7464525
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880076207065276578, guid: d9affb8d7d9ef4a759d84538ce3a25cc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7464525
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9affb8d7d9ef4a759d84538ce3a25cc, type: 3}
 --- !u!1001 &6321045917714994311
@@ -2543,19 +2573,20 @@ PrefabInstance:
     - target: {fileID: 6321045917556499639, guid: 2ab2f7c33f8964bdda2011cd037df472,
         type: 3}
       propertyPath: jumpPower
-      value: 200
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 6321045917556499639, guid: 2ab2f7c33f8964bdda2011cd037df472,
         type: 3}
       propertyPath: runPower
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8899446205107649403, guid: 2ab2f7c33f8964bdda2011cd037df472,
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1343477113, guid: 2ab2f7c33f8964bdda2011cd037df472, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ab2f7c33f8964bdda2011cd037df472, type: 3}
 --- !u!4 &8732559926073817908 stripped
 Transform:
