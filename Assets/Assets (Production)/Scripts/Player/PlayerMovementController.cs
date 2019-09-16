@@ -23,6 +23,7 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private Transform feet;
 
+        private PlayerInputController inputController;
         private new Rigidbody2D rigidbody;
         private Animator animator;
 
@@ -30,6 +31,7 @@ namespace Crescendo.InitialCrescendo
 
         private void Awake()
         {
+            inputController = GetComponent<PlayerInputController>();
             rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
         }
@@ -44,6 +46,11 @@ namespace Crescendo.InitialCrescendo
         private void Update()
         {
             //Debug.LogFormat("Velocity, $Y: {0}", rigidbody.velocity.y);
+
+            //if (inputController.IsTouchingScreen)
+            //{
+
+            //}
 
             UpdateAnimator();
         }
