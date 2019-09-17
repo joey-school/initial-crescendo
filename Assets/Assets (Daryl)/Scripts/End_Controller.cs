@@ -20,21 +20,23 @@ namespace Crescendo.InitialCrescendo
             {
                 case "Hazard":
                     txt.text = "You failed!";
-                    Time.timeScale = 0f;
-                    EndPanel.SetActive(true);
-                    PauseButton.SetActive(false);
-                    GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong();
+                    Reset();
                     SaveScore();
                     break;
                 case "Finish":
                     txt.text = "Complete!";
-                    Time.timeScale = 0f;
-                    EndPanel.SetActive(true);
-                    PauseButton.SetActive(false);
-                    GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong();
+                    Reset();
                     SaveScore();
                     break;
             }
+        }
+
+        private void Reset()
+        {
+            Time.timeScale = 0f;
+            EndPanel.SetActive(true);
+            PauseButton.SetActive(false);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong(); 
         }
 
         private void SaveScore()
