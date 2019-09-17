@@ -14,7 +14,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if(droppingPlatform) 
+            if(platformTimed) 
             {
                 Invoke("MovePlatform", timer);
             } else {
