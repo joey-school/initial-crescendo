@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Crescendo.InitialCrescendo
 {
@@ -17,6 +18,11 @@ namespace Crescendo.InitialCrescendo
 
         private void Update()
         {
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                return;
+            }
+
 #if UNITY_EDITOR
             HandleMouseInput();
 #else
