@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 6
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5188,10 +5188,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7910175409348518183}
+  - component: {fileID: 7910175409348131755}
   - component: {fileID: 7910175409348131754}
   - component: {fileID: 7910175409348131756}
   - component: {fileID: 7910175409348131757}
-  - component: {fileID: 7910175409348131755}
   m_Layer: 0
   m_Name: Dandelion
   m_TagString: Untagged
@@ -5219,6 +5219,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7910175409348131755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910175409348033799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6626745dddf48449cb9d2855f78a1d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallFactor: 7
+  handle: {fileID: 7910175408820745708}
+  particleSystem: {fileID: 7910175408328007631}
 --- !u!50 &7910175409348131754
 Rigidbody2D:
   serializedVersion: 4
@@ -5274,20 +5289,6 @@ MonoBehaviour:
   m_Solvers:
   - {fileID: 7910175408980604605}
   m_Weight: 1
---- !u!114 &7910175409348131755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7910175409348033799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6626745dddf48449cb9d2855f78a1d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallFactor: 7
-  handle: {fileID: 7910175408820745708}
 --- !u!1 &7910175409348033801
 GameObject:
   m_ObjectHideFlags: 0

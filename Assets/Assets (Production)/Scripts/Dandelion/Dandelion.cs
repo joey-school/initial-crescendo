@@ -17,6 +17,9 @@ namespace Crescendo.SymphoSprint
         [SerializeField]
         private Transform handle;
 
+        [SerializeField]
+        private ParticleSystem particleSystem;
+
         private new Rigidbody2D rigidbody;
         private PlayerMovementController playerMovementController;
         private Animator animator;
@@ -37,6 +40,10 @@ namespace Crescendo.SymphoSprint
                 rigidbody.bodyType = RigidbodyType2D.Dynamic;
                 rigidbody.velocity = new Vector3(playerMovementController.Rigidbody.velocity.x, -fallFactor, 0f);
                 animator.SetBool("IsGliding", true);
+
+                // Unity Bugfix: we need to simulate first otherwise it won't play.
+                particleSystem.Simulate(1);
+                particleSystem.Play();
 
                 playerMovementController.AttachToGlider(handle);
 
