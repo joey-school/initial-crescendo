@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Crescendo.SymphoSprint;
 
 namespace Crescendo.InitialCrescendo
 {
@@ -40,6 +41,7 @@ namespace Crescendo.InitialCrescendo
         private Animator animator;
         public bool IsGrounded { get;  set; } = true;
         public PlayerMovementTypes ActiveMovementType { get; set; } = PlayerMovementTypes.Running;
+        private Dandelion activeDandelion;
 
         private void Awake()
         {
@@ -66,6 +68,8 @@ namespace Crescendo.InitialCrescendo
         private void Update()
         {
             UpdateAnimator();
+
+            Debug.LogFormat("up: {0}", Rigidbody.velocity.y);
         }
 
         private void Run()
@@ -78,9 +82,22 @@ namespace Crescendo.InitialCrescendo
             Rigidbody.AddForce(Vector2.up * jumpPower);
         }
 
-        public void AttachToGlider(Transform handle)
+        public void JumpFromGlider()
+        {
+            transform.DOKill();
+            DetachFromGlider();
+            Rigidbody.velocity = activeDandelion.Rigidbody.velocity;
+            Rigidbody.AddForce(Vector2.up * jumpPower * 1.6f);
+
+            Debug.Log("&&&&&&&", this);
+            Debug.LogFormat("up: {0}", Rigidbody.velocity.y);
+            Debug.Log("&&&&&&&", this);
+        }
+
+        public void AttachToGlider(Transform handle, Dandelion dandelion)
         {
             transform.parent = handle;
+            activeDandelion = dandelion;
 
             // TODO: Calculate target position!
             transform.DOLocalMove(new Vector3(3.36f, -0.79f, 0f), 0.3f).SetEase(Ease.InOutSine);

@@ -18,16 +18,16 @@ namespace Crescendo.SymphoSprint
         private Transform handle;
 
         [SerializeField]
-        private ParticleSystem particleSystem;
+        private new ParticleSystem particleSystem;
 
-        private new Rigidbody2D rigidbody;
+        public Rigidbody2D Rigidbody { get; private set; }
         private PlayerMovementController playerMovementController;
         private Animator animator;
         private bool isActive = false;
 
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
         }
 
@@ -37,15 +37,16 @@ namespace Crescendo.SymphoSprint
             {
                 playerMovementController = player.GetComponent<PlayerMovementController>();
 
-                rigidbody.bodyType = RigidbodyType2D.Dynamic;
-                rigidbody.velocity = new Vector3(playerMovementController.Rigidbody.velocity.x, -fallFactor, 0f);
+                Rigidbody.bodyType = RigidbodyType2D.Dynamic;
+                Rigidbody.velocity = new Vector3(playerMovementController.Rigidbody.velocity.x, -fallFactor, 0f);
                 animator.SetBool("IsGliding", true);
 
                 // Unity Bugfix: we need to simulate first otherwise it won't play.
-                particleSystem.Simulate(1);
-                particleSystem.Play();
+                //particleSystem.Simulate(1);
+                //particleSystem.Play();
+                particleSystem.gameObject.SetActive(true);
 
-                playerMovementController.AttachToGlider(handle);
+                playerMovementController.AttachToGlider(handle, this);
 
                 isActive = true;
             }
