@@ -38,8 +38,8 @@ namespace Crescendo.InitialCrescendo
         private PlayerInputController inputController;
         public Rigidbody2D Rigidbody { get; private set; }
         private Animator animator;
-
         public bool IsGrounded { get;  set; } = true;
+        public PlayerMovementTypes ActiveMovementType { get; set; } = PlayerMovementTypes.Running;
 
         private void Awake()
         {
@@ -52,18 +52,19 @@ namespace Crescendo.InitialCrescendo
         {
             CheckGrounded();
 
-            Run();
+            switch (ActiveMovementType)
+            {
+                case PlayerMovementTypes.Running:
+                    Run();
+                    break;
+                case PlayerMovementTypes.Gliding:
+
+                    break;
+            }
         }
 
         private void Update()
         {
-            //Debug.LogFormat("Velocity, $Y: {0}", rigidbody.velocity.y);
-
-            //if (inputController.IsTouchingScreen)
-            //{
-
-            //}
-
             UpdateAnimator();
         }
 
@@ -77,9 +78,28 @@ namespace Crescendo.InitialCrescendo
             Rigidbody.AddForce(Vector2.up * jumpPower);
         }
 
+        public void AttachToGlider(Transform handle)
+        {
+            transform.parent = handle;
+
+            // TODO: Calculate target position!
+            transform.DOLocalMove(new Vector3(3.36f, -0.79f, 0f), 0.3f).SetEase(Ease.InOutSine);
+            Rigidbody.simulated = false;
+            ActiveMovementType = PlayerMovementTypes.Gliding;
+        }
+
+        public void DetachFromGlider()
+        {
+            transform.parent = null;
+            Rigidbody.simulated = true;
+            Rigidbody.bodyType = RigidbodyType2D.Dynamic;
+            ActiveMovementType = PlayerMovementTypes.Running;
+        }
+
         private void UpdateAnimator()
         {
             animator.SetBool("IsGrounded", IsGrounded);
+            animator.SetBool("IsGliding", ActiveMovementType == PlayerMovementTypes.Gliding);
             animator.SetFloat("HorizontalVelocity", Rigidbody.velocity.x);//, 0.1f, Time.deltaTime);
             animator.SetFloat("VerticalVelocity", Rigidbody.velocity.y);//, 0.1f, Time.deltaTime);
         }
@@ -88,8 +108,6 @@ namespace Crescendo.InitialCrescendo
         {
             IsGrounded = false;
 
-            // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-            // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             Collider2D[] colliders = Physics2D.OverlapCircleAll(feet.position, 0.2f, groundLayers);
 
             for (int i = 0; i < colliders.Length; i++)
@@ -100,5 +118,11 @@ namespace Crescendo.InitialCrescendo
                 }
             }
         }
+    }
+
+    public enum PlayerMovementTypes
+    {
+        Running,
+        Gliding
     }
 }
