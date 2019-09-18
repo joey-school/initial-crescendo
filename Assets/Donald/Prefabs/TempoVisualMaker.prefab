@@ -12245,7 +12245,7 @@ MonoBehaviour:
   DistanceBetweenLines: 5.487805
   AmountOfLines: 500
   YValueForAllLines: 0
-  MusicBPM: 164
+  MusicBPM: 169
   PlayerDistancePer100Frames: 25
   FramesPerSecond: 60
   ThickenCertainLinesScript: {fileID: 2182424110844342485}
