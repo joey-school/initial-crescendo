@@ -17,7 +17,7 @@ TagManager:
   - 
   - Ground
   - Notes
-  - 
+  - Dandelion
   - 
   - 
   - 
@@ -42,6 +42,12 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3444537515
+    locked: 0
+  - name: Gameplay
+    uniqueID: 2333523165
+    locked: 0
+  - name: Foreground
+    uniqueID: 3729572213
     locked: 0
   - name: Default
     uniqueID: 0
