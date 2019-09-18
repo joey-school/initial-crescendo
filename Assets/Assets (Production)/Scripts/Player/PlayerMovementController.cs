@@ -42,6 +42,7 @@ namespace Crescendo.InitialCrescendo
         public bool IsGrounded { get;  set; } = true;
         public PlayerMovementTypes ActiveMovementType { get; set; } = PlayerMovementTypes.Running;
         private Dandelion activeDandelion;
+        public Bounds PreviousColliderBounds { get; private set; }
 
         private void Awake()
         {
@@ -69,7 +70,7 @@ namespace Crescendo.InitialCrescendo
         {
             UpdateAnimator();
 
-            Debug.LogFormat("up: {0}", Rigidbody.velocity.y);
+            PreviousColliderBounds = GetComponent<CapsuleCollider2D>().bounds;
         }
 
         private void Run()
@@ -92,6 +93,16 @@ namespace Crescendo.InitialCrescendo
             Debug.Log("&&&&&&&", this);
             Debug.LogFormat("up: {0}", Rigidbody.velocity.y);
             Debug.Log("&&&&&&&", this);
+        }
+
+        public IEnumerator JumpFromMushroom(float bounceFactor)
+        {
+            Rigidbody.AddForce(Vector2.up * jumpPower * bounceFactor);
+            animator.SetBool("IsFrontFlipping", true);
+
+            yield return null;
+
+            animator.SetBool("IsFrontFlipping", false);
         }
 
         public void AttachToGlider(Transform handle, Dandelion dandelion)
