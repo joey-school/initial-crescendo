@@ -42,8 +42,6 @@ namespace Crescendo.SymphoSprint
                 animator.SetBool("IsGliding", true);
 
                 // Unity Bugfix: we need to simulate first otherwise it won't play.
-                //particleSystem.Simulate(1);
-                //particleSystem.Play();
                 particleSystem.gameObject.SetActive(true);
 
                 playerMovementController.AttachToGlider(handle, this);
