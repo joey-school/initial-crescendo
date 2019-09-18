@@ -14,6 +14,18 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private float runPower = 5f;
 
+        public float RunPower
+        {
+            get
+            {
+                return runPower;
+            }
+            set
+            {
+                runPower = value;
+            }
+        }
+
         [SerializeField]
         private float jumpPower = 2f;
 
@@ -23,14 +35,16 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private Transform feet;
 
-        private new Rigidbody2D rigidbody;
+        private PlayerInputController inputController;
+        public Rigidbody2D Rigidbody { get; private set; }
         private Animator animator;
 
-        public bool IsGrounded { get; private set; } = true;
+        public bool IsGrounded { get;  set; } = true;
 
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            inputController = GetComponent<PlayerInputController>();
+            Rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
         }
 
@@ -45,24 +59,29 @@ namespace Crescendo.InitialCrescendo
         {
             //Debug.LogFormat("Velocity, $Y: {0}", rigidbody.velocity.y);
 
+            //if (inputController.IsTouchingScreen)
+            //{
+
+            //}
+
             UpdateAnimator();
         }
 
         private void Run()
         {
-            rigidbody.velocity = new Vector2(runPower, rigidbody.velocity.y);
+            Rigidbody.velocity = new Vector2(runPower, Rigidbody.velocity.y);
         }
 
         public void Jump()
         {
-            rigidbody.AddForce(Vector2.up * jumpPower);
+            Rigidbody.AddForce(Vector2.up * jumpPower);
         }
 
         private void UpdateAnimator()
         {
             animator.SetBool("IsGrounded", IsGrounded);
-            animator.SetFloat("HorizontalVelocity", rigidbody.velocity.x);//, 0.1f, Time.deltaTime);
-            animator.SetFloat("VerticalVelocity", rigidbody.velocity.y);//, 0.1f, Time.deltaTime);
+            animator.SetFloat("HorizontalVelocity", Rigidbody.velocity.x);//, 0.1f, Time.deltaTime);
+            animator.SetFloat("VerticalVelocity", Rigidbody.velocity.y);//, 0.1f, Time.deltaTime);
         }
 
         private void CheckGrounded()
