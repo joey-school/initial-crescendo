@@ -75,6 +75,10 @@ namespace Crescendo.InitialCrescendo
             {
                 movementController.Jump();
             }
+            else if (movementController.ActiveMovementType == PlayerMovementTypes.Gliding)
+            {
+                movementController.JumpFromGlider();
+            }
         }
 
         private void HandleInputUp()
