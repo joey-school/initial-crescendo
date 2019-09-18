@@ -11,7 +11,7 @@ namespace Crescendo.SymphoSprint
     {
 
         [SerializeField]
-        [Range(0, 100)]
+        [Range(-100, 100)]
         private float fallFactor;
 
         [SerializeField]
