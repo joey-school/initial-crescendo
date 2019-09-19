@@ -10,9 +10,11 @@ namespace Crescendo.InitialCrescendo
         [SerializeField] private GameObject EndPanel;
         [SerializeField] private GameObject PauseButton;
         [SerializeField] private Text txt;
-        [SerializeField] private ScoreManager scoreManager;
+		[SerializeField] private ScoreManager scoreManager;
+		[SerializeField] private GameObject DeadQuitButton;
+		[SerializeField] private GameObject EndLevelQuitButton;
 
-        private int currentHighscore = 0;
+		private int currentHighscore = 0;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -20,12 +22,16 @@ namespace Crescendo.InitialCrescendo
             {
                 case "Hazard":
                     txt.text = "You failed!";
+					DeadQuitButton.SetActive(true);
+					EndLevelQuitButton.SetActive(false);
                     Reset();
                     SaveScore();
                     break;
                 case "Finish":
                     txt.text = "Complete!";
-                    Reset();
+					DeadQuitButton.SetActive(false);
+					EndLevelQuitButton.SetActive(false);
+					Reset();
                     SaveScore();
                     break;
             }
@@ -36,7 +42,7 @@ namespace Crescendo.InitialCrescendo
             Time.timeScale = 0f;
             EndPanel.SetActive(true);
             PauseButton.SetActive(false);
-            GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong(); 
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().PauseSong(true); 
         }
 
         private void SaveScore()

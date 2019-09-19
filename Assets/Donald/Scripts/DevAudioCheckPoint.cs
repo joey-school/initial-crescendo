@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DevAudioCheckPoint : MonoBehaviour
+namespace Crescendo.InitialCrescendo
 {
-    [SerializeField] private float StartTimeSeconds;
+	public class DevAudioCheckPoint : MonoBehaviour
+	{
+		[SerializeField] private float StartTimeSeconds;
 
-    [HideInInspector]
-    public bool Active;
+		[HideInInspector]
+		public bool Active;
 
-    private AudioSource AudioSource;
+		private AudioSource AudioSource;
 
-    private void Start()
-    {
-        AudioSource = GetComponent<AudioSource>();
-        AudioSource.time = StartTimeSeconds;
-    }
+		private void Start() {
+			if(Active) {
+				SoundManager.Instance.SetLevelThemeTime(StartTimeSeconds);
+			}
+		}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (Active)
-        {
-            AudioSource.Play();
-        }
-    }
+		private void OnTriggerEnter2D(Collider2D collision) {
+			if(Active) {
+				SoundManager.Instance.StartSong();
+			}
+		}
+	}
 }
