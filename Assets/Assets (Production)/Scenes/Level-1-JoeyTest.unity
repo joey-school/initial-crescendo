@@ -7414,7 +7414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1806223752, guid: dc98e51dd70ad458fa5895bc53f43a5f, type: 3}
       propertyPath: m_SelectedEditorRenderState
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc98e51dd70ad458fa5895bc53f43a5f, type: 3}
@@ -59133,12 +59133,12 @@ PrefabInstance:
     - target: {fileID: 7734492214156488846, guid: 51b36d0ab70c5ba4b89624bd923ead87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 144.4
+      value: -19.9
       objectReference: {fileID: 0}
     - target: {fileID: 7734492214156488846, guid: 51b36d0ab70c5ba4b89624bd923ead87,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7734492214156488846, guid: 51b36d0ab70c5ba4b89624bd923ead87,
         type: 3}
