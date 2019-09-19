@@ -11,11 +11,29 @@ namespace Crescendo.InitialCrescendo
         [SerializeField] private GameObject PauseButton;
         [SerializeField] private GameObject PausePanel;
         [SerializeField] private string MenuName;
+        private bool Pressed;
         private Scene scene;
 
         void Start()
         {
             scene = SceneManager.GetActiveScene();
+            StartCoroutine(LoadYourAsyncScene());
+        }
+
+        IEnumerator LoadYourAsyncScene()
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(MenuName);
+            asyncLoad.allowSceneActivation = false;
+
+            while (!asyncLoad.isDone)
+            {
+                if (asyncLoad.progress >= 0.9f && Pressed)
+                {
+                    asyncLoad.allowSceneActivation = true;
+                }
+
+                yield return null;
+            }
         }
 
         // When the pause button is pressed during the game
@@ -45,7 +63,7 @@ namespace Crescendo.InitialCrescendo
         public void QuitLevel()
         {
             Time.timeScale = 1.0f;
-            SceneManager.LoadScene(MenuName);
+            Pressed = true;
         }
     }
 }

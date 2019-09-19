@@ -7,19 +7,13 @@ public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private Transform endpoint;
     [SerializeField] private float duration;
-    [SerializeField] private bool platformTimed; //if true this platform will move after 'timer' amount of seconds
-    [SerializeField] private float timer;
+    [SerializeField] private float timer; //decides after which time the platform moves, can happen while player walks over platform
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            if(platformTimed) 
-            {
-                Invoke("MovePlatform", timer);
-            } else {
-                MovePlatform();
-            }
+            Invoke("MovePlatform", timer);
         }
     }
 
