@@ -16,7 +16,8 @@ namespace Crescendo.SymphoSprint
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Player"))
+            Debug.LogFormat("tag: {0}, active: {1}", other.tag, dandelion.IsActive);
+            if (other.CompareTag("Ground") && dandelion.IsActive)
             {
                 dandelion.Detach();
             }
