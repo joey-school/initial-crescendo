@@ -34,7 +34,7 @@ namespace Crescendo.InitialCrescendo
 			SoundManager.Instance.PlaySoundFX(Sounds.EndLevelQuitLevel);
 		}
 		public void OnClickEndLevelRestartButton() {
-			SoundManager.Instance.PlaySoundFX(Sounds.EndLevelRestart);
+			SoundManager.Instance.PlaySoundFX(Sounds.DeadRestart);
 		}
 	}
 }
