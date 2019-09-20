@@ -22,6 +22,7 @@ namespace Crescendo.InitialCrescendo
             {
                 case "Collectible":
                     Destroy(collision.gameObject);
+					SoundManager.Instance.PlaySoundFX(Sounds.Collectible);
                     scoreManager.Score++;
                     break;
             }

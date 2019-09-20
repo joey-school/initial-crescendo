@@ -33,7 +33,8 @@ namespace Crescendo.InitialCrescendo
 			deadRestartButtonFX,
 			deadQuitLevelButtonFX,
 			endLevelRestartButtonFX,
-			endLevelQuitLevelButtonFX;
+			endLevelQuitLevelButtonFX,
+			collectibleFX;
 
 		[SerializeField] string MainMenuName, Level1Name;
 
@@ -124,6 +125,9 @@ namespace Crescendo.InitialCrescendo
 				case Sounds.EndLevelQuitLevel:
 					clipToPlay = endLevelQuitLevelButtonFX;
 					break;
+				case Sounds.Collectible:
+					clipToPlay = collectibleFX;
+					break;
 			}
 
 			soundFXAudioSource.clip = clipToPlay;
@@ -141,6 +145,7 @@ namespace Crescendo.InitialCrescendo
 		DeadRestart,
 		DeadQuitLevel,
 		EndLevelQuitLevel,
-		EndLevelRestart
+		EndLevelRestart,
+		Collectible
 	}
 }
