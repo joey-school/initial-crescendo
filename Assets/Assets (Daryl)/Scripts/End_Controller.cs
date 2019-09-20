@@ -31,6 +31,7 @@ namespace Crescendo.InitialCrescendo
                     txt.text = "Timmy liked this dream!";
 					DeadQuitButton.SetActive(false);
 					EndLevelQuitButton.SetActive(true);
+					SoundManager.Instance.PlaySoundFX(Sounds.LevelCompleted);
 					Reset();
                     SaveScore();
                     break;

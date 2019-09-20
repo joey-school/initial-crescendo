@@ -32,6 +32,7 @@ namespace Crescendo.InitialCrescendo
 			quitButtonFX,
 			deadRestartButtonFX,
 			deadQuitLevelButtonFX,
+			levelCompletedFX,
 			endLevelRestartButtonFX,
 			endLevelQuitLevelButtonFX,
 			collectibleFX;
@@ -119,6 +120,9 @@ namespace Crescendo.InitialCrescendo
 				case Sounds.DeadQuitLevel:
 					clipToPlay = deadQuitLevelButtonFX;
 					break;
+				case Sounds.LevelCompleted:
+					clipToPlay = levelCompletedFX;
+					break;
 				case Sounds.EndLevelRestart:
 					clipToPlay = endLevelRestartButtonFX;
 					break;
@@ -144,6 +148,7 @@ namespace Crescendo.InitialCrescendo
 		QuitLevel,
 		DeadRestart,
 		DeadQuitLevel,
+		LevelCompleted,
 		EndLevelQuitLevel,
 		EndLevelRestart,
 		Collectible
