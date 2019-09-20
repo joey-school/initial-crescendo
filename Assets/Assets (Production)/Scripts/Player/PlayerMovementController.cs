@@ -30,6 +30,18 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private float jumpPower = 2f;
 
+        public float JumpPower
+        {
+            get
+            {
+                return jumpPower;
+            }
+            set
+            {
+                jumpPower = value;
+            }
+        }
+
         [SerializeField]
         private LayerMask groundLayers;
 
