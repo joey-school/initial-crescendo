@@ -200,6 +200,46 @@ PrefabInstance:
       propertyPath: endLevelRestartButtonFX
       value: 
       objectReference: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: pauseButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7aff99e09ffb16f4a84b175cc9952f55, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: resumeButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: c0ca0b29648b18949b4052e063b0e8a3, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: restartButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: quitButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d092a9a1aa5b2448942d1512f1e6255, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: deadQuitLevelButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d092a9a1aa5b2448942d1512f1e6255, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: deadRestartButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: mainMenuTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d20c6da96a047e42a1c85692feff015, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: startGameButtonFX
+      value: 
+      objectReference: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
     - target: {fileID: 3501735426294670244, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,6 +295,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670242, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d20c6da96a047e42a1c85692feff015, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6781b41605aff442af5a35cb5b17949, type: 3}
 --- !u!1 &601492955
