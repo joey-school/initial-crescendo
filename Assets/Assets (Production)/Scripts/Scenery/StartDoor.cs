@@ -34,9 +34,9 @@ namespace Crescendo.SymphoSprint
 
             yield return new WaitForSeconds(2f);
 
-            playerMovementController.Jump();
             playerMovementController.RunPower = defaultRunPower;
             playerMovementController.JumpPower = defaultJumpPower;
+            playerMovementController.Jump();
         }
 
         private void FadeOutDoor()
