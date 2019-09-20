@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelThemeAudioSource: {fileID: 3501735426294670242}
   soundFXAudioSource: {fileID: 4578715548984759453}
-  EasingOfDeath: 1
+  easingOfDeath: 8
+  easingLength: 1
   mainMenuTheme: {fileID: 8300000, guid: e017aa3e9bf926741b22f56dc781dc7e, type: 3}
   level1Theme: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
   startGameButtonFX: {fileID: 8300000, guid: 29ea1868eefa6cd46894c8ea59ce1c9a, type: 3}
@@ -62,6 +63,8 @@ MonoBehaviour:
     type: 3}
   endLevelQuitLevelButtonFX: {fileID: 8300000, guid: 29ea1868eefa6cd46894c8ea59ce1c9a,
     type: 3}
+  MainMenuName: Main-Menu
+  Level1Name: Level-1
 --- !u!82 &3501735426294670242
 AudioSource:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets (Production)/Scenes/Level-1-JoeyTest.unity
     guid: 3d90d27d52e864317b4336d0e0647b41
   - enabled: 1

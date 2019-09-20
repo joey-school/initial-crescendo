@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &341580018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 194, y: 0}
-  m_SizeDelta: {x: 164.2, y: 118.4}
+  m_SizeDelta: {x: 219.8, y: 150.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &341580021
 CanvasRenderer:
@@ -128,7 +128,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 31899289}
-        m_MethodName: OnClickEndLevelQuitButton
+        m_MethodName: OnClickDeadQuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -249,7 +249,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140, y: 140}
+  m_SizeDelta: {x: 162.7, y: 162.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &676586148
 CanvasRenderer:
@@ -423,7 +423,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140.5, y: 140.5}
+  m_SizeDelta: {x: 162.7, y: 162.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1108970306
 CanvasRenderer:
@@ -497,7 +497,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140.5, y: 140.5}
+  m_SizeDelta: {x: 162.7, y: 162.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1316016542
 CanvasRenderer:
@@ -711,7 +711,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.82, y: 0}
-  m_SizeDelta: {x: 120.2, y: 114.8}
+  m_SizeDelta: {x: 161.1, y: 134.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1837660229
 CanvasRenderer:
@@ -775,7 +775,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174299063850157986}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -785,8 +785,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -118.3}
-  m_SizeDelta: {x: 361.4, y: 176.4}
+  m_AnchoredPosition: {x: 20.7, y: -136.32}
+  m_SizeDelta: {x: 591.3, y: 245.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &991212285985184159
 CanvasRenderer:
@@ -859,8 +859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchoredPosition: {x: -13.43, y: 0}
+  m_SizeDelta: {x: 153, y: 127.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &610068121722199832
 CanvasRenderer:
@@ -890,7 +890,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: aef61aa7ffc7e514389318bdd5e77626, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0818be8d22cfc054d9be2dd3000c79c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1089,7 +1089,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 259, y: 0}
-  m_SizeDelta: {x: 185.1, y: 132.9}
+  m_SizeDelta: {x: 201.5, y: 153.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5199145294233594817
 CanvasRenderer:
@@ -1423,7 +1423,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -259, y: 0}
-  m_SizeDelta: {x: 185.1, y: 132.9}
+  m_SizeDelta: {x: 199.5, y: 147.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5577432960328206457
 CanvasRenderer:
@@ -1820,11 +1820,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 94
+    m_FontSize: 134
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 169
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1868,7 +1868,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 7.4, y: -146.85}
-  m_SizeDelta: {x: 346.4, y: 146}
+  m_SizeDelta: {x: 396.7, y: 162.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1436249306904974601
 CanvasRenderer:
@@ -1942,7 +1942,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140, y: 140}
+  m_SizeDelta: {x: 162.7, y: 162.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3499906895644436626
 CanvasRenderer:
@@ -2018,7 +2018,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -194, y: 0}
-  m_SizeDelta: {x: 180, y: 122.2}
+  m_SizeDelta: {x: 220.9, y: 156.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7525836014784332533
 CanvasRenderer:
@@ -2232,7 +2232,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 184, y: 138}
+  m_SizeDelta: {x: 220.42, y: 157.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &937540262334193868
 CanvasRenderer:
@@ -2360,7 +2360,7 @@ GameObject:
   - component: {fileID: 5070635808311932296}
   - component: {fileID: 7157368071466835347}
   m_Layer: 5
-  m_Name: EndLevelQuitButton
+  m_Name: NextLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2384,7 +2384,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 194, y: 0}
-  m_SizeDelta: {x: 164.2, y: 118.4}
+  m_SizeDelta: {x: 219.8, y: 150.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1810487026525730863
 CanvasRenderer:
@@ -2654,7 +2654,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 42
+    m_FontSize: 53
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -2665,4 +2665,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSED
+  m_Text: Paused

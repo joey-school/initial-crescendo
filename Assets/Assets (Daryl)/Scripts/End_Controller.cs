@@ -21,16 +21,16 @@ namespace Crescendo.InitialCrescendo
             switch (collision.tag)
             {
                 case "Hazard":
-                    txt.text = "You failed!";
+                    txt.text = "Timmy had a bad dream...";
 					DeadQuitButton.SetActive(true);
 					EndLevelQuitButton.SetActive(false);
                     Reset();
                     SaveScore();
                     break;
                 case "Finish":
-                    txt.text = "Complete!";
+                    txt.text = "Timmy liked this dream!";
 					DeadQuitButton.SetActive(false);
-					EndLevelQuitButton.SetActive(false);
+					EndLevelQuitButton.SetActive(true);
 					Reset();
                     SaveScore();
                     break;

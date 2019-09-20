@@ -16,13 +16,15 @@ namespace Crescendo.InitialCrescendo
 		[SerializeField]
 		private AudioSource soundFXAudioSource;
 
-		[SerializeField]
-		private Ease EasingOfDeath;
+		[SerializeField] private Ease easingOfDeath;
+		[SerializeField] private float easingLength;
+		
 
 		[SerializeField]
 		private AudioClip
 			mainMenuTheme,
 			level1Theme,
+			//levelClearTheme,
 			startGameButtonFX,
 			pauseButtonFX, 
 			resumeButtonFX,
@@ -32,6 +34,8 @@ namespace Crescendo.InitialCrescendo
 			deadQuitLevelButtonFX,
 			endLevelRestartButtonFX,
 			endLevelQuitLevelButtonFX;
+
+		[SerializeField] string MainMenuName, Level1Name;
 
 		private float timeOnPause;
 
@@ -45,10 +49,14 @@ namespace Crescendo.InitialCrescendo
 		}
 
 		private void OnLevelWasLoaded(int level) {
-			if(level == 1) {
+
+			string levelName = SceneManager.GetActiveScene().name;
+			
+			if(levelName == MainMenuName) {
 				levelThemeAudioSource.clip = mainMenuTheme;
 				levelThemeAudioSource.Play();
-			} else if(level == 2) {
+			} else if(levelName == Level1Name) {
+				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level1Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
 			} else {
@@ -71,7 +79,7 @@ namespace Crescendo.InitialCrescendo
 			timeOnPause = levelThemeAudioSource.time;
 
 			if(dead) {
-				levelThemeAudioSource.DOPitch(0, 1f).SetEase(EasingOfDeath).SetUpdate(true).OnComplete(() => { levelThemeAudioSource.Pause(); });
+				levelThemeAudioSource.DOPitch(0, easingLength).SetEase(easingOfDeath).SetUpdate(true).OnComplete(() => { levelThemeAudioSource.Pause(); });
 			} else {
 				levelThemeAudioSource.Pause();
 			}
