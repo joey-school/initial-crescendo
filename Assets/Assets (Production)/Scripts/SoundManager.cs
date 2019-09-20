@@ -54,7 +54,7 @@ namespace Crescendo.InitialCrescendo
 			
 			if(levelName == MainMenuName) {
 				levelThemeAudioSource.clip = mainMenuTheme;
-				levelThemeAudioSource.Play();
+				StartSong();
 			} else if(levelName == Level1Name) {
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level1Theme;
