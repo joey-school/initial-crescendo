@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Assets (Production)/Scenes/Level-1-JoeyTest4.unity
-    guid: bdadbe9de741f4cefa69cb406fd6d2b2
-  - enabled: 1
-    path: Assets/Donald/Scenes/Main-Menu.unity
-    guid: a716cd5c747a78a498786269559a11c3
+    path: Assets/Assets (Production)/Scenes/MainMenu.unity
+    guid: 823e130001f774307a118985dc7173d8
   - enabled: 1
     path: Assets/Assets (Production)/Scenes/Level-1.unity
     guid: 626470bfe84a346af95db0f2dc933431
