@@ -240,6 +240,11 @@ PrefabInstance:
       propertyPath: startGameButtonFX
       value: 
       objectReference: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: collectibleFX
+      value: 
+      objectReference: {fileID: 8300000, guid: c70555016f30a96469b481bbeed78282, type: 3}
     - target: {fileID: 3501735426294670244, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: m_LocalPosition.x
