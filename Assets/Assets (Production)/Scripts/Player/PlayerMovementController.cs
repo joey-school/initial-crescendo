@@ -101,7 +101,8 @@ namespace Crescendo.InitialCrescendo
             DetachFromGlider();
             Rigidbody.velocity = activeDandelion.Rigidbody.velocity;
             Rigidbody.AddForce(Vector2.up * jumpPower * 1.6f);
-            activeDandelion.IsActive = false;
+            //activeDandelion.IsActive = false;
+            activeDandelion.IsDetachedOnce = true;
         }
 
         public IEnumerator JumpFromMushroom(float bounceFactor)

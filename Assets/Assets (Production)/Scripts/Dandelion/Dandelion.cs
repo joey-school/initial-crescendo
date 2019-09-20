@@ -24,6 +24,8 @@ namespace Crescendo.SymphoSprint
         private PlayerMovementController playerMovementController;
         private Animator animator;
         public bool IsActive { get; set; } = false;
+        //public bool IsActiveForPlayer { get; set; } = false;
+        public bool IsDetachedOnce { get; set; } = false;
 
         private void Awake()
         {
@@ -34,6 +36,7 @@ namespace Crescendo.SymphoSprint
         public void Attach(GameObject player)
         {
             if (!IsActive)
+            //if (!IsActiveForPlayer)
             {
                 playerMovementController = player.GetComponent<PlayerMovementController>();
 
@@ -47,6 +50,7 @@ namespace Crescendo.SymphoSprint
                 playerMovementController.AttachToGlider(handle, this);
 
                 IsActive = true;
+                //IsActiveForPlayer = true;
                 Debug.Log("joooo", this);
             }
         }
@@ -54,7 +58,11 @@ namespace Crescendo.SymphoSprint
         public void Detach()
         {
             Debug.Log("detach", this);
-            playerMovementController.DetachFromGlider();
+            if (!IsDetachedOnce)
+            {
+                playerMovementController.DetachFromGlider();
+                IsDetachedOnce = true;
+            }
         }
     }
 }
