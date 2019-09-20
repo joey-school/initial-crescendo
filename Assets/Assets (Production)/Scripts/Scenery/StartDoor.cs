@@ -26,7 +26,9 @@ namespace Crescendo.SymphoSprint
         private IEnumerator StartGame()
         {
             float defaultRunPower = playerMovementController.RunPower;
+            float defaultJumpPower = playerMovementController.JumpPower;
             playerMovementController.RunPower = 0f;
+            playerMovementController.JumpPower = 0f;
 
             FadeOutDoor();
 
@@ -34,6 +36,7 @@ namespace Crescendo.SymphoSprint
 
             playerMovementController.Jump();
             playerMovementController.RunPower = defaultRunPower;
+            playerMovementController.JumpPower = defaultJumpPower;
         }
 
         private void FadeOutDoor()
