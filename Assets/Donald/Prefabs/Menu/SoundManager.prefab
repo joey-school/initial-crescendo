@@ -49,20 +49,22 @@ MonoBehaviour:
   soundFXAudioSource: {fileID: 4578715548984759453}
   easingOfDeath: 8
   easingLength: 1
-  mainMenuTheme: {fileID: 8300000, guid: e017aa3e9bf926741b22f56dc781dc7e, type: 3}
+  mainMenuTheme: {fileID: 8300000, guid: 4973dbf1c08988243b85497d474cd29a, type: 3}
   level1Theme: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
-  startGameButtonFX: {fileID: 8300000, guid: 29ea1868eefa6cd46894c8ea59ce1c9a, type: 3}
-  pauseButtonFX: {fileID: 8300000, guid: 997f08954b67f4247af9d70aa5fae396, type: 3}
-  resumeButtonFX: {fileID: 8300000, guid: 3dbe1965a5ab64642a1e25b610eaf254, type: 3}
-  restartButtonFX: {fileID: 8300000, guid: 3dbe1965a5ab64642a1e25b610eaf254, type: 3}
-  quitButtonFX: {fileID: 8300000, guid: 635ae13c45190494eb532d8df876b36c, type: 3}
-  deadRestartButtonFX: {fileID: 8300000, guid: 3dbe1965a5ab64642a1e25b610eaf254, type: 3}
-  deadQuitLevelButtonFX: {fileID: 8300000, guid: 635ae13c45190494eb532d8df876b36c,
+  startGameButtonFX: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+  pauseButtonFX: {fileID: 8300000, guid: 7aff99e09ffb16f4a84b175cc9952f55, type: 3}
+  resumeButtonFX: {fileID: 8300000, guid: c0ca0b29648b18949b4052e063b0e8a3, type: 3}
+  restartButtonFX: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+  quitButtonFX: {fileID: 8300000, guid: 9d092a9a1aa5b2448942d1512f1e6255, type: 3}
+  deadRestartButtonFX: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+  deadQuitLevelButtonFX: {fileID: 8300000, guid: 9d092a9a1aa5b2448942d1512f1e6255,
     type: 3}
-  endLevelRestartButtonFX: {fileID: 8300000, guid: 3dbe1965a5ab64642a1e25b610eaf254,
+  levelCompletedFX: {fileID: 0}
+  endLevelRestartButtonFX: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249,
     type: 3}
-  endLevelQuitLevelButtonFX: {fileID: 8300000, guid: 29ea1868eefa6cd46894c8ea59ce1c9a,
+  endLevelQuitLevelButtonFX: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249,
     type: 3}
+  collectibleFX: {fileID: 8300000, guid: c70555016f30a96469b481bbeed78282, type: 3}
   MainMenuName: Main-Menu
   Level1Name: Level-1
 --- !u!82 &3501735426294670242
@@ -75,11 +77,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e017aa3e9bf926741b22f56dc781dc7e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4973dbf1c08988243b85497d474cd29a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
