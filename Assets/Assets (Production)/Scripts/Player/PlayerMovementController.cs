@@ -30,6 +30,18 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private float jumpPower = 2f;
 
+        public float JumpPower
+        {
+            get
+            {
+                return jumpPower;
+            }
+            set
+            {
+                jumpPower = value;
+            }
+        }
+
         [SerializeField]
         private LayerMask groundLayers;
 
@@ -89,10 +101,8 @@ namespace Crescendo.InitialCrescendo
             DetachFromGlider();
             Rigidbody.velocity = activeDandelion.Rigidbody.velocity;
             Rigidbody.AddForce(Vector2.up * jumpPower * 1.6f);
-
-            Debug.Log("&&&&&&&", this);
-            Debug.LogFormat("up: {0}", Rigidbody.velocity.y);
-            Debug.Log("&&&&&&&", this);
+            //activeDandelion.IsActive = false;
+            activeDandelion.IsDetachedOnce = true;
         }
 
         public IEnumerator JumpFromMushroom(float bounceFactor)

@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpawnPoint : MonoBehaviour
+namespace Crescendo.InitialCrescendo
 {
-    public GameObject SpawnPoint;
+	public class PlayerSpawnPoint : MonoBehaviour
+	{
+		public GameObject SpawnPoint;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        transform.position = SpawnPoint.transform.position;
-        SpawnPoint.GetComponentInChildren<DevAudioCheckPoint>().Active = true;
-    }
+		// Start is called before the first frame update
+		void Start() {
+			transform.position = SpawnPoint.transform.position;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+			SpawnPoint.GetComponentInChildren<DevAudioCheckPoint>().Active = true;
+		}
+
+		// Update is called once per frame
+		void Update() {
+
+		}
+	}
 }
