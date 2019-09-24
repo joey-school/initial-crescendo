@@ -37,7 +37,12 @@ namespace Crescendo.InitialCrescendo
 			endLevelQuitLevelButtonFX,
 			collectibleFX;
 
-		[SerializeField] string MainMenuName, Level1Name;
+        [SerializeField]
+        private string collectibleSoundAndroidFileName;
+
+        private int collectibleSoundAndroidID;
+
+        [SerializeField] string MainMenuName, Level1Name;
 
 		private float timeOnPause;
 
@@ -48,9 +53,13 @@ namespace Crescendo.InitialCrescendo
 				Instance = this;
 				DontDestroyOnLoad(gameObject);
 			}
-		}
 
-		private void OnLevelWasLoaded(int level) {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        collectibleSoundAndroidID = AudioCenter.loadSound (collectibleSoundAndroidFileName);
+#endif
+        }
+
+        private void OnLevelWasLoaded(int level) {
 
 			string levelName = SceneManager.GetActiveScene().name;
 			
@@ -96,7 +105,9 @@ namespace Crescendo.InitialCrescendo
         }
 
 		public void PlaySoundFX(Sounds sound) {
-			AudioClip clipToPlay = null;
+
+#if !UNITY_ANDROID || UNITY_EDITOR
+            AudioClip clipToPlay = null;
 
 			switch(sound) {
 				case Sounds.StartGame:
@@ -136,7 +147,19 @@ namespace Crescendo.InitialCrescendo
 
 			soundFXAudioSource.clip = clipToPlay;
 			soundFXAudioSource.Play();
-		}
+#elif UNITY_ANDROID
+            int ID = 0;
+
+            switch (sound)
+            {
+                case Sounds.Collectible:
+                    ID = collectibleSoundAndroidID;
+                    break;
+            }
+
+            AudioCenter.playSound (ID);
+#endif
+        }
     }
 
 	public enum Sounds
