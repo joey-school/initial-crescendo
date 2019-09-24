@@ -54,11 +54,9 @@ namespace Crescendo.InitialCrescendo
 
 			string levelName = SceneManager.GetActiveScene().name;
 
-			bool loop = false;
-
 			if(levelName == MainMenuName) {
 				levelThemeAudioSource.clip = mainMenuTheme;
-				loop = true;
+				levelThemeAudioSource.loop = true;
 				StartSong();
 			} else if(levelName == Level1Name) {
 				levelThemeAudioSource.Stop();
@@ -68,7 +66,6 @@ namespace Crescendo.InitialCrescendo
 				levelThemeAudioSource.Stop();
 			}
 
-			levelThemeAudioSource.loop = loop;
 		}
 
 		public void SetLevelThemeTime(float time) {
