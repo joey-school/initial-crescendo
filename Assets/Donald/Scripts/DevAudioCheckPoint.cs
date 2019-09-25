@@ -7,6 +7,8 @@ namespace Crescendo.InitialCrescendo
 	public class DevAudioCheckPoint : MonoBehaviour
 	{
 		[SerializeField] private float StartTimeSeconds;
+		[SerializeField] bool addAudioSource;
+		[SerializeField] AudioClip clip;
 
 		[HideInInspector]
 		public bool Active;
@@ -14,13 +16,17 @@ namespace Crescendo.InitialCrescendo
 		private AudioSource AudioSource;
 
 		private void Start() {
-			if(Active) {
-				SoundManager.Instance.SetLevelThemeTime(StartTimeSeconds);
-			}
+
 		}
 
 		private void OnTriggerEnter2D(Collider2D collision) {
-			if(Active) {
+			if(addAudioSource) {
+				AudioSource audioSource = SoundManager.Instance.gameObject.AddComponent<AudioSource>();
+				audioSource.clip = clip;
+				audioSource.time = StartTimeSeconds;
+				audioSource.Play();
+			} else {
+				SoundManager.Instance.SetLevelThemeTime(StartTimeSeconds);
 				SoundManager.Instance.StartSong();
 			}
 		}
