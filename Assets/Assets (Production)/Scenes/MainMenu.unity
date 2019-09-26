@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793891bd8e12f0143a2e9e36946ed499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Level-1-BackupJoey1
+  SceneName: Level-1
 --- !u!1 &1627805385
 GameObject:
   m_ObjectHideFlags: 0
