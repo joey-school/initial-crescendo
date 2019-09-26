@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets (Production)/Scenes/Level-1.unity
     guid: 626470bfe84a346af95db0f2dc933431
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets (Production)/Scenes/Level-1-BackupJoey1.unity
     guid: c44cd50bb104d4432a0f49ecfce12c2d
   m_configObjects: {}

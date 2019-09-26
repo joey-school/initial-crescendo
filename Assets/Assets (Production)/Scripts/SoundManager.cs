@@ -77,8 +77,15 @@ namespace Crescendo.InitialCrescendo
 
 		}
 
+		public float GetLevelThemeTime() {
+			return levelThemeAudioSource.time;
+		}
 		public void SetLevelThemeTime(float time) {
 			levelThemeAudioSource.time = time;
+		}
+
+		public AudioClip GetThemeCurrentLevel() {
+			return levelThemeAudioSource.clip;
 		}
 
 		public void StartSong()
