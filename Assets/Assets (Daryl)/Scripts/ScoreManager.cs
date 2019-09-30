@@ -36,7 +36,9 @@ namespace Crescendo.InitialCrescendo
 
         void Start()
         {
-            totalObjects = GameObject.FindGameObjectsWithTag("Collectible").Length;
+            int totalCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
+            int totalInteractables = GameObject.FindGameObjectsWithTag("InteractableCollectible").Length;
+            totalObjects = totalCollectibles + totalInteractables;
             score = 0;
             scoreText.text = "Completion: " + 0 + "%";
         }

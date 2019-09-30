@@ -10,7 +10,7 @@ namespace Crescendo.InitialCrescendo
 
         public delegate void DieEventHandler();
         public static event DieEventHandler Died;
-        
+
         [SerializeField]
         private ScoreManager scoreManager;
 
