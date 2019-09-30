@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Ground
   - Bird
+  - InteractableCollectible
   layers:
   - Default
   - TransparentFX
