@@ -6,7 +6,7 @@ namespace Crescendo.InitialCrescendo
 {
 	public class CheckpointSoundManager : MonoBehaviour
 	{
-		[SerializeField] bool isPlayerSpawnPoint;
+		public bool isPlayerSpawnPoint;
 
 		public float time;
 
