@@ -7,6 +7,9 @@ TagManager:
   - Collectible
   - Hazard
   - Ground
+  - Lvl1Checkpoint1
+  - CheckpointContainer
+  - Lvl1Checkpoint2
   layers:
   - Default
   - TransparentFX
