@@ -12,6 +12,8 @@ namespace Crescendo.InitialCrescendo
 		[SerializeField] private GameObject checkpointPrefab;
 		[SerializeField] private Transform checkpointParent;
 		[SerializeField] private Transform player;
+		[SerializeField] private Transform door;
+		[SerializeField] private Vector3 doorPlayerOffset;
 
 		public string PlayerPrefsNameCheckpLvl1;
 		[SerializeField] int ForceCheckpointNumber;
@@ -31,6 +33,7 @@ namespace Crescendo.InitialCrescendo
 			GameObject currentSpawnPoint = GetCurrentCheckpoint();
 			currentSpawnPoint.GetComponent<CheckpointSoundManager>().isPlayerSpawnPoint = true;
 			player.position = currentSpawnPoint.transform.GetChild(0).position;
+			door.position = player.position + doorPlayerOffset;
 			DisableOtherSpawnPoints(currentSpawnPoint);
 		}
 
