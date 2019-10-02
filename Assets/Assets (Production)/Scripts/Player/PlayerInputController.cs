@@ -86,8 +86,7 @@ namespace Crescendo.InitialCrescendo
                 Debug.Log("Touched " + touchedObject.transform.name);
 
                 // Obtaining the collectible part
-                MovingInteractableCollectible note = hitInformation.transform.gameObject.transform.GetChild(2).gameObject.GetComponent<MovingInteractableCollectible>();
-                note.Collect();
+                touchedObject.transform.GetChild(2).gameObject.GetComponent<MovingInteractableCollectible>().Collect();
             }
             else
             {

@@ -11,20 +11,20 @@ namespace Crescendo.InitialCrescendo
         public bool FirstTouched { get; set; }
         public bool Done { get; set; }
 
-        // When bird is near collectible
+        // When player is near collectible
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == "Bird")
+            if (collision.tag == "Player")
             {
                 Debug.Log("It entered");
                 FirstTouched = true;
             }
         }
 
-        // When bird catches the collectible
+        // When player catches the collectible
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.tag == "Bird")
+            if (collision.tag == "Player")
             {
                 Debug.Log("It left");
                 FirstTouched = false;

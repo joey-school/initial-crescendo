@@ -11,19 +11,12 @@ namespace Crescendo.InitialCrescendo
         [SerializeField] private MovingInteractableCollectible collectible;
         [SerializeField] private GameObject bird;
         [SerializeField] private float durationToPlatform; //speed of bird approaching
-        [SerializeField] private float movePower;
         private bool doneMoving = false;
-        private Rigidbody2D rgbd;
-
-        void Start()
-        {
-            rgbd = GetComponent<Rigidbody2D>();
-        }
+        
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.tag == "Player")
             {
-                rgbd.velocity = new Vector2(movePower, rgbd.velocity.y);
                 StartCoroutine("BirdToPlatformCoroutine");
             }
 
