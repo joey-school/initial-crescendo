@@ -10,6 +10,8 @@ TagManager:
   - Lvl1Checkpoint1
   - CheckpointContainer
   - Lvl1Checkpoint2
+  - PlayerSpawnPoint
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
