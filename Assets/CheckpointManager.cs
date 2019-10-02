@@ -7,20 +7,22 @@ namespace Crescendo.InitialCrescendo
 {
     public class CheckpointManager : MonoBehaviour
     {
-
-        [SerializeField]
-        private Transform[] checkpoints;
-
         [SerializeField]
         private Transform player;
 
         public static CheckpointManager Instance { get; private set; }
 
+        private List<Transform> checkpoints = new List<Transform>();
         private int activeCheckpointIndex = -1;
 
         private void Awake()
         {
-            Instance = this; 
+            Instance = this;
+
+            foreach (Transform checkpoint in transform)
+            {
+                checkpoints.Add(checkpoint);
+            }
 
             if (PlayerPrefs.HasKey("ActiveCheckpointIndex"))
             {
