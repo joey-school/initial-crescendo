@@ -38,11 +38,31 @@ namespace Crescendo.InitialCrescendo
 			collectibleFX;
 
         [SerializeField]
-        private string collectibleSoundAndroidFileName;
+		private string collectibleSoundAndroidFileName,
+			startGameButtonAndroidFileName,
+			pauseButtonAndroidFileName
+		,resumeButtonAndroidFileName
+		,restartButtonAndroidFileName
+		,quitButtonAndroidFileName
+		,deadRestartButtonAndroidFileName
+		,deadQuitLevelButtonAndroidFileName
+		,levelCompletedAndroidFileName
+		,endLevelRestartButtonAndroidFileName
+		,endLevelQuitLevelButtonAndroidFileName;
 
-        private int collectibleSoundAndroidID;
+		private int collectibleSoundAndroidID;
+		private int startGameButtonAndroidID;
+		private int pauseButtonAndroidID;
+		private int resumeButtonAndroidID;
+		private int restartButtonAndroidID;
+		private int quitButtonAndroidID;
+		private int deadRestartButtonAndroidID;
+		private int deadQuitLevelButtonAndroidID;
+		private int levelCompletedAndroidID;
+		private int endLevelRestartButtonAndroidID;
+		private int endLevelQuitLevelButtonAndroidID;
 
-        [SerializeField] string MainMenuName, Level1Name;
+		[SerializeField] string MainMenuName, Level1Name;
 
 		private float timeOnPause;
 
@@ -56,10 +76,20 @@ namespace Crescendo.InitialCrescendo
 
 #if UNITY_ANDROID && !UNITY_EDITOR
         collectibleSoundAndroidID = AudioCenter.loadSound (collectibleSoundAndroidFileName);
+		startGameButtonAndroidID = AudioCenter.loadSound (startGameButtonAndroidFileName);
+		pauseButtonAndroidID = AudioCenter.loadSound (pauseButtonAndroidFileName);
+		resumeButtonAndroidID = AudioCenter.loadSound (resumeButtonAndroidFileName);
+		restartButtonAndroidID = AudioCenter.loadSound (restartButtonAndroidFileName);
+		quitButtonAndroidID = AudioCenter.loadSound (quitButtonAndroidFileName);
+		deadRestartButtonAndroidID = AudioCenter.loadSound (deadRestartButtonAndroidFileName);
+		deadQuitLevelButtonAndroidID = AudioCenter.loadSound (deadQuitLevelButtonAndroidFileName);
+		levelCompletedAndroidID = AudioCenter.loadSound (levelCompletedAndroidFileName);
+		endLevelRestartButtonAndroidID = AudioCenter.loadSound (endLevelRestartButtonAndroidFileName);
+		endLevelQuitLevelButtonAndroidID = AudioCenter.loadSound (endLevelQuitLevelButtonAndroidFileName);
 #endif
-        }
+		}
 
-        private void OnLevelWasLoaded(int level) {
+		private void OnLevelWasLoaded(int level) {
 
 			string levelName = SceneManager.GetActiveScene().name;
 
@@ -161,6 +191,36 @@ namespace Crescendo.InitialCrescendo
 
             switch (sound)
             {
+				case Sounds.StartGame:
+					ID = startGameButtonAndroidID;
+					break;
+				case Sounds.Pause:
+					ID = pauseButtonAndroidID;
+					break;
+				case Sounds.Resume:
+					ID = resumeButtonAndroidID;
+					break;
+				case Sounds.Restart:
+					ID = restartButtonAndroidID;
+					break;
+				case Sounds.QuitLevel:
+					ID = quitButtonAndroidID;
+					break;
+				case Sounds.DeadRestart:
+					ID = deadRestartButtonAndroidID;
+					break;
+				case Sounds.DeadQuitLevel:
+					ID = deadQuitLevelButtonAndroidID;
+					break;
+				case Sounds.LevelCompleted:
+					ID = levelCompletedAndroidID;
+					break;
+				case Sounds.EndLevelRestart:
+					ID = endLevelRestartButtonAndroidID;
+					break;
+				case Sounds.EndLevelQuitLevel:
+					ID = endLevelQuitLevelButtonAndroidID;
+					break;
                 case Sounds.Collectible:
                     ID = collectibleSoundAndroidID;
                     break;
@@ -168,8 +228,8 @@ namespace Crescendo.InitialCrescendo
 
             AudioCenter.playSound (ID);
 #endif
-        }
-    }
+		}
+	}
 
 	public enum Sounds
 	{

@@ -5388,7 +5388,7 @@ MonoBehaviour:
   doorPlayerOffset: {x: 0, y: 0, z: 0}
   PlayerPrefsNameCheckpLvl1: currentCheckPointLvl1
   ForceCheckpointNumber: -1
-  ChangePlayerPrefs: 3
+  ChangePlayerPrefs: -1
 --- !u!4 &482172341
 Transform:
   m_ObjectHideFlags: 0
@@ -15611,6 +15611,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 155084011, guid: 5044e676db7a6024c94be51042f8374c, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 542302623, guid: 5044e676db7a6024c94be51042f8374c, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5044e676db7a6024c94be51042f8374c, type: 3}
@@ -25965,6 +25973,56 @@ PrefabInstance:
       propertyPath: collectibleFX
       value: 
       objectReference: {fileID: 8300000, guid: c70555016f30a96469b481bbeed78282, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: pauseButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: resumeButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: restartButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: quitButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: deadRestartButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: deadQuitLevelButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: endLevelQuitLevelButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: endLevelRestartButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: levelCompletedAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: startGameButtonAndroidFileName
+      value: Assets/Donald/SoundFX/LvlStart3.mp3
+      objectReference: {fileID: 0}
     - target: {fileID: 4578715548984759453, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: m_PlayOnAwake
