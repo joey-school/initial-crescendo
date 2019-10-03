@@ -10,7 +10,7 @@ namespace Crescendo.SymphoSprint
     {
 
         [SerializeField]
-        public float waitingTime = 1.5f;
+        public float waitingTime = 2f;
 
         [SerializeField]
         private SpriteRenderer closedDoorSpite;
@@ -32,7 +32,7 @@ namespace Crescendo.SymphoSprint
 
             FadeOutDoor();
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             playerMovementController.RunPower = defaultRunPower;
             playerMovementController.JumpPower = defaultJumpPower;
