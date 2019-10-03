@@ -10,14 +10,12 @@ namespace Crescendo.InitialCrescendo
 
         public delegate void DieEventHandler();
         public static event DieEventHandler Died;
-        
+
         [SerializeField]
         private ScoreManager scoreManager;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log(collision.tag, this);
-
             switch (collision.tag)
             {
                 case "Collectible":
