@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Crescendo.SymphoSprint;
 using UnityEngine;
@@ -10,10 +11,13 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private Transform player;
 
+        [SerializeField]
+        private ProgressMeter progressMeter;
+
         public static CheckpointManager Instance { get; private set; }
 
         private List<Transform> checkpoints = new List<Transform>();
-        private int activeCheckpointIndex = -1;
+        private int activeCheckpointIndex = 0;
 
         private void Awake()
         {
@@ -23,7 +27,10 @@ namespace Crescendo.InitialCrescendo
             {
                 checkpoints.Add(checkpoint);
             }
+        }
 
+        private void Start()
+        {
             if (PlayerPrefs.HasKey("ActiveCheckpointIndex"))
             {
                 activeCheckpointIndex = PlayerPrefs.GetInt("ActiveCheckpointIndex");
@@ -31,14 +38,25 @@ namespace Crescendo.InitialCrescendo
                 SpawnPlayerAtActiveCheckpoint();
                 ActivateUnlockedCheckpoints();
             }
+
+            AddCheckpointMarkersToProgressBar();
+        }
+
+        private void AddCheckpointMarkersToProgressBar()
+        {
+            for (int i = 0; i < checkpoints.Count; i++)
+            {
+                float percentage = checkpoints[i].position.x / (progressMeter.Finish.position.x - progressMeter.Start.position.x);
+                progressMeter.PlaceCheckpointMarker(percentage);
+            }
         }
 
         public void UnlockCheckpoint()
         {
-            activeCheckpointIndex++;
-
             SaveCheckpoint();
             ActivateCheckpoint();
+
+            activeCheckpointIndex++;
         }
 
         private void SaveCheckpoint()
@@ -53,14 +71,16 @@ namespace Crescendo.InitialCrescendo
 
         private void ActivateUnlockedCheckpoints()
         {
-            for (int i = 0; i < activeCheckpointIndex + 1; i++)
+            for (int i = 0; i < activeCheckpointIndex; i++)
             {
+                Debug.Log($"Activate checkpoint: {i}", this);
                 checkpoints[i].GetChild(0).GetComponent<PlayerSpawnPoint>().Activate();
             }
         }
 
         private void SpawnPlayerAtActiveCheckpoint()
         {
+            Debug.Log($"Spawn at checkpoint: {activeCheckpointIndex}", this);
             player.position = checkpoints[activeCheckpointIndex].GetChild(0).position;
             Camera.main.transform.position = new Vector3(checkpoints[activeCheckpointIndex].GetChild(0).position.x + 6f, checkpoints[activeCheckpointIndex].GetChild(0).position.y, -10f);
         }
