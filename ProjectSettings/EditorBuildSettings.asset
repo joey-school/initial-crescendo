@@ -6,21 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Assets (Production)/Scenes/Level-1-Joey1.unity
-    guid: 27a810126711b42e18727638ee5cd3c9
-  - enabled: 1
-=======
-    path: Assets/Assets (Daryl)/Scenes/Level-1.1.unity
-    guid: a3a6b80d2ffa6ca4bb2300f6fc09289c
-  - enabled: 0
->>>>>>> f5a8f6ab5cf9a2bca8dcc35774fab5705476f101
     path: Assets/Assets (Production)/Scenes/MainMenu.unity
     guid: 823e130001f774307a118985dc7173d8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Assets (Production)/Scenes/Level-1.unity
     guid: 626470bfe84a346af95db0f2dc933431
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}
