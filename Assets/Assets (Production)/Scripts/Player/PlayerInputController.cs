@@ -10,6 +10,7 @@ namespace Crescendo.InitialCrescendo
     {
     
         private PlayerMovementController movementController;
+        Vector3 touchPosWorld;
 
         private void Awake()
         {
@@ -34,6 +35,7 @@ namespace Crescendo.InitialCrescendo
         {
             if (Input.GetMouseButtonDown(0))
             {
+                touchPosWorld = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
                 HandleInputDown();
             }
             else if (Input.GetMouseButtonUp(0))
@@ -53,6 +55,7 @@ namespace Crescendo.InitialCrescendo
                 switch (Input.GetTouch(0).phase)
                 {
                     case TouchPhase.Began:
+                        touchPosWorld = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, Camera.main.nearClipPlane);
                         HandleInputDown();
                         break;
                     case TouchPhase.Ended:
@@ -71,6 +74,28 @@ namespace Crescendo.InitialCrescendo
 
         private void HandleInputDown()
         {
+            Vector2 touchPosWorld2D = Camera.main.ScreenToWorldPoint(touchPosWorld);
+            // selecting the collectible layer
+            int layerMask = 1 << 9;
+            RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward, Mathf.Infinity, layerMask);
+            if (hitInformation.collider != null)
+            {
+                //We should have hit something with a 2D Physics collider!
+                GameObject touchedObject = hitInformation.transform.gameObject;
+                //touchedObject should be the object someone touched.
+                Debug.Log("Touched " + touchedObject.transform.name);
+
+                // Obtaining the collectible part
+                touchedObject.transform.GetChild(2).gameObject.GetComponent<MovingInteractableCollectible>().Collect();
+            }
+            else
+            {
+                HandleMovement();
+            }
+        }
+
+        private void HandleMovement()
+        {
             if (movementController.IsGrounded)
             {
                 movementController.Jump();
@@ -87,6 +112,12 @@ namespace Crescendo.InitialCrescendo
         }
 
         private void HandleInputHold()
+        {
+
+        }
+
+        // Fix with checking for either mouse or input, connect to Scoremanager and collectible
+        private void CheckCollectible()
         {
 
         }

@@ -165,10 +165,10 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
-  - {fileID: 21300000, guid: 9b0f6fefb46924484bbc8add1c4c3ea9, type: 3}
+  - {fileID: 21300000, guid: 7dd815637248544bfb8546c5804d4206, type: 3}
   m_LocalAABB:
     m_Center: {x: 7.2335815, y: -0.9999999, z: -0.0005}
-    m_Extent: {x: 8.453582, y: 1.0500003, z: 0.0005}
+    m_Extent: {x: 8.233582, y: 1.0500003, z: 0.0005}
 --- !u!114 &1806223751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a08f61d074674d4f83582616dd27a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  willBeThieved: 0
   endpoint: {fileID: 1015933695}
+  bird: {fileID: 0}
+  toPlatformDuration: 0
   duration: 3
   timer: 0
 --- !u!50 &1806223749

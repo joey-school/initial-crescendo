@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ namespace Crescendo.InitialCrescendo
             
         private int score;
         private int totalObjects;
-        private int percentage;
+        private float percentage;
 
         public int Score 
         {
@@ -21,24 +22,26 @@ namespace Crescendo.InitialCrescendo
             {
                 score = value;
                 Percentage = score;
-                scoreText.text = "Completion: " + Percentage + "%";
+                scoreText.text = "Completion: " + Math.Round(Percentage) + "%";
             }
         }
 
-        public int Percentage
+        public float Percentage
         {
             get { return percentage; }
             set
             {
-                percentage = (100 / totalObjects) * value;
+                percentage = (100.2f / totalObjects) * value;
             }
         }
 
         void Start()
         {
-            totalObjects = GameObject.FindGameObjectsWithTag("Collectible").Length;
+            int totalCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
+            int totalInteractables = GameObject.FindGameObjectsWithTag("InteractableCollectible").Length;
+            totalObjects = totalCollectibles + totalInteractables;
             score = 0;
-            scoreText.text = "Completion: " + 0 + "%";
+            scoreText.text = "Completion: " + score + "%";
         }
 
     }

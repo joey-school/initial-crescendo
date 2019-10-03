@@ -52,6 +52,7 @@ MonoBehaviour:
   willBeThieved: 1
   endpoint: {fileID: 253111991}
   bird: {fileID: 1593319209}
+  toPlatformDuration: 0
   duration: 1.2
   timer: 0
 --- !u!50 &240357768
