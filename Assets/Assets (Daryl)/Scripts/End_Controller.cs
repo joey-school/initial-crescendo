@@ -54,7 +54,7 @@ namespace Crescendo.InitialCrescendo
             }
             if(currentHighscore < scoreManager.Percentage)
             {
-                PlayerPrefs.SetInt("Score", scoreManager.Percentage);
+                PlayerPrefs.SetFloat("Score", scoreManager.Percentage);
             }
         }
     }
