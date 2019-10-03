@@ -7,17 +7,8 @@ namespace Crescendo.InitialCrescendo
 	public class DevAudioCheckPoint : MonoBehaviour
 	{
 		[SerializeField] private float StartTimeSeconds;
-		[SerializeField] bool addAudioSource;
 		[SerializeField] AudioClip clip;
-
-		[HideInInspector]
-		public bool Active;
-
-		private AudioSource AudioSource;
-
-		private void Start() {
-
-		}
+		[SerializeField] bool addAudioSource;
 
 		private void OnTriggerEnter2D(Collider2D collision) {
 			if(addAudioSource) {

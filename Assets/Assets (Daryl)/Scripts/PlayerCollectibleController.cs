@@ -16,8 +16,6 @@ namespace Crescendo.InitialCrescendo
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log(collision.tag, this);
-
             switch (collision.tag)
             {
                 case "Collectible":
