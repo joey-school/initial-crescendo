@@ -7,11 +7,8 @@ TagManager:
   - Collectible
   - Hazard
   - Ground
-  - Lvl1Checkpoint1
-  - CheckpointContainer
-  - Lvl1Checkpoint2
-  - PlayerSpawnPoint
-  - Checkpoint
+  - Bird
+  - InteractableCollectible
   layers:
   - Default
   - TransparentFX
@@ -25,8 +22,8 @@ TagManager:
   - Notes
   - Dandelion
   - Player
-  - 
-  - 
+  - Bird
+  - MovingCollectible
   - 
   - 
   - 
