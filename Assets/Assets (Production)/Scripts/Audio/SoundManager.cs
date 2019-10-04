@@ -24,6 +24,7 @@ namespace Crescendo.InitialCrescendo
 		private AudioClip
 			mainMenuTheme,
 			level1Theme,
+			level2Theme,
 			//levelClearTheme,
 			startGameButtonFX,
 			pauseButtonFX, 
@@ -62,8 +63,6 @@ namespace Crescendo.InitialCrescendo
 		private int endLevelRestartButtonAndroidID;
 		private int endLevelQuitLevelButtonAndroidID;
 
-		[SerializeField] string MainMenuName, Level1Name;
-
 		private float timeOnPause;
 
 		private void Awake() {
@@ -89,17 +88,43 @@ namespace Crescendo.InitialCrescendo
 #endif
 		}
 
+		private void Start() {
+
+
+			string levelName = SceneManager.GetActiveScene().name;
+
+			if(levelName == LevelManager.Instance.MainMenuName) {
+				levelThemeAudioSource.clip = mainMenuTheme;
+				levelThemeAudioSource.loop = true;
+				StartSong();
+			} else if(levelName == LevelManager.Instance.Level1Name) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = level1Theme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+			} else if(levelName == LevelManager.Instance.Level2Name) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = level2Theme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+			} else {
+				levelThemeAudioSource.Stop();
+			}
+		}
+
 		private void OnLevelWasLoaded(int level) {
 
 			string levelName = SceneManager.GetActiveScene().name;
 
-			if(levelName == MainMenuName) {
+			if(levelName == LevelManager.Instance.MainMenuName) {
 				levelThemeAudioSource.clip = mainMenuTheme;
 				levelThemeAudioSource.loop = true;
 				StartSong();
-			} else if(levelName == Level1Name) {
+			} else if(levelName == LevelManager.Instance.Level1Name) {
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level1Theme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+			} else if(levelName == LevelManager.Instance.Level2Name) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = level2Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
 			} else {
 				levelThemeAudioSource.Stop();
