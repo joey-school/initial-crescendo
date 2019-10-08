@@ -52,9 +52,9 @@ namespace Crescendo.InitialCrescendo
             {
                 currentHighscore = PlayerPrefs.GetInt("Score");
             }
-            if(currentHighscore < scoreManager.Percentage)
+            if(currentHighscore < scoreManager.Score)
             {
-                PlayerPrefs.SetFloat("Score", scoreManager.Percentage);
+                PlayerPrefs.SetInt("Score", scoreManager.Score);
             }
         }
     }
