@@ -73,6 +73,9 @@ namespace Crescendo.InitialCrescendo
 
 		private float timeOnPause;
 
+        [SerializeField]
+        private float songTime;
+
 		private void Awake() {
 			if(Instance != null && Instance != this) {
 				Destroy(gameObject);
@@ -262,7 +265,12 @@ namespace Crescendo.InitialCrescendo
             AudioCenter.playSound (ID);
 #endif
 		}
-	}
+
+        private void Update()
+        {
+            songTime = levelThemeAudioSource.time;
+        }
+    }
 
 	public enum Sounds
 	{

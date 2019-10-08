@@ -51,6 +51,12 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private bool isDebugging;
 
+        [SerializeField]
+        private float debugTime;
+
+        [SerializeField]
+        private Vector3 debugPosition;
+
         private PlayerInputController inputController;
         public Rigidbody2D Rigidbody { get; private set; }
         private Animator animator;
@@ -58,6 +64,10 @@ namespace Crescendo.InitialCrescendo
         public PlayerMovementTypes ActiveMovementType { get; set; } = PlayerMovementTypes.Running;
         private Dandelion activeDandelion;
         public Bounds PreviousColliderBounds { get; private set; }
+
+        //
+        private Transform gliderHandle;
+        //
 
         private void Awake()
         {
@@ -75,17 +85,21 @@ namespace Crescendo.InitialCrescendo
         {
             float cachedRunPower = runPower;
             runPower = 0f;
+            Rigidbody.bodyType = RigidbodyType2D.Static;
+            transform.position = debugPosition;
 
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(1.3f);
 
             runPower = cachedRunPower;
 
-            float oldX = 17.409357f;
-            float oldTime = 1.166792f;
+            //float oldX = 17.409357f;
+            //float oldTime = 1.166792f;
 
-            float targetTime = (oldTime / (oldX / transform.position.x)) + 0.4f;
+            //float targetTime = (oldTime / (oldX / transform.position.x)) + 0.4f;
 
-            SoundManager.Instance.SetLevelThemeTime(targetTime);
+            Rigidbody.bodyType = RigidbodyType2D.Dynamic;
+
+            SoundManager.Instance.SetLevelThemeTime(debugTime);
             SoundManager.Instance.StartSong();
         }
 
@@ -99,7 +113,7 @@ namespace Crescendo.InitialCrescendo
                     Run();
                     break;
                 case PlayerMovementTypes.Gliding:
-
+                    //transform.position = gliderHandle.position + new Vector3(0f, -0.79f, 0f);
                     break;
             }
 
@@ -112,6 +126,13 @@ namespace Crescendo.InitialCrescendo
 
         private void Update()
         {
+            switch (ActiveMovementType)
+            {
+                case PlayerMovementTypes.Gliding:
+                    transform.position = gliderHandle.position + new Vector3(-0.3f, -3.19f, 0f);
+                    break;
+            }
+
             UpdateAnimator();
 
             PreviousColliderBounds = GetComponent<CapsuleCollider2D>().bounds;
@@ -135,6 +156,14 @@ namespace Crescendo.InitialCrescendo
             Rigidbody.AddForce(Vector2.up * jumpPower * 1.6f);
             //activeDandelion.IsActive = false;
             activeDandelion.IsDetachedOnce = true;
+
+
+
+            float xDiff = activeDandelion.transform.position.x - gliderHandle.position.x;
+            Debug.Log($"Jump: Dandx: {activeDandelion.transform.position.x}, Handlex: {gliderHandle.position.x}, Xdiff: {xDiff}", this);
+
+            transform.localPosition = new Vector3(transform.localPosition.x + xDiff, transform.localPosition.y, 0f);
+            //transform.DOLocalMoveX(transform.localPosition.x + xDiff, 0.2f);
         }
 
         public IEnumerator JumpFromMushroom(float bounceFactor)
@@ -149,11 +178,12 @@ namespace Crescendo.InitialCrescendo
 
         public void AttachToGlider(Transform handle, Dandelion dandelion)
         {
+            gliderHandle = handle;
             transform.parent = handle;
             activeDandelion = dandelion;
 
             // TODO: Calculate target position!
-            transform.DOLocalMove(new Vector3(3.36f, -0.79f, 0f), 0.3f).SetEase(Ease.InOutSine);
+            //transform.DOLocalMove(new Vector3(3.36f, -0.79f, 0f), 0.3f).SetEase(Ease.InOutSine);
             Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             ActiveMovementType = PlayerMovementTypes.Gliding;
         }
