@@ -15,7 +15,8 @@ namespace Crescendo.InitialCrescendo
 				if(isPlayerSpawnPoint) {
 					SoundManager.Instance.SetLevelThemeTime(time);
 					SoundManager.Instance.StartSong();
-				} else {
+                    Debug.Log($"PlayerX: {collision.transform.position.x}", this);
+                } else {
 					AudioSource audioSource = SoundManager.Instance.gameObject.AddComponent<AudioSource>();
 					audioSource.clip = SoundManager.Instance.GetThemeCurrentLevel();
 					audioSource.time = time;

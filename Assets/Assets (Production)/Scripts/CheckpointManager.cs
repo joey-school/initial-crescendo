@@ -81,8 +81,8 @@ namespace Crescendo.InitialCrescendo
         private void SpawnPlayerAtActiveCheckpoint()
         {
             Debug.Log($"Spawn at checkpoint: {activeCheckpointIndex}", this);
-            player.position = checkpoints[activeCheckpointIndex].GetChild(0).position;
-            Camera.main.transform.position = new Vector3(checkpoints[activeCheckpointIndex].GetChild(0).position.x + 6f, checkpoints[activeCheckpointIndex].GetChild(0).position.y, -10f);
+            player.position = checkpoints[activeCheckpointIndex].position;
+            Camera.main.transform.position = new Vector3(checkpoints[activeCheckpointIndex].position.x + 6f, checkpoints[activeCheckpointIndex].position.y, -10f);
         }
     }
 }
