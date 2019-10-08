@@ -9,8 +9,9 @@ TagManager:
   - Ground
   - Bird
   - InteractableCollectible
-  - CheckpointContainer
   - Checkpoint
+  - TimmyCanon
+  - CheckpointContainer
   layers:
   - Default
   - TransparentFX

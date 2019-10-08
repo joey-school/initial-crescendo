@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 
 	public string MainMenuName;
 	public string Level1Name;
+	public string Level2Name;
 
 	private void Awake() {
 		if(Instance == null) {
