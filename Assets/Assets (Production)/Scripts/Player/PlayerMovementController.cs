@@ -154,7 +154,7 @@ namespace Crescendo.InitialCrescendo
 
             // TODO: Calculate target position!
             transform.DOLocalMove(new Vector3(3.36f, -0.79f, 0f), 0.3f).SetEase(Ease.InOutSine);
-            Rigidbody.simulated = false;
+            Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             ActiveMovementType = PlayerMovementTypes.Gliding;
         }
 

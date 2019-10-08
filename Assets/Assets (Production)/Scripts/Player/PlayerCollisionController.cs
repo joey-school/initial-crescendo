@@ -12,11 +12,11 @@ namespace Crescendo.InitialCrescendo
         public static event DieEventHandler Died;
 		[SerializeField] private float TimmyCanonForce;
 
+        [SerializeField]
+        private ScoreManager scoreManager;
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("coll", this);
-            Debug.Log(collision.transform.tag, this);
-
             switch (collision.transform.tag)
             {
                 case "Hazard":
@@ -28,6 +28,8 @@ namespace Crescendo.InitialCrescendo
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            Debug.Log($"[Player] OnTriggerEnter2D(): Tag: {collision.tag}", this);
+
             switch (collision.tag)
             {
                 case "Checkpoint":
@@ -37,6 +39,11 @@ namespace Crescendo.InitialCrescendo
 					Debug.Log("launch!");
 					gameObject.GetComponent<Rigidbody2D>().AddForce(collision.GetComponent<Canon>().ForceLaunch);
 					break;
+                case "Collectible":
+                    Destroy(collision.gameObject);
+                    SoundManager.Instance.PlaySoundFX(Sounds.Collectible);
+                    scoreManager.Score++;
+                    break;
             }
         }
     }
