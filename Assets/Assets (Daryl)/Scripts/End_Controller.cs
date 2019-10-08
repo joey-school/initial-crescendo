@@ -16,16 +16,22 @@ namespace Crescendo.InitialCrescendo
 
 		private int currentHighscore = 0;
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            switch (collision.transform.tag)
+            {
+                case "Hazard":
+                    Die();
+                    break;
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             switch (collision.tag)
             {
                 case "Hazard":
-                    txt.text = "Timmy had a bad dream...";
-					DeadQuitButton.SetActive(true);
-					EndLevelQuitButton.SetActive(false);
-                    Reset();
-                    SaveScore();
+                    Die();
                     break;
                 case "Finish":
                     txt.text = "Timmy liked this dream!";
@@ -36,6 +42,16 @@ namespace Crescendo.InitialCrescendo
                     SaveScore();
                     break;
             }
+        }
+
+
+        private void Die()
+        {
+            txt.text = "Timmy had a bad dream...";
+            DeadQuitButton.SetActive(true);
+            EndLevelQuitButton.SetActive(false);
+            Reset();
+            SaveScore();
         }
 
         private void Reset()

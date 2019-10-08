@@ -48,6 +48,9 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private Transform feet;
 
+        [SerializeField]
+        private bool isDebugging;
+
         private PlayerInputController inputController;
         public Rigidbody2D Rigidbody { get; private set; }
         private Animator animator;
@@ -61,6 +64,29 @@ namespace Crescendo.InitialCrescendo
             inputController = GetComponent<PlayerInputController>();
             Rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+
+            if (isDebugging)
+            {
+                StartCoroutine(StartDebugRun());
+            }
+        }
+
+        private IEnumerator StartDebugRun()
+        {
+            float cachedRunPower = runPower;
+            runPower = 0f;
+
+            yield return new WaitForSeconds(0.3f);
+
+            runPower = cachedRunPower;
+
+            float oldX = 17.409357f;
+            float oldTime = 1.166792f;
+
+            float targetTime = (oldTime / (oldX / transform.position.x)) + 0.4f;
+
+            SoundManager.Instance.SetLevelThemeTime(targetTime);
+            SoundManager.Instance.StartSong();
         }
 
         private void FixedUpdate()
@@ -76,6 +102,12 @@ namespace Crescendo.InitialCrescendo
 
                     break;
             }
+
+            //if (transform.position.x >= 50f)
+            //{
+            //    Debug.Log($"PlayerX: {transform.position.x}, Theme time: {SoundManager.Instance.GetLevelThemeTime()}", this);
+            //    Debug.Break();
+            //}
         }
 
         private void Update()
