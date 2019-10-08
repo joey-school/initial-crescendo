@@ -13,7 +13,15 @@ namespace Crescendo.InitialCrescendo
 		[SerializeField]
         private AudioSource levelThemeAudioSource;
 
-		[SerializeField]
+        public AudioSource LevelThemeAudioSource
+        {
+            get
+            {
+                return levelThemeAudioSource;
+            }
+        }
+
+        [SerializeField]
 		private AudioSource soundFXAudioSource;
 
 		[SerializeField] private Ease easingOfDeath;
