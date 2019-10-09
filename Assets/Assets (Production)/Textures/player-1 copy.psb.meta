@@ -1,0 +1,305 @@
+fileFormatVersion: 2
+guid: c6acbe377f3924719a8c507a253b0bb2
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: player-1 copy_GO/player-1 copy_GO
+    100002: player-1 copy_GO/player-1 copy_GO/Body
+    100004: player-1 copy_GO/player-1 copy_GO/Hoofd
+    100006: player-1 copy_GO/player-1 copy_GO/Left Arm
+    100008: player-1 copy_GO/player-1 copy_GO/Leg
+    100010: player-1 copy_GO/player-1 copy_GO/Leg copy
+    100012: player-1 copy_GO/player-1 copy_GO/Right Arm copy
+    400000: player-1 copy_GO/player-1 copy_GO/Transform
+    400002: player-1 copy_GO/player-1 copy_GO/Body/Transform
+    400004: player-1 copy_GO/player-1 copy_GO/Hoofd/Transform
+    400006: player-1 copy_GO/player-1 copy_GO/Left Arm/Transform
+    400008: player-1 copy_GO/player-1 copy_GO/Leg/Transform
+    400010: player-1 copy_GO/player-1 copy_GO/Leg copy/Transform
+    400012: player-1 copy_GO/player-1 copy_GO/Right Arm copy/Transform
+    2800000: player-1 copy
+    21200000: player-1 copy_GO/player-1 copy_GO/Body/SpriteRenderer
+    21200002: player-1 copy_GO/player-1 copy_GO/Hoofd/SpriteRenderer
+    21200004: player-1 copy_GO/player-1 copy_GO/Left Arm/SpriteRenderer
+    21200006: player-1 copy_GO/player-1 copy_GO/Leg/SpriteRenderer
+    21200008: player-1 copy_GO/player-1 copy_GO/Leg copy/SpriteRenderer
+    21200010: player-1 copy_GO/player-1 copy_GO/Right Arm copy/SpriteRenderer
+    21300000: e01afa0fcd59b438b99cc3033ccb2c36
+    21300002: a03954c691f314a3bba72eb4e74dbd48
+    21300004: 88cf8fbc380444d9eaa0d9bd8bc04ffa
+    21300006: 7b51eac0d29cd4b51b1d4b1b316561c5
+    21300008: 92a565751f15741eab7844d02e20d631
+    21300010: 07ab71876787f41c3b6455c780d60f45
+    100100000: player-1 copy_GO
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Hoofd
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 128
+      height: 113
+    spriteID: e01afa0fcd59b438b99cc3033ccb2c36
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -169, y: -260}
+  - name: Left Arm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 323
+      width: 69
+      height: 87
+    spriteID: a03954c691f314a3bba72eb4e74dbd48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -142, y: 147}
+  - name: Leg
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 81
+      y: 323
+      width: 51
+      height: 96
+    spriteID: 88cf8fbc380444d9eaa0d9bd8bc04ffa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -106, y: 215}
+  - name: Body
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 4
+      width: 60
+      height: 94
+    spriteID: 7b51eac0d29cd4b51b1d4b1b316561c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -59, y: -181}
+  - name: Leg copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 226
+      width: 68
+      height: 89
+    spriteID: 92a565751f15741eab7844d02e20d631
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -228, y: 115}
+  - name: Right Arm copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 125
+      width: 80
+      height: 93
+    spriteID: 07ab71876787f41c3b6455c780d60f45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -227, y: -70}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 256
+  importedTextureHeight: 512
+  documentSize: {x: 458, y: 452}
+  textureActualWidth: 256
+  textureActualHeight: 512
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Hoofd
+    spriteName: Hoofd
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e01afa0fcd59b438b99cc3033ccb2c36
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+  - name: Left Arm
+    spriteName: Left Arm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a03954c691f314a3bba72eb4e74dbd48
+    layerID: 5
+    mosaicPosition: {x: 4, y: 323}
+  - name: Leg
+    spriteName: Leg
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 88cf8fbc380444d9eaa0d9bd8bc04ffa
+    layerID: 10
+    mosaicPosition: {x: 81, y: 323}
+  - name: Body
+    spriteName: Body
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7b51eac0d29cd4b51b1d4b1b316561c5
+    layerID: 7
+    mosaicPosition: {x: 140, y: 4}
+  - name: Leg copy
+    spriteName: Leg copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 92a565751f15741eab7844d02e20d631
+    layerID: 23
+    mosaicPosition: {x: 4, y: 226}
+  - name: Right Arm copy
+    spriteName: Right Arm copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 07ab71876787f41c3b6455c780d60f45
+    layerID: 14
+    mosaicPosition: {x: 4, y: 125}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+  boneGOs: []
+  generateGOHierarchy: 0
+  textureAssetName: player-1 copy
+  prefabAssetName: player-1 copy_GO
