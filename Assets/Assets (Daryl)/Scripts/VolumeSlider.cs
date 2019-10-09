@@ -19,10 +19,10 @@ namespace Crescendo.InitialCrescendo
             AudioSources = SoundManager.GetComponents<AudioSource>();
             if (MusicSelected)
             {
-                slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+                slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f) * 10;
             } else
             {
-                slider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+                slider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f) * 10;
             }
         }
 
@@ -32,12 +32,12 @@ namespace Crescendo.InitialCrescendo
             if(MusicSelected)
             {
                 AudioSources[0].volume = sliderValue/10;
-                PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+                PlayerPrefs.SetFloat("MusicVolume", sliderValue/10);
             }
             else
             {
                 AudioSources[1].volume = sliderValue/10;
-                PlayerPrefs.SetFloat("SFXVolume", sliderValue);
+                PlayerPrefs.SetFloat("SFXVolume", sliderValue/10);
             }
         }
     }
