@@ -13,7 +13,6 @@ namespace Crescendo.InitialCrescendo
             
         private int score;
         private int totalObjects;
-        private float percentage;
 
         public int Score 
         {
@@ -21,17 +20,7 @@ namespace Crescendo.InitialCrescendo
             set
             {
                 score = value;
-                Percentage = score;
-                scoreText.text = "Completion: " + Math.Round(Percentage) + "%";
-            }
-        }
-
-        public float Percentage
-        {
-            get { return percentage; }
-            set
-            {
-                percentage = (100.2f / totalObjects) * value;
+                scoreText.text = "Completion: " + score + "/" + totalObjects;
             }
         }
 
@@ -41,7 +30,7 @@ namespace Crescendo.InitialCrescendo
             int totalInteractables = GameObject.FindGameObjectsWithTag("InteractableCollectible").Length;
             totalObjects = totalCollectibles + totalInteractables;
             score = 0;
-            scoreText.text = "Completion: " + score + "%";
+            scoreText.text = "Completion: " + score + "/" + totalObjects;
         }
 
     }
