@@ -35,7 +35,7 @@ namespace Crescendo.InitialCrescendo
                 PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, 0);
             }
 
-            ShowCheckpointsInProgressBar();
+            //ShowCheckpointsInProgressBar();
         }
 
         private void Start() {
@@ -128,22 +128,22 @@ namespace Crescendo.InitialCrescendo
 
         private void ActivateUnlockedCheckpoints()
         {
-            for (int i = 0; i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1) + 1; i++)
-            {
-                Checkpoint checkpoint = level1Checkpoints[i].GetComponent<Checkpoint>();
+            //for (int i = 0; i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1) + 1; i++)
+            //{
+            //    Checkpoint checkpoint = level1Checkpoints[i].GetComponent<Checkpoint>();
 
-                if (checkpoint.IsUsedInDebugging)
-                {
-                    continue;
-                }
+            //    if (checkpoint.IsUsedInDebugging)
+            //    {
+            //        continue;
+            //    }
 
-                level1Checkpoints[i].GetComponent<Checkpoint>().Activate();
+            //    level1Checkpoints[i].GetComponent<Checkpoint>().Activate();
 
-                if (i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1))
-                {
-                    progressMeter.ActivateCheckpoint(i);
-                }
-            }
+            //    if (i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1))
+            //    {
+            //        progressMeter.ActivateCheckpoint(i);
+            //    }
+            //}
         }
     }
 }
