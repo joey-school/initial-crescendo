@@ -40,11 +40,5 @@ namespace Crescendo.InitialCrescendo
                 PlayerPrefs.SetFloat("SFXVolume", sliderValue);
             }
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
