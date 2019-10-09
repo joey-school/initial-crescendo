@@ -39,7 +39,7 @@ namespace Crescendo.InitialCrescendo
         }
 
         private void Start() {
-            //PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, 1);
+            PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, 2);
             if (isDebugging) {
 				PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, ChangePlayerPrefs);
 			}
