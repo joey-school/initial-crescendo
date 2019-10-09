@@ -470,6 +470,11 @@ PrefabInstance:
       propertyPath: level2Theme
       value: 
       objectReference: {fileID: 8300000, guid: 81ddeec8579f84155b09064a494d92e6, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: unlockCheckpointFX
+      value: 
+      objectReference: {fileID: 8300000, guid: fb84a5ab83b574b24bf6a3c9193955d6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6781b41605aff442af5a35cb5b17949, type: 3}
 --- !u!1 &601492955

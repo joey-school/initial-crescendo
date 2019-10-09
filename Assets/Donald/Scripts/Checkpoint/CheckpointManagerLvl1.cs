@@ -93,7 +93,7 @@ namespace Crescendo.InitialCrescendo
                 Debug.Log(checkpoint.GetSiblingIndex(), this);
 
                 // Don't show the start checkpoint.
-                if (checkpoint.GetSiblingIndex() == 0)
+                if (checkpoint.GetSiblingIndex() == 0 || checkpoint.GetComponent<Checkpoint>().IsUsedInDebugging)
                 {
                     continue;
                 }
@@ -127,6 +127,13 @@ namespace Crescendo.InitialCrescendo
         {
             for (int i = 0; i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1) + 1; i++)
             {
+                Checkpoint checkpoint = level1Checkpoints[i].GetComponent<Checkpoint>();
+
+                if (checkpoint.IsUsedInDebugging)
+                {
+                    continue;
+                }
+
                 level1Checkpoints[i].GetComponent<Checkpoint>().Activate();
 
                 if (i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1))
