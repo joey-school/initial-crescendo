@@ -28,8 +28,8 @@ TagManager:
   - Bird
   - MovingCollectible
   - Hazard
-  - 
-  - 
+  - ParticleBorder
+  - ParticleSystem
   - 
   - 
   - 

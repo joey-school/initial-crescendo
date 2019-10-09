@@ -38,7 +38,15 @@ namespace Crescendo.InitialCrescendo
             }
         }
 
-        private void Reset()
+		public void TimmyDie() {
+			txt.text = "Timmy had a bad dream...";
+			DeadQuitButton.SetActive(true);
+			EndLevelQuitButton.SetActive(false);
+			Reset();
+			SaveScore();
+		}
+
+		private void Reset()
         {
             Time.timeScale = 0f;
             EndPanel.SetActive(true);

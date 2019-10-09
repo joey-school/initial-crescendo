@@ -9,7 +9,6 @@ namespace Crescendo.InitialCrescendo
     {
         public delegate void DieEventHandler();
         public static event DieEventHandler Died;
-		[SerializeField] private float TimmyCanonForce;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -19,7 +18,8 @@ namespace Crescendo.InitialCrescendo
                     CheckpointManager.Instance.UnlockCheckpoint();
                     break;
 				case "TimmyCanon":
-					Debug.Log("launch!");
+					//gameObject.GetComponent<PlayerMovementController>().IsGrounded = false;
+					gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 					gameObject.GetComponent<Rigidbody2D>().AddForce(collision.GetComponent<Canon>().ForceLaunch);
 					break;
             }
