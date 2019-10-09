@@ -39,7 +39,8 @@ namespace Crescendo.InitialCrescendo
         }
 
         private void Start() {
-			if(isDebugging) {
+            //PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, 1);
+            if (isDebugging) {
 				PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, ChangePlayerPrefs);
 			}
 
@@ -57,8 +58,15 @@ namespace Crescendo.InitialCrescendo
                 DisableOtherSpawnPoints(currentSpawnPoint);
             }
 
-            StartFromActiveCheckpoint();
             ActivateUnlockedCheckpoints();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown("q"))
+            {
+                GenerateCheckpoint();
+            }
         }
 
         public void GenerateCheckpoint() {
@@ -116,11 +124,6 @@ namespace Crescendo.InitialCrescendo
             PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, index);
             checkpointParent.GetChild(index).GetComponent<Checkpoint>().Unlock();
             progressMeter.ActivateCheckpoint(index - 1);
-        }
-
-        private void StartFromActiveCheckpoint()
-        {
-            
         }
 
         private void ActivateUnlockedCheckpoints()
