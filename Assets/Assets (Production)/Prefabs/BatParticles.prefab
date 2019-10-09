@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3411511371495884966}
   - component: {fileID: 3411511371495884965}
   - component: {fileID: 3411511371495884968}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: BatParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

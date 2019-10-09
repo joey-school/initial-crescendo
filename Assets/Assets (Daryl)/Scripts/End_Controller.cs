@@ -44,7 +44,6 @@ namespace Crescendo.InitialCrescendo
             }
         }
 
-
         private void Die()
         {
             txt.text = "Timmy had a bad dream...";

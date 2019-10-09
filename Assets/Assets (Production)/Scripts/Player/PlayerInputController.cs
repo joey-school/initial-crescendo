@@ -91,19 +91,25 @@ namespace Crescendo.InitialCrescendo
             else
             {
                 HandleMovement();
-            }
+			}
         }
 
         private void HandleMovement()
         {
-            if (movementController.IsGrounded)
+			Debug.Log("HandleMovement()");
+			Debug.Log(movementController.ActiveMovementType);
+            if (movementController.IsGrounded && movementController.ActiveMovementType != PlayerMovementTypes.Gliding)
             {
+				Debug.Log("movementController.IsGrounded");
                 movementController.Jump();
             }
-            else if (movementController.ActiveMovementType == PlayerMovementTypes.Gliding)
+            if (movementController.ActiveMovementType == PlayerMovementTypes.Gliding)
             {
                 movementController.JumpFromGlider();
-            }
+				Debug.Log("movementController.ActiveMovementType == PlayerMovementTypes.Gliding");
+			} else {
+				Debug.Log("else");
+			}
         }
 
         private void HandleInputUp()

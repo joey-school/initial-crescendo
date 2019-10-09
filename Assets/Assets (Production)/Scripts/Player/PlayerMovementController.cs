@@ -150,6 +150,7 @@ namespace Crescendo.InitialCrescendo
 
         public void JumpFromGlider()
         {
+			Debug.Log("JumpFromGlider()");
             transform.DOKill();
             DetachFromGlider();
             Rigidbody.velocity = activeDandelion.Rigidbody.velocity;
