@@ -11,7 +11,7 @@ namespace Crescendo.InitialCrescendo
 
 		private void OnTriggerEnter2D(Collider2D collision) {
 			if(collision.tag == tag) {
-				player.GetComponent<End_Controller>().TimmyDie();
+				//player.GetComponent<End_Controller>().TimmyDie();
 				Destroy(gameObject);
 			}
 		}
