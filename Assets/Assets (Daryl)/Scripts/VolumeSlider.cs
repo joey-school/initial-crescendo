@@ -32,12 +32,11 @@ namespace Crescendo.InitialCrescendo
             if(MusicSelected)
             {
                 AudioSources[0].volume = sliderValue/10;
-                Debug.Log(sliderValue/10);
                 PlayerPrefs.SetFloat("MusicVolume", sliderValue);
             }
             else
             {
-                AudioSources[1].volume = Mathf.Log10(sliderValue) * 20;
+                AudioSources[1].volume = sliderValue/10;
                 PlayerPrefs.SetFloat("SFXVolume", sliderValue);
             }
         }
