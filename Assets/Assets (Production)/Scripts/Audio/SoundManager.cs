@@ -44,7 +44,8 @@ namespace Crescendo.InitialCrescendo
 			levelCompletedFX,
 			endLevelRestartButtonFX,
 			endLevelQuitLevelButtonFX,
-			collectibleFX;
+			collectibleFX,
+            unlockCheckpointFX;
 
         [SerializeField]
 		private string collectibleSoundAndroidFileName,
@@ -218,7 +219,10 @@ namespace Crescendo.InitialCrescendo
 				case Sounds.Collectible:
 					clipToPlay = collectibleFX;
 					break;
-			}
+                case Sounds.UnlockCheckpoint:
+                    clipToPlay = unlockCheckpointFX;
+                    break;
+            }
 
 			soundFXAudioSource.clip = clipToPlay;
 			soundFXAudioSource.Play();
@@ -284,6 +288,7 @@ namespace Crescendo.InitialCrescendo
 		LevelCompleted,
 		EndLevelQuitLevel,
 		EndLevelRestart,
-		Collectible
+		Collectible,
+        UnlockCheckpoint
 	}
 }

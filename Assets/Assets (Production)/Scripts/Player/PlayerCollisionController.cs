@@ -28,7 +28,7 @@ namespace Crescendo.InitialCrescendo
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log($"[Player] OnTriggerEnter2D(): Tag: {collision.tag}", this);
+            //Debug.Log($"[Player] OnTriggerEnter2D(): Tag: {collision.tag}", this);
 
             switch (collision.tag)
             {

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Crescendo.SymphoSprint;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,30 +16,52 @@ namespace Crescendo.InitialCrescendo
 		[SerializeField] private Transform player;
 		[SerializeField] private Transform door;
 		[SerializeField] private Vector3 doorPlayerOffset;
+        [SerializeField] private ProgressMeter progressMeter;
+        [SerializeField] private bool isDebugging;
 
-		public string PlayerPrefsNameCheckpLvl1;
+        public bool IsDebugging { get { return isDebugging; } }
+
+        public string PlayerPrefsNameCheckpLvl1;
 		[SerializeField] int ForceCheckpointNumber;
 		[SerializeField] int ChangePlayerPrefs;
 
-		private List<GameObject> level1Checkpoints;
+		private List<GameObject> level1Checkpoints = new List<GameObject>();
 
-		private void Start() {
-			if(ChangePlayerPrefs >= 0) {
+        private void Awake()
+        {
+            // Start is already unlocked.
+            if (!PlayerPrefs.HasKey(PlayerPrefsNameCheckpLvl1))
+            {
+                PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, 0);
+            }
+
+            ShowCheckpointsInProgressBar();
+        }
+
+        private void Start() {
+			if(isDebugging) {
 				PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, ChangePlayerPrefs);
 			}
 
-			level1Checkpoints = new List<GameObject>();
 			foreach(Transform checkpoint in checkpointParent.transform) {
 				level1Checkpoints.Add(checkpoint.gameObject);
 			};
+
 			GameObject currentSpawnPoint = GetCurrentCheckpoint();
 			currentSpawnPoint.GetComponent<CheckpointSoundManager>().isPlayerSpawnPoint = true;
 			player.position = currentSpawnPoint.transform.GetChild(0).position;
 			door.position = player.position + doorPlayerOffset;
-			DisableOtherSpawnPoints(currentSpawnPoint);
-		}
 
-		public void GenerateCheckpoint() {
+            if (isDebugging)
+            {
+                DisableOtherSpawnPoints(currentSpawnPoint);
+            }
+
+            StartFromActiveCheckpoint();
+            ActivateUnlockedCheckpoints();
+        }
+
+        public void GenerateCheckpoint() {
 			GameObject newCheckpoint = Instantiate(checkpointPrefab, player.position, Quaternion.identity, checkpointParent);
 			CheckpointSoundManager checkpointSoundManager = newCheckpoint.GetComponent<CheckpointSoundManager>();
 			checkpointSoundManager.time = SoundManager.Instance.GetLevelThemeTime();
@@ -61,5 +85,55 @@ namespace Crescendo.InitialCrescendo
 				spawnpoint.SetActive(spawnpoint == currentSpawnPoint);
 			}
 		}
-	}
+
+        private void ShowCheckpointsInProgressBar()
+        {
+            foreach (Transform checkpoint in checkpointParent)
+            {
+                Debug.Log(checkpoint.GetSiblingIndex(), this);
+
+                // Don't show the start checkpoint.
+                if (checkpoint.GetSiblingIndex() == 0)
+                {
+                    continue;
+                }
+
+                float percentage = checkpoint.position.x / (progressMeter.Finish.position.x - progressMeter.Start.position.x);
+                progressMeter.PlaceCheckpointMarker(percentage);
+            }
+        }
+
+        public void UnlockCheckpoint(int index)
+        {
+            // Prevents double unlock on start.
+            if (PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1) == index)
+            {
+                return;
+            }
+
+            Debug.Log($"Unlock checkpoint: {index}", this);
+
+            PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, index);
+            checkpointParent.GetChild(index).GetComponent<Checkpoint>().Unlock();
+            progressMeter.ActivateCheckpoint(index - 1);
+        }
+
+        private void StartFromActiveCheckpoint()
+        {
+            
+        }
+
+        private void ActivateUnlockedCheckpoints()
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1) + 1; i++)
+            {
+                level1Checkpoints[i].GetComponent<Checkpoint>().Activate();
+
+                if (i < PlayerPrefs.GetInt(PlayerPrefsNameCheckpLvl1))
+                {
+                    progressMeter.ActivateCheckpoint(i);
+                }
+            }
+        }
+    }
 }
