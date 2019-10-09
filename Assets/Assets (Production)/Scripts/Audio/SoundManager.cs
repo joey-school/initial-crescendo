@@ -85,6 +85,9 @@ namespace Crescendo.InitialCrescendo
 				DontDestroyOnLoad(gameObject);
 			}
 
+            levelThemeAudioSource.volume = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+            soundFXAudioSource.volume = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+
 #if UNITY_ANDROID && !UNITY_EDITOR
         collectibleSoundAndroidID = AudioCenter.loadSound (collectibleSoundAndroidFileName);
 		startGameButtonAndroidID = AudioCenter.loadSound (startGameButtonAndroidFileName);
