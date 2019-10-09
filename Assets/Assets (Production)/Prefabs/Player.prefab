@@ -717,7 +717,6 @@ GameObject:
   - component: {fileID: 6321045917556499639}
   - component: {fileID: 6321045917556499637}
   - component: {fileID: 4882510356001039452}
-  - component: {fileID: 3978423590663075212}
   - component: {fileID: 6321045919130300483}
   - component: {fileID: 6321045919130300484}
   - component: {fileID: 6321045917556499607}
@@ -775,6 +774,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 823
   feet: {fileID: 6321045918450232452}
+  isDebugging: 0
 --- !u!114 &6321045917556499637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,18 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a9fa3ddbfac4a58b2a6ed66000c310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3978423590663075212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6321045917556499624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81c1678c3fc2e8468e5ac653f14a3eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  TimmyCanonForce: 0
   scoreManager: {fileID: 0}
 --- !u!50 &6321045919130300483
 Rigidbody2D:

@@ -13,7 +13,15 @@ namespace Crescendo.InitialCrescendo
 		[SerializeField]
         private AudioSource levelThemeAudioSource;
 
-		[SerializeField]
+        public AudioSource LevelThemeAudioSource
+        {
+            get
+            {
+                return levelThemeAudioSource;
+            }
+        }
+
+        [SerializeField]
 		private AudioSource soundFXAudioSource;
 
 		[SerializeField] private Ease easingOfDeath;
@@ -36,7 +44,8 @@ namespace Crescendo.InitialCrescendo
 			levelCompletedFX,
 			endLevelRestartButtonFX,
 			endLevelQuitLevelButtonFX,
-			collectibleFX;
+			collectibleFX,
+            unlockCheckpointFX;
 
         [SerializeField]
 		private string collectibleSoundAndroidFileName,
@@ -64,6 +73,9 @@ namespace Crescendo.InitialCrescendo
 		private int endLevelQuitLevelButtonAndroidID;
 
 		private float timeOnPause;
+
+        [SerializeField]
+        private float songTime;
 
 		private void Awake() {
 			if(Instance != null && Instance != this) {
@@ -207,7 +219,10 @@ namespace Crescendo.InitialCrescendo
 				case Sounds.Collectible:
 					clipToPlay = collectibleFX;
 					break;
-			}
+                case Sounds.UnlockCheckpoint:
+                    clipToPlay = unlockCheckpointFX;
+                    break;
+            }
 
 			soundFXAudioSource.clip = clipToPlay;
 			soundFXAudioSource.Play();
@@ -254,7 +269,12 @@ namespace Crescendo.InitialCrescendo
             AudioCenter.playSound (ID);
 #endif
 		}
-	}
+
+        private void Update()
+        {
+            songTime = levelThemeAudioSource.time;
+        }
+    }
 
 	public enum Sounds
 	{
@@ -268,6 +288,7 @@ namespace Crescendo.InitialCrescendo
 		LevelCompleted,
 		EndLevelQuitLevel,
 		EndLevelRestart,
-		Collectible
+		Collectible,
+        UnlockCheckpoint
 	}
 }

@@ -14,6 +14,8 @@ public class CarnivorousPlant : MonoBehaviour
     [SerializeField]
     private Transform rightClaw;
 
+    private bool hasSpottedPlayer;
+
     private void Awake()
     {
         Ease inEase = Ease.InSine;
@@ -34,12 +36,23 @@ public class CarnivorousPlant : MonoBehaviour
     private void Update()
     {
         Vector3 targetPosition = GameObject.FindWithTag("Player").transform.position;
+        //targetPosition += Vector3.left * 2f;
 
-        if (targetPosition.y <= 4f)
+
+
+        if (targetPosition.y <= transform.position.y  + 13f)
         {
-            targetPosition = new Vector3(targetPosition.x, 4f, targetPosition.z);
+            targetPosition = new Vector3(targetPosition.x, transform.position.y + 13f, targetPosition.z);
         }
 
-        stemHandle.position = targetPosition;
+        //if ((stemHandle.position - targetPosition).magnitude <= 10f)
+        //{
+        //    hasSpottedPlayer = true;
+        //}
+
+        //if (hasSpottedPlayer)
+        //{
+            stemHandle.position = targetPosition;
+        //}
     }
 }

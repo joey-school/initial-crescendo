@@ -42,6 +42,9 @@ namespace Crescendo.SymphoSprint
         [SerializeField]
         private Transform checkpointMarkerContainer;
 
+        [SerializeField]
+        private Sprite unlockedSprite;
+
         private void Update()
         {
             float f = player.position.x / (finish.position.x - start.position.x);
@@ -56,6 +59,11 @@ namespace Crescendo.SymphoSprint
             float destinationXPosition = percentage * checkpointMarkerContainer.GetComponent<RectTransform>().sizeDelta.x;
 
             checkpointMarker.GetComponent<RectTransform>().anchoredPosition = new Vector2(destinationXPosition, 0f);
-        }  
+        }
+
+        public void ActivateCheckpoint(int index)
+        {
+            checkpointMarkerContainer.GetChild(index).GetComponent<Image>().sprite = unlockedSprite;
+        }
     }
 }

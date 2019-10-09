@@ -26,8 +26,6 @@ namespace Crescendo.SymphoSprint
             {
                 PlayerMovementController playerMovementController = collision.GetComponent<PlayerMovementController>();
 
-                Debug.LogFormat("player y: {0}, mushroom y: {1}", playerMovementController.PreviousColliderBounds.min.y, GetComponent<SpriteRenderer>().bounds.max.y);
-
                 if (playerMovementController.PreviousColliderBounds.min.y > GetComponent<SpriteRenderer>().bounds.max.y)
                 {
                     StartCoroutine(playerMovementController.JumpFromMushroom(bounceFactor));
