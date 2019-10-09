@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,14 @@ namespace Crescendo.InitialCrescendo
 		[SerializeField] private GameObject EndLevelQuitButton;
 
 		private int currentHighscore = 0;
+        private int totalObjects = 0;
+
+        void Start()
+        {
+            int totalCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
+            int totalInteractables = GameObject.FindGameObjectsWithTag("InteractableCollectible").Length;
+            totalObjects = totalCollectibles + totalInteractables;
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -50,11 +59,12 @@ namespace Crescendo.InitialCrescendo
         {
             if(PlayerPrefs.HasKey("Score"))
             {
-                currentHighscore = PlayerPrefs.GetInt("Score");
+                string number = PlayerPrefs.GetString("Score").Substring(0,3);
+                currentHighscore = Int32.Parse(number);
             }
             if(currentHighscore < scoreManager.Score)
             {
-                PlayerPrefs.SetInt("Score", scoreManager.Score);
+                PlayerPrefs.SetString("Score", scoreManager.Score + "/" + totalObjects);
             }
         }
     }

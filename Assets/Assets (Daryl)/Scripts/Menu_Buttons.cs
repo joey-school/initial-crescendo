@@ -13,7 +13,8 @@ namespace Crescendo.InitialCrescendo
             LevelSelectPanel,
             OptionsPanel,
             MenuPanel,
-            CheatsPanel;
+            CheatsPanel,
+            CreditsPanel;
         private bool Pressed;
 
         void Start()
@@ -50,13 +51,23 @@ namespace Crescendo.InitialCrescendo
             OptionsPanel.SetActive(false);
             LevelSelectPanel.SetActive(false);
             CheatsPanel.SetActive(false);
+            CreditsPanel.SetActive(false);
         }
 
         public void OptionsActive()
         {
             SoundManager.Instance.PlaySoundFX(Sounds.Pause);
             MenuPanel.SetActive(false);
+            CreditsPanel.SetActive(false);
+            CheatsPanel.SetActive(false);
             OptionsPanel.SetActive(true);
+        }
+
+        public void CreditsActive()
+        {
+            SoundManager.Instance.PlaySoundFX(Sounds.Pause);
+            OptionsPanel.SetActive(false);
+            CreditsPanel.SetActive(true);
         }
 
         public void LevelSelectActive()
