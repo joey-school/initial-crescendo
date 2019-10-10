@@ -7,7 +7,7 @@ namespace Crescendo.InitialCrescendo
 {
     public class Menu_Buttons : MonoBehaviour
     {
-        [SerializeField] private string SceneName;
+        [SerializeField] private string level1name, level2name;
         [SerializeField]
         private GameObject
             LevelSelectPanel,
@@ -15,33 +15,56 @@ namespace Crescendo.InitialCrescendo
             MenuPanel,
             CheatsPanel,
             CreditsPanel;
-        private bool Pressed;
+        private bool level1Activated, level2Activated;
 
         void Start()
         {
-            StartCoroutine(LoadYourAsyncScene());
+            StartCoroutine(LoadLevel1());
+            StartCoroutine(LoadLevel2());
         }
 
-        IEnumerator LoadYourAsyncScene()
+        IEnumerator LoadLevel1()
         {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
-            asyncLoad.allowSceneActivation = false;
+            AsyncOperation asyncLoad1 = SceneManager.LoadSceneAsync(level1name);
+            asyncLoad1.allowSceneActivation = false;
 
-            while (!asyncLoad.isDone)
+            while (!asyncLoad1.isDone)
             {
-                if (asyncLoad.progress >= 0.9f && Pressed)
+                if (asyncLoad1.progress >= 0.9f && level1Activated)
                 {
-                    asyncLoad.allowSceneActivation = true;
+                    asyncLoad1.allowSceneActivation = true;
                 }
 
                 yield return null;
             }
         }
 
-        public void StartGame()
+        IEnumerator LoadLevel2()
+        {
+            AsyncOperation asyncLoad2 = SceneManager.LoadSceneAsync(level2name);
+            asyncLoad2.allowSceneActivation = false;
+
+            while (!asyncLoad2.isDone)
+            {
+                if (asyncLoad2.progress >= 0.9f && level2Activated)
+                {
+                    asyncLoad2.allowSceneActivation = true;
+                }
+
+                yield return null;
+            }
+        }
+
+        public void StartLevel1()
         {
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
-            Pressed = true;
+            level1Activated = true;
+        }
+
+        public void StartLevel2()
+        {
+            SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
+            level2Activated = true;
         }
 
         public void MainMenuActive()
