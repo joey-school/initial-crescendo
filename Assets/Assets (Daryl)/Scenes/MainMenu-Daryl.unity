@@ -904,7 +904,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1547601043}
-        m_MethodName: StartGame
+        m_MethodName: StartLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1963,7 +1963,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1547601043}
-        m_MethodName: StartGame
+        m_MethodName: StartLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4118,7 +4118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793891bd8e12f0143a2e9e36946ed499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Level-1.1
+  level1name: 
+  level2name: 
   LevelSelectPanel: {fileID: 1196824024}
   OptionsPanel: {fileID: 1174615977}
   MenuPanel: {fileID: 1627805385}
