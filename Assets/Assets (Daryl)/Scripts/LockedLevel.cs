@@ -7,18 +7,18 @@ namespace Crescendo.InitialCrescendo
 {
     public class LockedLevel : MonoBehaviour
     {
-        [SerializeField] private string levelName;
+        [SerializeField] private string previousLevelName;
         [SerializeField] private Button button;
         [SerializeField] private GameObject lockedGraphic;
-        private int locked = 1;
+        private int finishedPrevious = 0;
         void Start()
         {
-            if (PlayerPrefs.HasKey(levelName + "locked"))
+            if (PlayerPrefs.HasKey(previousLevelName + "finished"))
             {
-                locked = PlayerPrefs.GetInt(levelName + "locked");
+                finishedPrevious = PlayerPrefs.GetInt(previousLevelName + "finished");
             }
 
-            if (locked == 0)
+            if (finishedPrevious == 1)
             {
                 button.interactable = true;
                 lockedGraphic.SetActive(false);
@@ -28,7 +28,7 @@ namespace Crescendo.InitialCrescendo
         // If the level is locked, only then is needed to see if the cheat is enabled
         void Update()
         {
-            if(locked == 1)
+            if(finishedPrevious == 0)
             {
                 button.interactable = CheatManager.Instance.LevelsUnlocked;
                 lockedGraphic.SetActive(!CheatManager.Instance.LevelsUnlocked);

@@ -10,15 +10,18 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private Text txt;
         [SerializeField]
-        private int levelNumber;
+        private string levelName;
 
         // Start is called before the first frame update
         void Start()
         {
             txt.text = "High Score: 0/0";
-            if (PlayerPrefs.HasKey(LevelManager.Instance.GetLevelNameFromLevelNumber(levelNumber) + "score"))
+            if (PlayerPrefs.HasKey(levelName + "score"))
             {
-                txt.text = "High Score: " + PlayerPrefs.GetInt(LevelManager.Instance.GetLevelNameFromLevelNumber(levelNumber) + "score");
+                txt.text = "High Score: " 
+                    + PlayerPrefs.GetInt(levelName + "score") 
+                    + "/"
+                    + PlayerPrefs.GetInt(levelName + "totalObjects");
             }
         }
     }
