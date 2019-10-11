@@ -11,7 +11,7 @@ namespace Crescendo.InitialCrescendo
         public bool LevelsUnlocked { get; set; }
         public bool GodMode { get; set; }
 
-        private void Awake()
+        void Awake()
         {
             if (Instance != null && Instance != this)
             {

@@ -9,7 +9,7 @@ namespace Crescendo.InitialCrescendo
     {
         [SerializeField] private string levelName;
         [SerializeField] private Button button;
-        [SerializeField] private GameObject lockedText;
+        [SerializeField] private GameObject lockedGraphic;
         private int locked = 1;
         void Start()
         {
@@ -21,7 +21,7 @@ namespace Crescendo.InitialCrescendo
             if (locked == 0)
             {
                 button.interactable = true;
-                lockedText.SetActive(false);
+                lockedGraphic.SetActive(false);
             }
         }
 
@@ -31,7 +31,7 @@ namespace Crescendo.InitialCrescendo
             if(locked == 1)
             {
                 button.interactable = CheatManager.Instance.LevelsUnlocked;
-                lockedText.SetActive(!CheatManager.Instance.LevelsUnlocked);
+                lockedGraphic.SetActive(!CheatManager.Instance.LevelsUnlocked);
             }
         }
     }
