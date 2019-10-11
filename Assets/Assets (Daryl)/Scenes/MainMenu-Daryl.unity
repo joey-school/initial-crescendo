@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 300974758}
-  levelName: level-1
+  levelNumber: 1
 --- !u!114 &300974757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,6 +1190,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468503697}
   m_CullTransparentMesh: 0
+--- !u!1001 &491803889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1981628283785438758, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 254.37715
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.73193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.481821
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438752, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: MainMenuName
+      value: MainMenu-Daryl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438752, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: Level2Name
+      value: Level-2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdf7d1192eb225445a7daeffe02fee1f, type: 3}
 --- !u!1 &505352222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,12 +1474,12 @@ PrefabInstance:
         type: 3}
       propertyPath: endLevelQuitLevelButtonFX
       value: 
-      objectReference: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249, type: 3}
+      objectReference: {fileID: 8300000, guid: f529b82179b9d6a43a82e532a76ad902, type: 3}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: endLevelRestartButtonFX
       value: 
-      objectReference: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249, type: 3}
+      objectReference: {fileID: 8300000, guid: f529b82179b9d6a43a82e532a76ad902, type: 3}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: pauseButtonFX
@@ -1415,7 +1494,7 @@ PrefabInstance:
         type: 3}
       propertyPath: restartButtonFX
       value: 
-      objectReference: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
+      objectReference: {fileID: 8300000, guid: f314a30eaf95aaf438d01cda45b06d15, type: 3}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: quitButtonFX
@@ -1435,7 +1514,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mainMenuTheme
       value: 
-      objectReference: {fileID: 8300000, guid: 1d20c6da96a047e42a1c85692feff015, type: 3}
+      objectReference: {fileID: 8300000, guid: 41fa6d7449fcb6f4085ac968ea316560, type: 3}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: startGameButtonFX
@@ -1445,7 +1524,7 @@ PrefabInstance:
         type: 3}
       propertyPath: collectibleFX
       value: 
-      objectReference: {fileID: 8300000, guid: c70555016f30a96469b481bbeed78282, type: 3}
+      objectReference: {fileID: 8300000, guid: 4f73052244c541a48aa83ebb5e26c453, type: 3}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: MainMenuName
@@ -1455,17 +1534,27 @@ PrefabInstance:
         type: 3}
       propertyPath: levelCompletedFX
       value: 
-      objectReference: {fileID: 8300000, guid: bc3d2add72db81b4b8fecb32558b0652, type: 3}
+      objectReference: {fileID: 8300000, guid: 2d55231ebfaf86e439ad6d532b5b0d1d, type: 3}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: collectibleSoundAndroidFileName
-      value: collectible-pickup-sound-1.mp3
+      value: CollectibleSparkle2.mp3
       objectReference: {fileID: 0}
     - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: Level1Name
       value: Level-1
       objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: level2Theme
+      value: 
+      objectReference: {fileID: 8300000, guid: 81ddeec8579f84155b09064a494d92e6, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: level1Theme
+      value: 
+      objectReference: {fileID: 8300000, guid: ad44b29ab42f04a2594cedd536f88523, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6781b41605aff442af5a35cb5b17949, type: 3}
 --- !u!1 &597962856
@@ -4608,8 +4697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793891bd8e12f0143a2e9e36946ed499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1name: 
-  level2name: 
   LevelSelectPanel: {fileID: 1196824024}
   OptionsPanel: {fileID: 1174615977}
   MenuPanel: {fileID: 1627805385}
@@ -5768,7 +5855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1892295527}
-  levelName: level-2
+  levelNumber: 2
 --- !u!114 &1892295526
 MonoBehaviour:
   m_ObjectHideFlags: 0

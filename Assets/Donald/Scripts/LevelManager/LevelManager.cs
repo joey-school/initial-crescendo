@@ -18,4 +18,11 @@ public class LevelManager : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+
+	public string GetLevelNameFromLevelNumber(int level_zeroIsMainMenu) {
+		if(level_zeroIsMainMenu == 0) return MainMenuName;
+		if(level_zeroIsMainMenu == 1) return Level1Name;
+		if(level_zeroIsMainMenu == 2) return Level2Name;
+		else return MainMenuName;
+	}
 }

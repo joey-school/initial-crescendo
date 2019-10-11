@@ -7,7 +7,6 @@ namespace Crescendo.InitialCrescendo
 {
     public class Menu_Buttons : MonoBehaviour
     {
-        [SerializeField] private string level1name, level2name;
         [SerializeField]
         private GameObject
             LevelSelectPanel,
@@ -25,7 +24,7 @@ namespace Crescendo.InitialCrescendo
 
         IEnumerator LoadLevel1()
         {
-            AsyncOperation asyncLoad1 = SceneManager.LoadSceneAsync(level1name);
+            AsyncOperation asyncLoad1 = SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
             asyncLoad1.allowSceneActivation = false;
 
             while (!asyncLoad1.isDone)
@@ -41,7 +40,7 @@ namespace Crescendo.InitialCrescendo
 
         IEnumerator LoadLevel2()
         {
-            AsyncOperation asyncLoad2 = SceneManager.LoadSceneAsync(level2name);
+            AsyncOperation asyncLoad2 = SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
             asyncLoad2.allowSceneActivation = false;
 
             while (!asyncLoad2.isDone)
@@ -57,8 +56,11 @@ namespace Crescendo.InitialCrescendo
 
         public void StartLevel1()
         {
+			//if playerprefs bool storyseen:
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
             level1Activated = true;
+			//else:
+			//show story
         }
 
         public void StartLevel2()
