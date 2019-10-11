@@ -53,9 +53,9 @@ namespace Crescendo.SymphoSprint
             unlockParticles.Simulate(1);
             unlockParticles.Play();
             unlockParticles.Stop();
-            unlockParticles.Emit(100);
+            unlockParticles.Emit(130);
             SoundManager.Instance.PlaySoundFX(Sounds.UnlockCheckpoint);
-            Camera.main.DOShakeRotation(1f, 8);
+            Camera.main.DOShakeRotation(1.5f, 8);
         }
 
         public void Activate()
