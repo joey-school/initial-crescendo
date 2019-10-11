@@ -18,7 +18,10 @@ namespace Crescendo.InitialCrescendo
             txt.text = "High Score: 0/0";
             if (PlayerPrefs.HasKey(levelName + "score"))
             {
-                txt.text = "High Score: " + PlayerPrefs.GetInt(levelName + "score");
+                txt.text = "High Score: " 
+                    + PlayerPrefs.GetInt(levelName + "score") 
+                    + "/"
+                    + PlayerPrefs.GetInt(levelName + "totalObjects");
             }
         }
     }

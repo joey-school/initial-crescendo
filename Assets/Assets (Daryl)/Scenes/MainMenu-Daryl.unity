@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd9d3b452dfecf4f90b149bbadf7ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: level-2
+  previousLevelName: Level-1
   button: {fileID: 361471579}
   lockedGraphic: {fileID: 0}
 --- !u!1 &468503697

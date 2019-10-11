@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Crescendo.InitialCrescendo
@@ -17,12 +18,14 @@ namespace Crescendo.InitialCrescendo
 
 		private int currentHighscore = 0;
         private int totalObjects = 0;
+        private string levelName;
 
         void Start()
         {
             int totalCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
             int totalInteractables = GameObject.FindGameObjectsWithTag("InteractableCollectible").Length;
             totalObjects = totalCollectibles + totalInteractables;
+            levelName = SceneManager.GetActiveScene().name;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -33,21 +36,22 @@ namespace Crescendo.InitialCrescendo
                     txt.text = "Timmy had a bad dream...";
 					DeadQuitButton.SetActive(true);
 					EndLevelQuitButton.SetActive(false);
-                    Reset();
+                    ResetValues();
                     SaveScore();
                     break;
                 case "Finish":
                     txt.text = "Timmy liked this dream!";
 					DeadQuitButton.SetActive(false);
 					EndLevelQuitButton.SetActive(true);
-					SoundManager.Instance.PlaySoundFX(Sounds.LevelCompleted);
-					Reset();
+                    PlayerPrefs.SetInt(levelName + "finished", 1);
+                    SoundManager.Instance.PlaySoundFX(Sounds.LevelCompleted);
+					ResetValues();
                     SaveScore();
                     break;
             }
         }
 
-        private void Reset()
+        private void ResetValues()
         {
             Time.timeScale = 0f;
             EndPanel.SetActive(true);
@@ -57,15 +61,16 @@ namespace Crescendo.InitialCrescendo
 
         private void SaveScore()
         {
-            if(PlayerPrefs.HasKey("Score"))
+            int currentHighscore = 0;
+            if(PlayerPrefs.HasKey(levelName + "score"))
             {
-                string number = PlayerPrefs.GetString("Score").Substring(0,3);
-                currentHighscore = Int32.Parse(number);
+                currentHighscore = PlayerPrefs.GetInt(levelName + "score");
             }
             if(currentHighscore < scoreManager.Score)
             {
-                PlayerPrefs.SetString("Score", scoreManager.Score + "/" + totalObjects);
+                PlayerPrefs.SetInt(levelName + "score", scoreManager.Score);
             }
+            PlayerPrefs.SetInt(levelName + "totalObjects", totalObjects);
         }
     }
 }
