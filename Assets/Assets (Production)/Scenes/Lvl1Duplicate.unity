@@ -19876,7 +19876,7 @@ PrefabInstance:
     - target: {fileID: 5572080898794474729, guid: 83acc81ad1850fa4f9f52fc64fceaf05,
         type: 3}
       propertyPath: MenuName
-      value: MainMenu
+      value: MainMenu-Daryl
       objectReference: {fileID: 0}
     - target: {fileID: 5572080898794474728, guid: 83acc81ad1850fa4f9f52fc64fceaf05,
         type: 3}
@@ -22185,9 +22185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978312ea5263a34fadd3d3bbf3548ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenuName: MainMenu
-  Level1Name: Level-1
-  Level2Name: 
+  MainMenuName: MainMenu-Daryl
+  Level1Name: Lvl1Duplicate
+  Level2Name: Level-2
 --- !u!4 &1068148073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7799492184752785527, guid: c8db5f46b83d107439b96898be1acc2e,
@@ -24230,6 +24230,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 717015587}
+    - target: {fileID: 4603173460068336641, guid: 5044e676db7a6024c94be51042f8374c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 359110287105571009, guid: 5044e676db7a6024c94be51042f8374c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -61307,7 +61312,7 @@ PrefabInstance:
     - target: {fileID: 3501735426294670243, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3501735426294670244, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
@@ -61384,6 +61389,11 @@ PrefabInstance:
       propertyPath: unlockCheckpointFX
       value: 
       objectReference: {fileID: 8300000, guid: fb84a5ab83b574b24bf6a3c9193955d6, type: 3}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: level1Theme
+      value: 
+      objectReference: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
     - target: {fileID: 4578715548984759453, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: m_PlayOnAwake

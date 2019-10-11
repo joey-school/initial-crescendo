@@ -49,24 +49,36 @@ MonoBehaviour:
   soundFXAudioSource: {fileID: 4578715548984759453}
   easingOfDeath: 8
   easingLength: 1
-  mainMenuTheme: {fileID: 8300000, guid: 4973dbf1c08988243b85497d474cd29a, type: 3}
-  level1Theme: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
-  startGameButtonFX: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
-  pauseButtonFX: {fileID: 8300000, guid: 7aff99e09ffb16f4a84b175cc9952f55, type: 3}
-  resumeButtonFX: {fileID: 8300000, guid: c0ca0b29648b18949b4052e063b0e8a3, type: 3}
-  restartButtonFX: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
-  quitButtonFX: {fileID: 8300000, guid: 9d092a9a1aa5b2448942d1512f1e6255, type: 3}
-  deadRestartButtonFX: {fileID: 8300000, guid: dff062cc284a80449a92524332cbf6c6, type: 3}
-  deadQuitLevelButtonFX: {fileID: 8300000, guid: 9d092a9a1aa5b2448942d1512f1e6255,
+  mainMenuTheme: {fileID: 8300000, guid: 41fa6d7449fcb6f4085ac968ea316560, type: 3}
+  level1Theme: {fileID: 8300000, guid: ad44b29ab42f04a2594cedd536f88523, type: 3}
+  level2Theme: {fileID: 8300000, guid: 81ddeec8579f84155b09064a494d92e6, type: 3}
+  startGameButtonFX: {fileID: 8300000, guid: 850a4f91de1da11488d95496179b5fb8, type: 3}
+  pauseButtonFX: {fileID: 8300000, guid: 0f9087afe56046b44ace1984d9515c09, type: 3}
+  resumeButtonFX: {fileID: 8300000, guid: f314a30eaf95aaf438d01cda45b06d15, type: 3}
+  restartButtonFX: {fileID: 8300000, guid: f314a30eaf95aaf438d01cda45b06d15, type: 3}
+  quitButtonFX: {fileID: 8300000, guid: 23697f032f051ed498588a38ad0ebc39, type: 3}
+  deadRestartButtonFX: {fileID: 8300000, guid: 850a4f91de1da11488d95496179b5fb8, type: 3}
+  deadQuitLevelButtonFX: {fileID: 8300000, guid: 23697f032f051ed498588a38ad0ebc39,
     type: 3}
-  levelCompletedFX: {fileID: 0}
-  endLevelRestartButtonFX: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249,
+  levelCompletedFX: {fileID: 8300000, guid: 2d55231ebfaf86e439ad6d532b5b0d1d, type: 3}
+  endLevelRestartButtonFX: {fileID: 8300000, guid: f529b82179b9d6a43a82e532a76ad902,
     type: 3}
-  endLevelQuitLevelButtonFX: {fileID: 8300000, guid: 41c7c957534124b49bbaf3fb86f2a249,
+  endLevelQuitLevelButtonFX: {fileID: 8300000, guid: f529b82179b9d6a43a82e532a76ad902,
     type: 3}
-  collectibleFX: {fileID: 8300000, guid: c70555016f30a96469b481bbeed78282, type: 3}
-  MainMenuName: Main-Menu
-  Level1Name: Level-1
+  collectibleFX: {fileID: 8300000, guid: 4f73052244c541a48aa83ebb5e26c453, type: 3}
+  unlockCheckpointFX: {fileID: 8300000, guid: 7977435c76a3a074c826223681f093ca, type: 3}
+  collectibleSoundAndroidFileName: CollectibleSparkle2.mp3
+  startGameButtonAndroidFileName: LvlStart2.mp3
+  pauseButtonAndroidFileName: RPG_Menu_Confirm_01 - confirmDeamplified2.mp3
+  resumeButtonAndroidFileName: ConfirmHappyNOSprinklesDeamplified2
+  restartButtonAndroidFileName: ConfirmHappyNOSprinklesDeamplified2
+  quitButtonAndroidFileName: CancelHappySprinklesDeamplified2
+  deadRestartButtonAndroidFileName: LvlStart2
+  deadQuitLevelButtonAndroidFileName: CancelHappySprinklesDeamplified2
+  levelCompletedAndroidFileName: Applause2
+  endLevelRestartButtonAndroidFileName: ToLvlSelect
+  endLevelQuitLevelButtonAndroidFileName: ToLvlSelect
+  songTime: 0
 --- !u!82 &3501735426294670242
 AudioSource:
   m_ObjectHideFlags: 0
@@ -77,7 +89,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4973dbf1c08988243b85497d474cd29a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1d20c6da96a047e42a1c85692feff015, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
