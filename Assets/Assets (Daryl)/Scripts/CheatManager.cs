@@ -9,7 +9,7 @@ namespace Crescendo.InitialCrescendo
 
         public static CheatManager Instance { get; private set; }
         public bool LevelsUnlocked { get; set; }
-        public bool GodMode { get; set; }
+		public bool GodMode;
 
         void Awake()
         {

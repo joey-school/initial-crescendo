@@ -33,11 +33,13 @@ namespace Crescendo.InitialCrescendo
             switch (collision.tag)
             {
                 case "Hazard":
-                    txt.text = "Timmy had a bad dream...";
-					DeadQuitButton.SetActive(true);
-					EndLevelQuitButton.SetActive(false);
-                    ResetValues();
-                    SaveScore();
+					if(!CheatManager.Instance.GodMode) {
+						txt.text = "Timmy had a bad dream...";
+						DeadQuitButton.SetActive(true);
+						EndLevelQuitButton.SetActive(false);
+						ResetValues();
+						SaveScore();
+					}
                     break;
                 case "Finish":
                     txt.text = "Timmy liked this dream!";
