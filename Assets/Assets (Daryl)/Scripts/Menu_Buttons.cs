@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,13 +17,32 @@ namespace Crescendo.InitialCrescendo
             CreditsPanel;
         private bool level1Activated, level2Activated;
 
-        void Start()
-        {
-            StartCoroutine(LoadLevel1());
-            StartCoroutine(LoadLevel2());
-        }
+        void Start() {
+			//StartCoroutine(LoadLevels());
+			//StartCoroutine(LoadLevel1());
+			//StartCoroutine(LoadLevel2());
+		}
 
-        IEnumerator LoadLevel1()
+		IEnumerator LoadLevels() {
+			AsyncOperation asyncLoad1 = SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
+			asyncLoad1.allowSceneActivation = false;
+
+			AsyncOperation asyncLoad2 = SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
+			asyncLoad2.allowSceneActivation = false;
+
+			while(!asyncLoad1.isDone && !asyncLoad2.isDone) {
+				if(asyncLoad1.progress >= 0.9f && level1Activated) {
+					asyncLoad1.allowSceneActivation = true;
+				}
+				if(asyncLoad2.progress >= 0.9f && level2Activated) {
+					asyncLoad2.allowSceneActivation = true;
+				}
+
+				yield return null;
+			}
+		}
+
+		IEnumerator LoadLevel1()
         {
             AsyncOperation asyncLoad1 = SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
             asyncLoad1.allowSceneActivation = false;
@@ -57,16 +77,22 @@ namespace Crescendo.InitialCrescendo
         public void StartLevel1()
         {
 			//if playerprefs bool storyseen:
+
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
-            level1Activated = true;
+			//level1Activated = true;
+
 			//else:
 			//show story
-        }
+
+			SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
+		}
 
         public void StartLevel2()
         {
-            SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
-            level2Activated = true;
+			SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
+            //level2Activated = true;
+
+			SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
         }
 
         public void MainMenuActive()

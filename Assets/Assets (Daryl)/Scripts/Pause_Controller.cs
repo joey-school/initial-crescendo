@@ -10,7 +10,6 @@ namespace Crescendo.InitialCrescendo
     {
         [SerializeField] private GameObject PauseButton;
         [SerializeField] private GameObject PausePanel;
-        [SerializeField] private string MenuName;
         private Scene scene;
 
         void Start()
@@ -45,7 +44,7 @@ namespace Crescendo.InitialCrescendo
         public void QuitLevel()
         {
             Time.timeScale = 1.0f;
-            SceneManager.LoadScene(MenuName);
+            SceneManager.LoadScene(LevelManager.Instance.MainMenuName);
         }
     }
 }

@@ -13,7 +13,7 @@ public class MoveBackground : MonoBehaviour
     {
 		Vector2 distanceTimmyToAnchor = anchorPoint.transform.position - Player.position;
 		float xPosition = anchorPoint.transform.position.x - xRatio * distanceTimmyToAnchor.x;
-		//float yPosition = anchorPoint.transform.position.y - yRatio * distanceTimmyToAnchor.y;
-		transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
+		float yPosition = anchorPoint.transform.position.y - yRatio * distanceTimmyToAnchor.y;
+		transform.position = new Vector3(xPosition, yPosition, transform.position.z);
     }
 }
