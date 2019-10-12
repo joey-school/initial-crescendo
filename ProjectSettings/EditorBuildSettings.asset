@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets (Daryl)/Scenes/MainMenu-Daryl.unity
     guid: ced50a39637db99479e5f7e27bd69a66
   - enabled: 0
@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Assets (Production)/Scenes/Level-1.unity
     guid: 626470bfe84a346af95db0f2dc933431
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets (Production)/Scenes/Lvl1Duplicate.unity
     guid: cd2d112821098d64d950d7fd89afd57b
   - enabled: 1

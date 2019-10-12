@@ -10,7 +10,6 @@ namespace Crescendo.InitialCrescendo
     {
         [SerializeField] private GameObject PauseButton;
         [SerializeField] private GameObject PausePanel;
-        [SerializeField] private string MenuName;
         private bool Pressed;
         private Scene scene;
 
@@ -22,7 +21,7 @@ namespace Crescendo.InitialCrescendo
 
         IEnumerator LoadYourAsyncScene()
         {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(MenuName);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelManager.Instance.MainMenuName);
             asyncLoad.allowSceneActivation = false;
 
             while (!asyncLoad.isDone)
