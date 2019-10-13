@@ -58,9 +58,10 @@ namespace Crescendo.InitialCrescendo
 		,deadQuitLevelButtonAndroidFileName
 		,levelCompletedAndroidFileName
 		,endLevelRestartButtonAndroidFileName
-		,endLevelQuitLevelButtonAndroidFileName;
+		,endLevelQuitLevelButtonAndroidFileName
+        ,unlockCheckpointAndroidFileName;
 
-		private int collectibleSoundAndroidID;
+        private int collectibleSoundAndroidID;
 		private int startGameButtonAndroidID;
 		private int pauseButtonAndroidID;
 		private int resumeButtonAndroidID;
@@ -71,8 +72,9 @@ namespace Crescendo.InitialCrescendo
 		private int levelCompletedAndroidID;
 		private int endLevelRestartButtonAndroidID;
 		private int endLevelQuitLevelButtonAndroidID;
+        private int unlockCheckpointAndroidID;
 
-		private float timeOnPause;
+        private float timeOnPause;
 
         [SerializeField]
         private float songTime;
@@ -100,10 +102,11 @@ namespace Crescendo.InitialCrescendo
 		levelCompletedAndroidID = AudioCenter.loadSound (levelCompletedAndroidFileName);
 		endLevelRestartButtonAndroidID = AudioCenter.loadSound (endLevelRestartButtonAndroidFileName);
 		endLevelQuitLevelButtonAndroidID = AudioCenter.loadSound (endLevelQuitLevelButtonAndroidFileName);
+        unlockCheckpointAndroidID = AudioCenter.loadSound (unlockCheckpointAndroidFileName);
 #endif
-		}
+        }
 
-		private void Start() {
+        private void Start() {
 
 
 			string levelName = SceneManager.GetActiveScene().name;
@@ -270,11 +273,14 @@ namespace Crescendo.InitialCrescendo
                 case Sounds.Collectible:
                     ID = collectibleSoundAndroidID;
                     break;
+                case Sounds.UnlockCheckpoint:
+                    ID = unlockCheckpointAndroidID;
+                    break;
             }
 
             AudioCenter.playSound (ID);
 #endif
-		}
+        }
 
         private void Update()
         {

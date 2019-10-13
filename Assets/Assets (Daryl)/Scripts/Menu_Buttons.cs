@@ -17,6 +17,8 @@ namespace Crescendo.InitialCrescendo
             CreditsPanel;
         private bool level1Activated, level2Activated;
 
+        private bool isStartingLevel;
+
         void Start() {
 			//StartCoroutine(LoadLevels());
 			//StartCoroutine(LoadLevel1());
@@ -76,7 +78,14 @@ namespace Crescendo.InitialCrescendo
 
         public void StartLevel1()
         {
-			//if playerprefs bool storyseen:
+            if (isStartingLevel)
+            {
+                return;
+            }
+
+            isStartingLevel = true;
+
+            //if playerprefs bool storyseen:
 
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
 			//level1Activated = true;
@@ -89,7 +98,14 @@ namespace Crescendo.InitialCrescendo
 
         public void StartLevel2()
         {
-			SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
+            if (isStartingLevel)
+            {
+                return;
+            }
+
+            isStartingLevel = true;
+
+            SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
             //level2Activated = true;
 
 			SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
