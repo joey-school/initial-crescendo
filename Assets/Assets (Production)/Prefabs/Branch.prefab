@@ -74,10 +74,10 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
-  - {fileID: 21300000, guid: 9b0f6fefb46924484bbc8add1c4c3ea9, type: 3}
+  - {fileID: 21300000, guid: 7dd815637248544bfb8546c5804d4206, type: 3}
   m_LocalAABB:
-    m_Center: {x: 22.361393, y: 2.33707, z: -0.0025000002}
-    m_Extent: {x: 39.34413, y: 11.451582, z: 0.0025000002}
+    m_Center: {x: 22.364319, y: 2.321632, z: -0.0025000002}
+    m_Extent: {x: 39.128532, y: 11.410713, z: 0.0025000002}
 --- !u!114 &1970224882517442346
 MonoBehaviour:
   m_ObjectHideFlags: 0
