@@ -23,6 +23,10 @@ namespace Crescendo.InitialCrescendo
             PauseButton.SetActive(false); 
             PausePanel.SetActive(true);
             Time.timeScale = 0f;
+
+            // Bugfix: Used to fix pause super jump.
+            GameObject.Find("Player").GetComponent<PlayerMovementController>().Rigidbody.velocity = Vector2.zero;
+            //
         }
 
         // When resume game button is pressed
