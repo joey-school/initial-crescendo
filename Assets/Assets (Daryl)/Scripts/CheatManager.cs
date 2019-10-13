@@ -25,7 +25,7 @@ namespace Crescendo.InitialCrescendo
         }
 
 		private void Update() {
-			Debug.Log(GodMode);
+			//Debug.Log(GodMode);
 		}
 	}
 }

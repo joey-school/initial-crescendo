@@ -35,7 +35,7 @@ namespace Crescendo.InitialCrescendo
                 PlayerPrefs.SetInt(PlayerPrefsNameCheckpLvl1, 0);
             }
 
-            //ShowCheckpointsInProgressBar();
+            ShowCheckpointsInProgressBar();
         }
 
         private void Start() {
