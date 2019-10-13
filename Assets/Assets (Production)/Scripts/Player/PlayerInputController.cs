@@ -98,7 +98,7 @@ namespace Crescendo.InitialCrescendo
         {
 			Debug.Log("HandleMovement()");
 			Debug.Log(movementController.ActiveMovementType);
-            if (movementController.IsGrounded && movementController.ActiveMovementType != PlayerMovementTypes.Gliding)
+            if (movementController.IsGrounded && movementController.ActiveMovementType != PlayerMovementTypes.Gliding && movementController.Rigidbody.velocity.x > 1f)
             {
 				Debug.Log("movementController.IsGrounded");
                 movementController.Jump();
