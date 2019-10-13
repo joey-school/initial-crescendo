@@ -53,7 +53,21 @@ namespace Crescendo.InitialCrescendo
             }
         }
 
-        private void ResetValues()
+		private void OnCollisionEnter2D(Collision2D collision) {
+			switch(collision.transform.tag) {
+				case "Hazard":
+					if(!CheatManager.Instance.GodMode) {
+						txt.text = "Timmy had a bad dream...";
+						DeadQuitButton.SetActive(true);
+						EndLevelQuitButton.SetActive(false);
+						ResetValues();
+						SaveScore();
+					}
+					break;
+			}
+		}
+
+		private void ResetValues()
         {
             Time.timeScale = 0f;
             EndPanel.SetActive(true);

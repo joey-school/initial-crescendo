@@ -8,7 +8,7 @@ namespace Crescendo.InitialCrescendo
 	{
 		[SerializeField] private GameObject GodBranch; 
 
-		private void Awake() {
+		private void Start() {
 			GodBranch.SetActive(CheatManager.Instance.GodMode);
 		}
 	}

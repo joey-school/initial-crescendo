@@ -7,8 +7,6 @@ namespace Crescendo.InitialCrescendo
 {
     public class VolumeSlider : MonoBehaviour
     {
-
-        [SerializeField] private GameObject SoundManager;
         [SerializeField] private bool MusicSelected;
         [SerializeField] private Slider slider;
         private AudioSource[] AudioSources;
@@ -16,7 +14,7 @@ namespace Crescendo.InitialCrescendo
         // Start is called before the first frame update
         void Start()
         {
-            AudioSources = SoundManager.GetComponents<AudioSource>();
+            AudioSources = SoundManager.Instance.GetComponents<AudioSource>();
             if (MusicSelected)
             {
                 slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f) * 10;

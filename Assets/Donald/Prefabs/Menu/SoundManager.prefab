@@ -50,7 +50,7 @@ MonoBehaviour:
   easingOfDeath: 8
   easingLength: 1
   mainMenuTheme: {fileID: 8300000, guid: 41fa6d7449fcb6f4085ac968ea316560, type: 3}
-  level1Theme: {fileID: 8300000, guid: ad44b29ab42f04a2594cedd536f88523, type: 3}
+  level1Theme: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
   level2Theme: {fileID: 8300000, guid: 81ddeec8579f84155b09064a494d92e6, type: 3}
   startGameButtonFX: {fileID: 8300000, guid: 850a4f91de1da11488d95496179b5fb8, type: 3}
   pauseButtonFX: {fileID: 8300000, guid: 0f9087afe56046b44ace1984d9515c09, type: 3}
@@ -67,17 +67,17 @@ MonoBehaviour:
     type: 3}
   collectibleFX: {fileID: 8300000, guid: 4f73052244c541a48aa83ebb5e26c453, type: 3}
   unlockCheckpointFX: {fileID: 8300000, guid: 7977435c76a3a074c826223681f093ca, type: 3}
-  collectibleSoundAndroidFileName: CollectibleSparkle2.mp3
-  startGameButtonAndroidFileName: LvlStart2.mp3
-  pauseButtonAndroidFileName: RPG_Menu_Confirm_01 - confirmDeamplified2.mp3
-  resumeButtonAndroidFileName: ConfirmHappyNOSprinklesDeamplified2
-  restartButtonAndroidFileName: ConfirmHappyNOSprinklesDeamplified2
-  quitButtonAndroidFileName: CancelHappySprinklesDeamplified2
-  deadRestartButtonAndroidFileName: LvlStart2
-  deadQuitLevelButtonAndroidFileName: CancelHappySprinklesDeamplified2
-  levelCompletedAndroidFileName: Applause2
-  endLevelRestartButtonAndroidFileName: ToLvlSelect
-  endLevelQuitLevelButtonAndroidFileName: ToLvlSelect
+  collectibleSoundAndroidFileName: CollectibleSparkle3.mp3
+  startGameButtonAndroidFileName: LvlStart3.mp3
+  pauseButtonAndroidFileName: RPG_Menu_Confirm_01 - confirmDeamplified3.mp3
+  resumeButtonAndroidFileName: ConfirmHappyNOSprinklesDeamplified3.mp3
+  restartButtonAndroidFileName: ConfirmHappyNOSprinklesDeamplified3.mp3
+  quitButtonAndroidFileName: CancelHappySprinklesDeamplified3.mp3
+  deadRestartButtonAndroidFileName: LvlStart3.mp3
+  deadQuitLevelButtonAndroidFileName: CancelHappySprinklesDeamplified3.mp3
+  levelCompletedAndroidFileName: Applause3.mp3
+  endLevelRestartButtonAndroidFileName: ToLvlSelect 1.wav
+  endLevelQuitLevelButtonAndroidFileName: ToLvlSelect 1.wav
   songTime: 0
 --- !u!82 &3501735426294670242
 AudioSource:

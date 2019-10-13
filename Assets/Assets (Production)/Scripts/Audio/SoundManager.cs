@@ -110,6 +110,7 @@ namespace Crescendo.InitialCrescendo
 
 			if(levelName == LevelManager.Instance.MainMenuName) {
 				levelThemeAudioSource.clip = mainMenuTheme;
+				levelThemeAudioSource.time = 0;
 				levelThemeAudioSource.loop = true;
 				StartSong();
 			} else if(levelName == LevelManager.Instance.Level1Name) {
@@ -131,6 +132,7 @@ namespace Crescendo.InitialCrescendo
 
 			if(levelName == LevelManager.Instance.MainMenuName) {
 				levelThemeAudioSource.clip = mainMenuTheme;
+				levelThemeAudioSource.time = 0;
 				levelThemeAudioSource.loop = true;
 				StartSong();
 			} else if(levelName == LevelManager.Instance.Level1Name) {

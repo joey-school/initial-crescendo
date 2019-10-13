@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 300974758}
-  levelName: 
+  levelName: Level-1
 --- !u!114 &300974757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,66 +1470,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: level1Theme
-      value: 
-      objectReference: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: startGameButtonAndroidFileName
-      value: LvlStart3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: collectibleSoundAndroidFileName
-      value: CollectibleSparkle3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: pauseButtonAndroidFileName
-      value: RPG_Menu_Confirm_01 - confirmDeamplified3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: resumeButtonAndroidFileName
-      value: ConfirmHappyNOSprinklesDeamplified3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: restartButtonAndroidFileName
-      value: ConfirmHappyNOSprinklesDeamplified3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: quitButtonAndroidFileName
-      value: CancelHappySprinklesDeamplified3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: deadQuitLevelButtonAndroidFileName
-      value: CancelHappySprinklesDeamplified3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: deadRestartButtonAndroidFileName
-      value: LvlStart3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: levelCompletedAndroidFileName
-      value: Applause3.mp3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: endLevelRestartButtonAndroidFileName
-      value: ToLvlSelect 1.wav
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: endLevelQuitLevelButtonAndroidFileName
-      value: ToLvlSelect 1.wav
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6781b41605aff442af5a35cb5b17949, type: 3}
@@ -3450,12 +3390,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1262861164 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3501735426294670243, guid: f6781b41605aff442af5a35cb5b17949,
-    type: 3}
-  m_PrefabInstance: {fileID: 532442619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295089321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,7 +4708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1fac35418904d4d95f7e58ceb09794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundManager: {fileID: 1262861164}
   MusicSelected: 1
   slider: {fileID: 1576268463}
 --- !u!1 &1627805385
@@ -5724,7 +5657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1892295527}
-  levelName: 
+  levelName: Level-2
 --- !u!114 &1892295526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5964,7 +5897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1fac35418904d4d95f7e58ceb09794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundManager: {fileID: 1262861164}
   MusicSelected: 0
   slider: {fileID: 1961667409}
 --- !u!114 &1961667409

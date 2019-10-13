@@ -20,7 +20,6 @@ namespace Crescendo.InitialCrescendo
             {
                 case "Hazard":
 
-
                     break;
             }
         }
