@@ -201,8 +201,8 @@ namespace Crescendo.InitialCrescendo
         {
             animator.SetBool("IsGrounded", IsGrounded);
             animator.SetBool("IsGliding", ActiveMovementType == PlayerMovementTypes.Gliding);
-            animator.SetFloat("HorizontalVelocity", Rigidbody.velocity.x);//, 0.1f, Time.deltaTime);
-            animator.SetFloat("VerticalVelocity", Rigidbody.velocity.y);//, 0.1f, Time.deltaTime);
+            animator.SetFloat("HorizontalVelocity", Rigidbody.velocity.x);
+            animator.SetFloat("VerticalVelocity", Rigidbody.velocity.y);
         }
 
         private void CheckGrounded()
