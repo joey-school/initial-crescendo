@@ -23,5 +23,9 @@ namespace Crescendo.InitialCrescendo
                 DontDestroyOnLoad(gameObject);
             }
         }
-    }
+
+		private void Update() {
+			Debug.Log(GodMode);
+		}
+	}
 }

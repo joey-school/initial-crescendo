@@ -2107,6 +2107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806401985}
   - component: {fileID: 806401986}
+  - component: {fileID: 806401987}
   m_Layer: 5
   m_Name: ToggleGodMode
   m_TagString: Untagged
@@ -2192,6 +2193,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &806401987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806401984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed22c857ea33201419020805f24fbea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &882681675
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,6 +4834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1638168520}
   - component: {fileID: 1638168521}
+  - component: {fileID: 1638168522}
   m_Layer: 5
   m_Name: ToggleLevels
   m_TagString: Untagged
@@ -4906,6 +4920,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &1638168522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638168519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b60f207408997340b40b400723132cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1652108105
 GameObject:
   m_ObjectHideFlags: 0
