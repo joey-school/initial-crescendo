@@ -8,11 +8,13 @@ namespace Crescendo.InitialCrescendo
 	{
 		[SerializeField] private AudioSource audioSource;
 		[SerializeField] private AudioClip newClip;
+
 		private void OnTriggerEnter2D(Collider2D collision) {
-			if(CompareTag(collision.tag)) {
+			if(collision.CompareTag("Player")) {
 				audioSource.Stop();
 				audioSource.time = 0;
 				audioSource.clip = newClip;
+				audioSource.volume = 0.5f;
 				audioSource.Play();
 			}
 		}
