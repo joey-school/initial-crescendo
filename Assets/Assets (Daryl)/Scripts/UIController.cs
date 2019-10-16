@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace Crescendo.InitialCrescendo
 {
-    public class Menu_Buttons : MonoBehaviour
+    public class UIController : MonoBehaviour
     {
         [SerializeField]
         private GameObject
@@ -76,7 +76,7 @@ namespace Crescendo.InitialCrescendo
             }
         }
 
-        public void StartLevel1()
+        public void StartLevel(int levelNumber)
         {
             if (isStartingLevel)
             {
@@ -85,31 +85,56 @@ namespace Crescendo.InitialCrescendo
 
             isStartingLevel = true;
 
-            //if playerprefs bool storyseen:
+            string sceneName;
 
-            SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
-			//level1Activated = true;
-
-			//else:
-			//show story
-
-			SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
-		}
-
-        public void StartLevel2()
-        {
-            if (isStartingLevel)
+            switch (levelNumber)
             {
-                return;
+                case 1:
+                    sceneName = LevelManager.Instance.Level1Name;
+                    break;
+                case 2:
+                    sceneName = LevelManager.Instance.Level1Name;
+                    break;
             }
 
-            isStartingLevel = true;
-
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
-            //level2Activated = true;
-
-			SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
+            SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
         }
+
+  //      public void StartLevel1()
+  //      {
+  //          if (isStartingLevel)
+  //          {
+  //              return;
+  //          }
+
+  //          isStartingLevel = true;
+
+  //          //if playerprefs bool storyseen:
+
+  //          SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
+		//	//level1Activated = true;
+
+		//	//else:
+		//	//show story
+
+		//	SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
+		//}
+
+   //     public void StartLevel2()
+   //     {
+   //         if (isStartingLevel)
+   //         {
+   //             return;
+   //         }
+
+   //         isStartingLevel = true;
+
+   //         SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
+   //         //level2Activated = true;
+
+			//SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
+        //}
 
         public void MainMenuActive()
         {
