@@ -95,6 +95,14 @@ namespace Crescendo.InitialCrescendo
 			SceneManager.LoadSceneAsync(LevelManager.Instance.Level2Name);
         }
 
+        public void StartLevel3()
+        {
+			SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
+            //level3Activated = true;
+
+			SceneManager.LoadSceneAsync(LevelManager.Instance.Level3Name);
+        }
+
         public void MainMenuActive()
         {
             SoundManager.Instance.PlaySoundFX(Sounds.Pause);
