@@ -191,7 +191,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: OptionsActive
         m_Mode: 1
         m_Arguments:
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: OptionsActive
         m_Mode: 1
         m_Arguments:
@@ -1198,11 +1198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1981628283785438758, guid: cdf7d1192eb225445a7daeffe02fee1f,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
-      objectReference: {fileID: 0}
     - target: {fileID: 1981628283785438753, guid: cdf7d1192eb225445a7daeffe02fee1f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1257,6 +1252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438758, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 1981628283785438752, guid: cdf7d1192eb225445a7daeffe02fee1f,
         type: 3}
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: OptionsActive
         m_Mode: 1
         m_Arguments:
@@ -3293,7 +3293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1196824025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3492,7 +3492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: MainMenuActive
         m_Mode: 1
         m_Arguments:
@@ -4270,7 +4270,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: CreditsActive
         m_Mode: 1
         m_Arguments:
@@ -5466,7 +5466,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: CheatsActive
         m_Mode: 1
         m_Arguments:
@@ -5800,7 +5800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: MainMenuActive
         m_Mode: 1
         m_Arguments:
@@ -6697,7 +6697,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1729222817}
         m_MethodName: LevelSelectActive
         m_Mode: 1
         m_Arguments:
