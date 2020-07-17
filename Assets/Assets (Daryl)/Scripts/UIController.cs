@@ -85,7 +85,7 @@ namespace Crescendo.InitialCrescendo
 
             isStartingLevel = true;
 
-            string sceneName;
+            string sceneName = LevelManager.Instance.MainMenuName;
 
             switch (levelNumber)
             {
@@ -93,12 +93,15 @@ namespace Crescendo.InitialCrescendo
                     sceneName = LevelManager.Instance.Level1Name;
                     break;
                 case 2:
-                    sceneName = LevelManager.Instance.Level1Name;
+                    sceneName = LevelManager.Instance.Level2Name;
+                    break;
+                case 3:
+                    sceneName = LevelManager.Instance.Level3Name;
                     break;
             }
 
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
-            SceneManager.LoadSceneAsync(LevelManager.Instance.Level1Name);
+            SceneManager.LoadSceneAsync(sceneName);
         }
 
   //      public void StartLevel1()
