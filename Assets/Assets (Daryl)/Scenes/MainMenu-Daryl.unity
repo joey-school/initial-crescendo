@@ -1550,11 +1550,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
-        type: 3}
-      propertyPath: unlockCheckpointAndroidFileName
-      value: bellDeamplified.mp3
-      objectReference: {fileID: 0}
     - target: {fileID: 3501735426294670242, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: Loop
@@ -3687,7 +3682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1196824025
 RectTransform:
   m_ObjectHideFlags: 0

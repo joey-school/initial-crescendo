@@ -14,7 +14,7 @@ namespace Crescendo.InitialCrescendo
 		private void OnTriggerEnter2D(Collider2D collision) {
 
             // TODO: Make CheckpointManagerLvl1 a singleton.
-            CheckpointManagerLvl1 checkpointManager = GameObject.Find("CheckPointManager").GetComponent<CheckpointManagerLvl1>();
+            CheckpointManager checkpointManager = GameObject.Find("CheckPointManager").GetComponent<CheckpointManager>();
 
             if (collision.tag == "Player") {
                 if (isPlayerSpawnPoint) {

@@ -8,12 +8,11 @@ namespace Crescendo.SymphoSprint
 {
     public class StartDoor : MonoBehaviour
     {
-
         [SerializeField]
         public float waitingTime = 2f;
 
         [SerializeField]
-        private SpriteRenderer closedDoorSpite;
+        private SpriteRenderer closedDoorSprite;
 
         [SerializeField]
         private PlayerMovementController playerMovementController;
@@ -41,7 +40,7 @@ namespace Crescendo.SymphoSprint
 
         private void FadeOutDoor()
         {
-            closedDoorSpite.DOFade(0f, 1f).SetEase(Ease.Linear);
+            closedDoorSprite.DOFade(0f, 1f).SetEase(Ease.Linear);
         }
     }
 }

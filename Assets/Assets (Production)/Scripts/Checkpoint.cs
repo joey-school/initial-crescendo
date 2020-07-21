@@ -33,7 +33,7 @@ namespace Crescendo.SymphoSprint
 
         private void Awake()
         {
-            CheckpointManagerLvl1 checkpointManager = GameObject.Find("CheckPointManager").GetComponent<CheckpointManagerLvl1>();
+            CheckpointManager checkpointManager = GameObject.Find("CheckPointManager").GetComponent<CheckpointManager>();
 
             if (isUsedInDebugging && !checkpointManager.IsDebugging)
             {

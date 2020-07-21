@@ -13,6 +13,7 @@ namespace Crescendo.InitialCrescendo
         [SerializeField] private GameObject PauseButton;
         [SerializeField] private Text txt;
 		[SerializeField] private ScoreManager scoreManager;
+		[SerializeField] private CheckpointManager checkPointManager;
 		[SerializeField] private GameObject DeadQuitButton;
 		[SerializeField] private GameObject EndLevelQuitButton;
 
@@ -46,6 +47,7 @@ namespace Crescendo.InitialCrescendo
 					DeadQuitButton.SetActive(false);
 					EndLevelQuitButton.SetActive(true);
                     PlayerPrefs.SetInt(levelName + "finished", 1);
+                    PlayerPrefs.SetInt(checkPointManager.PlayerPrefsNameCheckp, 0);
                     SoundManager.Instance.PlaySoundFX(Sounds.LevelCompleted);
 					ResetValues();
                     SaveScore();

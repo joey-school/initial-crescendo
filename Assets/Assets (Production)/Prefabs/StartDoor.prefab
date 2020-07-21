@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitingTime: 1.5
-  closedDoorSpite: {fileID: 2928731595628028711}
+  closedDoorSprite: {fileID: 2928731595628028711}
   playerMovementController: {fileID: 0}
 --- !u!61 &2928731595458083529
 BoxCollider2D:

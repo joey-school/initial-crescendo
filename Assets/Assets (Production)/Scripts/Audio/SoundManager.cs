@@ -33,6 +33,7 @@ namespace Crescendo.InitialCrescendo
 			mainMenuTheme,
 			level1Theme,
 			level2Theme,
+			level3Theme,
 			//levelClearTheme,
 			startGameButtonFX,
 			pauseButtonFX, 
@@ -124,6 +125,10 @@ namespace Crescendo.InitialCrescendo
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level2Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+			} else if(levelName == LevelManager.Instance.Level3Name) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = level3Theme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
 			} else {
 				levelThemeAudioSource.Stop();
 			}
@@ -145,6 +150,10 @@ namespace Crescendo.InitialCrescendo
 			} else if(levelName == LevelManager.Instance.Level2Name) {
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level2Theme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+			} else if(levelName == LevelManager.Instance.Level3Name) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = level3Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
 			} else {
 				levelThemeAudioSource.Stop();

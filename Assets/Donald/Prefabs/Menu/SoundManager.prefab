@@ -52,6 +52,7 @@ MonoBehaviour:
   mainMenuTheme: {fileID: 8300000, guid: 41fa6d7449fcb6f4085ac968ea316560, type: 3}
   level1Theme: {fileID: 8300000, guid: 382aef7898b9b4444a101ba8cb65301e, type: 3}
   level2Theme: {fileID: 8300000, guid: 81ddeec8579f84155b09064a494d92e6, type: 3}
+  level3Theme: {fileID: 8300000, guid: ea80d81b1154e8244b2708b28e1c8d7c, type: 3}
   startGameButtonFX: {fileID: 8300000, guid: 850a4f91de1da11488d95496179b5fb8, type: 3}
   pauseButtonFX: {fileID: 8300000, guid: 0f9087afe56046b44ace1984d9515c09, type: 3}
   resumeButtonFX: {fileID: 8300000, guid: f314a30eaf95aaf438d01cda45b06d15, type: 3}
@@ -78,6 +79,7 @@ MonoBehaviour:
   levelCompletedAndroidFileName: Applause3.mp3
   endLevelRestartButtonAndroidFileName: ToLvlSelect 1.wav
   endLevelQuitLevelButtonAndroidFileName: ToLvlSelect 1.wav
+  unlockCheckpointAndroidFileName: bellDeamplified.mp3
   songTime: 0
 --- !u!82 &3501735426294670242
 AudioSource:
