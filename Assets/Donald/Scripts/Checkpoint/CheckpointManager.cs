@@ -36,6 +36,7 @@ namespace Crescendo.InitialCrescendo
             }
 
             ShowCheckpointsInProgressBar();
+			UpdateCheckpointSprites();
         }
 
         private void Start() {
@@ -98,8 +99,6 @@ namespace Crescendo.InitialCrescendo
         {
             foreach (Transform checkpoint in checkpointParent)
             {
-				//Debug.Log(checkpoint.GetSiblingIndex(), this);
-
 				int checkpointIndex = checkpoint.GetSiblingIndex();
 
                 // Don't show the start checkpoint.
@@ -116,7 +115,25 @@ namespace Crescendo.InitialCrescendo
             }
         }
 
-        public void UnlockCheckpoint(int index)
+		private void UpdateCheckpointSprites() {
+			foreach(Transform checkpoint in checkpointParent) {
+				int checkpointIndex = checkpoint.GetSiblingIndex();
+
+				// Skip the start checkpoint.
+				if(checkpointIndex == 0 || checkpoint.GetComponent<Checkpoint>().IsUsedInDebugging) {
+					continue;
+				}
+
+				//show checkpoint unlocked sprite if checkpoint unlocked, else show locked sprite
+				bool checkpointUnlocked = PlayerPrefs.GetInt(PlayerPrefsNameCheckp, checkpointIndex) >= checkpointIndex;
+				if(checkpointUnlocked) {
+					checkpoint.GetComponent<Checkpoint>().Activate();
+				}
+			}
+		}
+
+
+		public void UnlockCheckpoint(int index)
         {
             // Prevents double unlock on start.
             if (PlayerPrefs.GetInt(PlayerPrefsNameCheckp) == index)

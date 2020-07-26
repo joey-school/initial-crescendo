@@ -39,10 +39,10 @@ namespace Crescendo.SymphoSprint
             {
                 Destroy(gameObject);
             }
-            //else
-            //{
-            //    gameObject.SetActive(false);
-            //}
+			//else
+			//{
+			//    gameObject.SetActive(false);
+			//}
         }
 
         public void Unlock()
@@ -62,5 +62,9 @@ namespace Crescendo.SymphoSprint
         {
             sprite.sprite = unlockedSprite;
         }
+
+		public void HideMe() {
+			GetComponentInChildren<SpriteRenderer>().enabled = false;
+		}
     }
 }
