@@ -36,10 +36,10 @@ namespace Crescendo.SymphoSprint
         [SerializeField]
         private Image progressFill;
 
-        [SerializeField]
-        private GameObject checkPointMarkerPrefab;
+		[SerializeField]
+		private GameObject checkPointMarkerPrefab;
 
-        [SerializeField]
+		[SerializeField]
         private Transform checkpointMarkerContainer;
 
         [SerializeField]
@@ -52,13 +52,19 @@ namespace Crescendo.SymphoSprint
             progressFill.fillAmount = f;
         }
 
-        public void PlaceCheckpointMarker(float percentage)
+        public void PlaceCheckpointMarker(float percentage, bool showUnlockedSprite)
         {
             GameObject checkpointMarker = Instantiate(checkPointMarkerPrefab, checkpointMarkerContainer, false);
 
-            float destinationXPosition = percentage * checkpointMarkerContainer.GetComponent<RectTransform>().sizeDelta.x;
+			float destinationXPosition = percentage * checkpointMarkerContainer.GetComponent<RectTransform>().sizeDelta.x
+				- checkPointMarkerPrefab.GetComponent<RectTransform>().rect.width / 2;
+			//print(destinationXPosition);
 
-            checkpointMarker.GetComponent<RectTransform>().anchoredPosition = new Vector2(destinationXPosition, 0f);
+			checkpointMarker.GetComponent<RectTransform>().anchoredPosition = new Vector2(destinationXPosition, 0f);
+
+			if(showUnlockedSprite) {
+				checkpointMarker.GetComponent<Image>().sprite = unlockedSprite;
+			}
         }
 
         public void ActivateCheckpoint(int index)

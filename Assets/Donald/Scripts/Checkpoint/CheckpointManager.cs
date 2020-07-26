@@ -98,16 +98,21 @@ namespace Crescendo.InitialCrescendo
         {
             foreach (Transform checkpoint in checkpointParent)
             {
-                Debug.Log(checkpoint.GetSiblingIndex(), this);
+				//Debug.Log(checkpoint.GetSiblingIndex(), this);
+
+				int checkpointIndex = checkpoint.GetSiblingIndex();
 
                 // Don't show the start checkpoint.
-                if (checkpoint.GetSiblingIndex() == 0 || checkpoint.GetComponent<Checkpoint>().IsUsedInDebugging)
+                if (checkpointIndex == 0 || checkpoint.GetComponent<Checkpoint>().IsUsedInDebugging)
                 {
                     continue;
                 }
 
+				//show checkpoint unlocked sprite if checkpoint unlocked, else show locked sprite
+				bool checkpointUnlocked = PlayerPrefs.GetInt(PlayerPrefsNameCheckp, checkpointIndex) >= checkpointIndex;
+
                 float percentage = checkpoint.position.x / (progressMeter.Finish.position.x - progressMeter.Start.position.x);
-                progressMeter.PlaceCheckpointMarker(percentage);
+                progressMeter.PlaceCheckpointMarker(percentage, checkpointUnlocked);
             }
         }
 
