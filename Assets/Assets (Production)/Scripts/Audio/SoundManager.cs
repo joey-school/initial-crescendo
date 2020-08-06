@@ -150,14 +150,17 @@ namespace Crescendo.InitialCrescendo
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level1Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+				levelThemeAudioSource.loop = false;
 			} else if(levelName == LevelManager.Instance.Level2Name) {
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level2Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+				levelThemeAudioSource.loop = false;
 			} else if(levelName == LevelManager.Instance.Level3Name) {
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level3Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+				levelThemeAudioSource.loop = false;
 			} else {
 				levelThemeAudioSource.Stop();
 			}
