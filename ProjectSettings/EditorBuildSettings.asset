@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Assets (Daryl)/Scenes/MainMenu-Daryl.unity
+    path: Assets/Assets (Production)/Scenes/MainMenu.unity
     guid: ced50a39637db99479e5f7e27bd69a66
   - enabled: 1
     path: Assets/Assets (Production)/Scenes/Level-1.unity

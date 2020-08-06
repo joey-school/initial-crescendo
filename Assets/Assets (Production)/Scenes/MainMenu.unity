@@ -1335,7 +1335,7 @@ PrefabInstance:
     - target: {fileID: 1981628283785438752, guid: cdf7d1192eb225445a7daeffe02fee1f,
         type: 3}
       propertyPath: MainMenuName
-      value: MainMenu-Daryl
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1981628283785438752, guid: cdf7d1192eb225445a7daeffe02fee1f,
         type: 3}
