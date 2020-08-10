@@ -1352,6 +1352,11 @@ PrefabInstance:
       propertyPath: Level3Name
       value: Level-3
       objectReference: {fileID: 0}
+    - target: {fileID: 1981628283785438752, guid: cdf7d1192eb225445a7daeffe02fee1f,
+        type: 3}
+      propertyPath: LevelIndianaJonesName
+      value: Level-IndianaJones
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdf7d1192eb225445a7daeffe02fee1f, type: 3}
 --- !u!1 &505352222
@@ -1550,6 +1555,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3501735426294670245, guid: f6781b41605aff442af5a35cb5b17949,
+        type: 3}
+      propertyPath: levelIndianaJonesTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d3f2d587450f77459dc7591a772c289, type: 3}
     - target: {fileID: 3501735426294670242, guid: f6781b41605aff442af5a35cb5b17949,
         type: 3}
       propertyPath: Loop

@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 	public string Level1Name;
 	public string Level2Name;
 	public string Level3Name;
+	public string LevelIndianaJonesName;
 
 	private void Awake() {
 		if(Instance == null) {
@@ -25,6 +26,7 @@ public class LevelManager : MonoBehaviour
 		if(level_zeroIsMainMenu == 1) return Level1Name;
 		if(level_zeroIsMainMenu == 2) return Level2Name;
 		if(level_zeroIsMainMenu == 3) return Level3Name;
+		if(level_zeroIsMainMenu == 4) return LevelIndianaJonesName;
 		else return MainMenuName;
 	}
 }

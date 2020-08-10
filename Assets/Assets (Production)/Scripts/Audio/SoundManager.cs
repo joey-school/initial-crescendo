@@ -34,6 +34,7 @@ namespace Crescendo.InitialCrescendo
 			level1Theme,
 			level2Theme,
 			level3Theme,
+			levelIndianaJonesTheme,
 			//levelClearTheme,
 			startGameButtonFX,
 			pauseButtonFX, 
@@ -132,6 +133,11 @@ namespace Crescendo.InitialCrescendo
 				levelThemeAudioSource.clip = level3Theme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
 				levelThemeAudioSource.loop = false;
+			}  else if(levelName == LevelManager.Instance.LevelIndianaJonesName) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = levelIndianaJonesTheme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+				levelThemeAudioSource.loop = false;
 			} else {
 				levelThemeAudioSource.Stop();
 			}
@@ -159,6 +165,11 @@ namespace Crescendo.InitialCrescendo
 			} else if(levelName == LevelManager.Instance.Level3Name) {
 				levelThemeAudioSource.Stop();
 				levelThemeAudioSource.clip = level3Theme;
+				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
+				levelThemeAudioSource.loop = false;
+			} else if(levelName == LevelManager.Instance.LevelIndianaJonesName) {
+				levelThemeAudioSource.Stop();
+				levelThemeAudioSource.clip = levelIndianaJonesTheme;
 				//DON'T PLAY HERE. PlayerSpawnPoint handles that.
 				levelThemeAudioSource.loop = false;
 			} else {
