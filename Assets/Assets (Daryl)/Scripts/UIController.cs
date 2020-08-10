@@ -11,6 +11,7 @@ namespace Crescendo.InitialCrescendo
         [SerializeField]
         private GameObject
             LevelSelectPanel,
+            BdayLevelSelectPanel,
             OptionsPanel,
             MenuPanel,
             CheatsPanel,
@@ -98,6 +99,9 @@ namespace Crescendo.InitialCrescendo
                 case 3:
                     sceneName = LevelManager.Instance.Level3Name;
                     break;
+                case 4:
+                    sceneName = LevelManager.Instance.LevelIndianaJonesName;
+                    break;
             }
 
             SoundManager.Instance.PlaySoundFX(Sounds.StartGame);
@@ -145,6 +149,7 @@ namespace Crescendo.InitialCrescendo
             MenuPanel.SetActive(true);
             OptionsPanel.SetActive(false);
             LevelSelectPanel.SetActive(false);
+            BdayLevelSelectPanel.SetActive(false);
             CheatsPanel.SetActive(false);
             CreditsPanel.SetActive(false);
         }
@@ -169,7 +174,11 @@ namespace Crescendo.InitialCrescendo
         {
             SoundManager.Instance.PlaySoundFX(Sounds.Pause);
             MenuPanel.SetActive(false);
-            LevelSelectPanel.SetActive(true);
+			if(CheatManager.Instance.Bday) {
+				BdayLevelSelectPanel.SetActive(true);
+			} else {
+				LevelSelectPanel.SetActive(true);
+			}
         }
 
         public void CheatsActive()

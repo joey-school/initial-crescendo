@@ -10,6 +10,7 @@ namespace Crescendo.InitialCrescendo
         public static CheatManager Instance { get; private set; }
         public bool LevelsUnlocked { get; set; }
 		public bool GodMode { get; set; }
+		public bool Bday { get; set; }
 
         void Awake()
         {
@@ -25,7 +26,7 @@ namespace Crescendo.InitialCrescendo
         }
 
 		private void Update() {
-			//Debug.Log(GodMode);
+			Debug.Log(GodMode);
 		}
 	}
 }
