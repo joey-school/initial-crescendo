@@ -12,6 +12,7 @@ TagManager:
   - Checkpoint
   - TimmyCanon
   - CheckpointContainer
+  - PlayerSpriteChange
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,6 @@ TagManager:
   - ParticleBorder
   - ParticleSystem
   - ParticleSystems
-  - 
   - 
   - 
   - 

@@ -43,6 +43,9 @@ namespace Crescendo.InitialCrescendo
                     SoundManager.Instance.PlaySoundFX(Sounds.Collectible);
                     scoreManager.Score++;
                     break;
+				case "PlayerSpriteChange":
+					collision.gameObject.GetComponent<ChangePlayerSpriteOnHit>().ChangePlayerSprite();
+					break;
             }
         }
     }
