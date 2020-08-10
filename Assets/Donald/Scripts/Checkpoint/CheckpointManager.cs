@@ -29,6 +29,8 @@ namespace Crescendo.InitialCrescendo
 
         private void Awake()
         {
+			PlayerPrefsNameCheckp = SceneManager.GetActiveScene().name + "Checkpoint";
+
             // Start is already unlocked.
             if (!PlayerPrefs.HasKey(PlayerPrefsNameCheckp))
             {
